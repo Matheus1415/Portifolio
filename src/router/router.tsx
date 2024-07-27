@@ -9,6 +9,7 @@ const AppRouter = () => {
             <MainContainer>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/manuntencao" element={<h1>Manuenteção</h1>} />
                 </Routes>
             </MainContainer>
         </Router>
