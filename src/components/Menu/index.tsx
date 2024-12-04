@@ -1,73 +1,55 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { IoMenu, IoClose } from "react-icons/io5";
-import ItemMenu from "../ItemMenu";
 import { FaHome } from "react-icons/fa";
 
 const ContainerMenu = styled.div`
-    position: relative;
-    color: white;
-`;
+  width: 100%;
+  max-width: 97%;
+  padding-top: 20px;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 
-const MenuToggle = styled.div`
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    cursor: pointer;
-`;
-
-const MenuFixed = styled.div<{ $isOpen: boolean }>`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: #26263c;
-    color: white;
-    transform: ${props => props.$isOpen ? 'translateX(0)' : 'translateX(-100%)'};
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
+  & > .text {
+    font-size: 30px;
+    color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    & > .list-ico{
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-    }
+    align-items: center;
+    transition: 1s;
+  }
+
+  & > .text > .line {
+    height: 5px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 2px;
+    transition: 1s;
+  }
+
+  & > .text:hover > .line {
+    background-color: #6c6c87;
+    box-shadow: -3px -7px 53px 10px #6c6c87;
+  }
+
+  & > .div70 {
+    width: 100%;
+    max-width: 70%;
+  }
 `;
 
-const CloseButton = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-    cursor: pointer;
-`;
 
 export const Menu: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => setIsOpen(prevState => !prevState);
-
-    return (
-        <ContainerMenu>
-            <MenuToggle onClick={toggleMenu}>
-                {isOpen ? <IoClose size={40} /> : <IoMenu size={60} />}
-            </MenuToggle>
-            <MenuFixed $isOpen={isOpen}>
-                <CloseButton onClick={toggleMenu}>
-                    <IoClose size={30} />
-                </CloseButton>
-                <div className="list-ico">
-                    <ItemMenu icon={<FaHome />} route="/" title="Home"/>
-                    <ItemMenu icon={<FaHome />} route="/manuntencao" title="Home"/>
-                    <ItemMenu icon={<FaHome />} route="/manuntencao" title="Home"/>
-                    <ItemMenu icon={<FaHome />} route="/manuntencao" title="Home"/>
-                    <ItemMenu icon={<FaHome />} route="/manuntencao" title="Home"/>
-                </div>                
-            </MenuFixed>
-        </ContainerMenu>
-    );
+  return (
+    <ContainerMenu>
+      <div className="div70"></div>
+      <div className="text" >
+        <p>Início</p>
+        <div className="line"></div>
+      </div>
+    </ContainerMenu>
+  );
 };
-

@@ -5,7 +5,7 @@ const Face = styled.div`
     width: 100%;
     max-width: 500px;
     height: 500px;
-    background: url(/animatePessoa.jpg) no-repeat center center;
+    background: url(/animatePessoa.png) no-repeat center center;
     background-size:cover;
     display: flex;
     align-items: center;
