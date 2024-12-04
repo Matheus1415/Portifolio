@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { InteractiveFace } from "../../components/InteractiveFace";
 import { Menu } from "../../components/Menu";
@@ -17,6 +17,8 @@ import { TbBrandLaravel } from "react-icons/tb";
 import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import { FaGitAlt } from "react-icons/fa";
+import Skills from "../Skills";
+import Project from "../Project";
 
 const Container = styled.section`
   min-height: 910px;
@@ -80,7 +82,7 @@ const Container = styled.section`
 `;
 
 const HomeContainer = styled.section`
-  background-image: linear-gradient(to top, #13131f, #000000);
+  background-image: linear-gradient(to top, #13131f, #08080d);
   font-family: "Roboto", sans-serif;
   color: white;
   width: 100%;
@@ -88,6 +90,44 @@ const HomeContainer = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow-x: hidden;
+
+  & > .wrapper-search {
+    width: 100%;
+    max-width: 1600px;
+    margin: 50px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    & > .titleSection {
+      max-width: 50%;
+      font-size: 55px !important;
+      margin-bottom: 20px;
+    }
+  }
+
+  & > .wrapper-search > input {
+    font-size: 18px;
+    padding: 15px;
+    width: 100%;
+    color: white;
+    background-color: #13131d;
+    box-shadow: 3px 3px 24px -10px rgba(0, 0, 0, 1);
+    max-width: 700px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  & > .wrapper-search > input:focus {
+    outline: none;
+  }
+
+  & > .titleSection::selection {
+    background-color: #8257e6;
+    color: white;
+  }
 `;
 
 const ProjectContainer = styled.section`
@@ -102,6 +142,7 @@ const ProjectContainer = styled.section`
   padding-bottom: 50px;
   flex-wrap: wrap;
   min-height: 500px;
+
   & > .boxProject {
     box-shadow: -13px -7px 53px -6px #000000c8;
     max-height: 700px;
@@ -157,7 +198,88 @@ const ProjectContainer = styled.section`
   }
 `;
 
+const projects = [
+  {
+    title: "Restaurant Web App",
+    subtitle: "Front-and | UI",
+    description:
+      "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
+    tools: [SiSass, SiTypescript, FaReact],
+    githubUrl: "https://github.com/Matheus1415/restaurante",
+    githubMessage: "Aluroni",
+  },
+  {
+    title: "Space Explorer",
+    subtitle: "Front-and | UI",
+    description:
+      "O Space Explorer é um site com temática espacial onde os usuários podem explorar fotos de galáxias, luas e planetas. A aplicação é uma single-page, apresentando uma única página estática. Os usuários podem filtrar as imagens por tags ou realizar uma pesquisa.",
+    tools: [SiSass, SiTypescript, FaReact],
+    githubUrl: "https://github.com/Matheus1415/siteEspacial",
+    githubMessage: "Space Explorer",
+  },
+  {
+    title: "Pomodoro",
+    subtitle: "Front-and | Lógica",
+    description:
+      "O Pomodoro é um projeto simples desenvolvido com HTML, CSS, TypeScript e JavaScript. Ele permite criar uma lista de tarefas com um cronômetro, onde as tarefas são marcadas como concluídas quando o tempo acabar.",
+    tools: [FaHtml5, FaCss3Alt, IoLogoJavascript, SiTypescript],
+    githubUrl: "https://github.com/Matheus1415/Comodoro",
+    githubMessage: "Pomodoro",
+  },
+  {
+    title: "Gerenciador de Estudos",
+    subtitle: "Front-and | UI | Lógica",
+    description:
+      "O Gerenciador de Estudos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu tempo de estudo, incluindo um cronômetro para controlar o tempo dedicado a cada assunto.",
+    tools: [SiSass, SiTypescript, FaReact],
+    githubUrl: "https://github.com/Matheus1415/gerenciador-de-estudo",
+    githubMessage: "Gerenciador de Estudos",
+  },
+  {
+    title: "Gerenciador de Evento",
+    subtitle: "Front-and | UI | Lógica | Recoil",
+    description:
+      "O Gerenciador de Eventos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu calendário de eventos, podendo adicionar eventos, filtrar eventos por datas usando Hook personalizando usando Recoil.",
+    tools: [SiSass, SiTypescript, FaReact],
+    githubUrl: "https://github.com/Matheus1415/Gerenciador-de-eventos",
+    githubMessage: "Gerenciador de Evento",
+  },
+  {
+    title: "Tech Innovation Hub",
+    subtitle: "Back-and | Lógica | API-REST",
+    description:
+      "Essa API foi desenvolvida usando o Laravel e implementa um sistema para gerenciar usuários, startups e propostas de investimentos. A seguir, apresentamos a estrutura geral e os endpoints que a API oferece.",
+    tools: [TbBrandLaravel, SiMysql],
+    githubUrl: "https://github.com/Matheus1415/TechInnovationHub",
+    githubMessage: "Tech Innovation Hub",
+  },
+  {
+    title: "Mendel",
+    subtitle: "Front-and | Back-and | Lógica | Tech Lead | Project management",
+    description:
+      "Este projeto de genética interativa foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente.",
+    tools: [
+      SiChakraui,
+      IoLogoJavascript,
+      FaReact,
+      BsTrello,
+      FaGitAlt,
+      FaGithub,
+    ],
+    githubUrl: "https://github.com/Matheus1415/Mendel",
+    githubMessage: "Mendel",
+  },
+];
+
 const Home: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredProjects = projects.filter(
+    (project) =>
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.subtitle.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <HomeContainer>
       <Menu />
@@ -189,184 +311,30 @@ const Home: React.FC = () => {
           <InteractiveFace />
         </div>
       </Container>
+      <div className="wrapper-search">
+        <h1 className="titleSection">Projetos desenvolvidos</h1>
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Pesquise pelo nome ou categoria do projeto"
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       <ProjectContainer>
-        <div className="boxProject">
-          <div className="headerProject">
-            <div className="titleProject">
-              <h2>Restaurant Web App</h2>
-              <h3>Front-and | UI</h3>
-            </div>
-            <div className="github">
-              <Tooltip
-                icon={<FaGithub />}
-                message="Aluroni"
-                url="https://github.com/Matheus1415/restaurante"
-              />
-            </div>
-          </div>
-          <p>
-            O Restaurant App é uma aplicação web moderna, desenvolvida com React
-            e TypeScript, que oferece aos usuários a capacidade de explorar e
-            filtrar uma ampla variedade de pratos disponíveis no cardápio de um
-            restaurante.
-          </p>
-          <p className="ferramenta">Ferramentas:</p>
-          <div className="boxIcon">
-            <SiSass />
-            <SiTypescript />
-            <FaReact />
-          </div>
-        </div>
-
-        <div className="boxProject">
-          <div className="headerProject">
-            <div className="titleProject">
-              <h2>Space Explorer</h2>
-              <h3>Front-and | UI</h3>
-            </div>
-            <div className="github">
-              <Tooltip
-                icon={<FaGithub />}
-                message="Space Explorer"
-                url="https://github.com/Matheus1415/siteEspacial"
-              />
-            </div>
-          </div>
-          <p>
-            O Space Explorer é um site com temática espacial onde os usuários
-            podem explorar fotos de galáxias, luas e planetas. A aplicação é uma
-            single-page, apresentando uma única página estática. Os usuários
-            podem filtrar as imagens por tags ou realizar uma pesquisa.
-          </p>
-          <p className="ferramenta">Ferramentas:</p>
-          <div className="boxIcon">
-            <SiSass />
-            <SiTypescript />
-            <FaReact />
-          </div>
-        </div>
-
-        <div className="boxProject">
-          <div className="headerProject">
-            <div className="titleProject">
-              <h2>Comodoro</h2>
-              <h3>Front-and | Lógica</h3>
-            </div>
-            <div className="github">
-              <Tooltip
-                icon={<FaGithub />}
-                message="Space Explorer"
-                url="https://github.com/Matheus1415/Comodoro"
-              />
-            </div>
-          </div>
-          <p>
-            O Comodoro é um projeto simples desenvolvido com HTML, CSS,
-            TypeScript e JavaScript. Ele permite criar uma lista de tarefas com
-            um cronômetro, onde as tarefas são marcadas como concluídas quando o
-            tempo acabar. Este projeto depende da utilização do Live Server para
-            funcionar corretamente.
-          </p>
-          <p className="ferramenta">Ferramentas:</p>
-          <div className="boxIcon">
-            <FaHtml5 />
-            <FaCss3Alt />
-            <IoLogoJavascript />
-            <SiTypescript />
-          </div>
-        </div>
-
-        <div className="boxProject">
-          <div className="headerProject">
-            <div className="titleProject">
-              <h2>Gerenciador de Estudos</h2>
-              <h3>Front-and | UI | Lógica</h3>
-            </div>
-            <div className="github">
-              <Tooltip
-                icon={<FaGithub />}
-                message="Gerenciador de Estudos"
-                url="https://github.com/Matheus1415/gerenciador-de-estudo"
-              />
-            </div>
-          </div>
-          <p>
-            O Gerenciador de Estudos é uma aplicação single-page desenvolvida
-            com TypeScript, React e Sass. Ele permite que você gerencie seu
-            tempo de estudo, incluindo um cronômetro para controlar o tempo
-            dedicado a cada assunto. Além disso, possui um formulário para
-            adicionar o tempo e o assunto que você deseja estudar.
-          </p>
-          <p className="ferramenta">Ferramentas:</p>
-          <div className="boxIcon">
-            <SiSass />
-            <SiTypescript />
-            <FaReact />
-          </div>
-        </div>
-
-        <div className="boxProject">
-          <div className="headerProject">
-            <div className="titleProject">
-              <h2>Tech Innovation Hub</h2>
-              <h3>Back-and | Lógica | API-REST</h3>
-            </div>
-            <div className="github">
-              <Tooltip
-                icon={<FaGithub />}
-                message="Tech Innovation Hub"
-                url="https://github.com/Matheus1415/TechInnovationHub"
-              />
-            </div>
-          </div>
-          <p>
-            Essa API foi desenvolvida usando o Laravel e implementa um sistema
-            para gerenciar usuários, startups e propostas de investimentos. A
-            seguir, apresentamos a estrutura geral e os endpoints que a API
-            oferece, bem como as instruções para autenticação e exemplos de uso.
-          </p>
-          <p className="ferramenta">Ferramentas:</p>
-          <div className="boxIcon">
-            <TbBrandLaravel />
-            <SiMysql />
-          </div>
-        </div>
-
-        <div className="boxProject">
-          <div className="headerProject">
-            <div className="titleProject">
-              <h2>Mendel</h2>
-              <h3>
-                Font-and | Back-and | Lógica | Tech Lead | Project management
-              </h3>
-            </div>
-            <div className="github">
-              <Tooltip
-                icon={<FaGithub />}
-                message="Mendel"
-                url="https://github.com/Matheus1415/Mendel"
-              />
-            </div>
-          </div>
-          <p>
-            Este projeto de genética interativa foi desenvolvido para
-            proporcionar uma experiência educacional rica em conceitos
-            genéticos, utilizando um design interativo e visualmente atraente.
-            Ele abrange desde as Leis de Mendel até genética avançada, incluindo
-            herança ligada ao sexo, com várias seções detalhadas e
-            funcionalidades interativas.{" "}
-          </p>
-          <p className="ferramenta">Ferramentas:</p>
-          <div className="boxIcon">
-            <SiChakraui />
-            <IoLogoJavascript />
-            <FaReact />
-            <BsTrello />
-            <FaGitAlt />
-            <FaGithub />
-          </div>
-        </div>
+        {filteredProjects.map((project) => (
+          <Project
+            key={project.title}
+            title={project.title}
+            subtitle={project.subtitle}
+            description={project.description}
+            tools={project.tools}
+            githubUrl={project.githubUrl}
+            githubMessage={project.githubMessage}
+          />
+        ))}
       </ProjectContainer>
+      <Skills />
     </HomeContainer>
   );
 };

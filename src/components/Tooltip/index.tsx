@@ -4,7 +4,7 @@ import "./Tooltip.css";
 interface TooltipAttributes {
     icon: React.ReactNode;
     message: string;
-    url: string;
+    url?: string;
 }
 
 const Tooltip: React.FC<TooltipAttributes> = ({icon, message, url}) => {
