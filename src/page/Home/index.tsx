@@ -23,7 +23,6 @@ import About from "../About";
 import Experience from "../Experience";
 import Footer from "../Footer/inde";
 
-
 const Container = styled.section`
   min-height: 910px;
   width: 100%;
@@ -45,9 +44,17 @@ const Container = styled.section`
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    @media (max-width: 600px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
 
     & > h1 {
       font-size: 80px;
+      @media (max-width: 600px) {
+        font-size: 30px;
+      }
       & > span {
         color: #8257e6;
         &::selection {
@@ -62,6 +69,9 @@ const Container = styled.section`
 
     & > h2 {
       font-size: 45px;
+      @media (max-width: 600px) {
+        font-size: 25px;
+      }
       font-family: "Anton", sans-serif;
       &::selection {
         background-color: #8257e6;
@@ -111,12 +121,15 @@ const HomeContainer = styled.section`
     }
     & > .titleSection {
       max-width: 50%;
-      font-size: 55px !important;
+      font-size: 55px;
       margin-bottom: 20px;
       @media (max-width: 900px) {
         width: 100%;
         align-items: center;
         text-align: center;
+      }
+      @media (max-width: 600px) {
+        font-size: 25px;
       }
     }
   }
@@ -135,6 +148,9 @@ const HomeContainer = styled.section`
       width: 100%;
       align-items: center;
       text-align: center;
+    }
+    @media (max-width: 600px) {
+      max-width: 350px;
     }
   }
 
@@ -160,6 +176,11 @@ const ProjectContainer = styled.section`
   padding-bottom: 50px;
   flex-wrap: wrap;
   min-height: 500px;
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 
   & > .boxProject {
     box-shadow: -13px -7px 53px -6px #000000c8;
@@ -172,6 +193,9 @@ const ProjectContainer = styled.section`
     flex-direction: column;
     border-radius: 10px;
     padding: 10px;
+    @media (max-width: 600px) {
+      padding: 20px;
+    }
     & > .boxIcon {
       padding: 5px;
       font-size: 45px;
@@ -179,6 +203,10 @@ const ProjectContainer = styled.section`
       flex-direction: row;
       align-items: center;
       gap: 15px;
+      @media (max-width: 600px) {
+        font-size: 20px;
+        padding: 5px;
+      }
     }
 
     & > .headerProject {
@@ -193,12 +221,18 @@ const ProjectContainer = styled.section`
         & > h2 {
           font-size: 30px;
           padding: 10px;
+          @media (max-width: 600px) {
+            font-size: 15px;
+          }
         }
 
         & > h3 {
           font-size: 18px;
           padding: 10px;
           color: #846495;
+          @media (max-width: 600px) {
+            font-size: 15px;
+          }
         }
       }
     }
@@ -206,12 +240,18 @@ const ProjectContainer = styled.section`
       text-align: justify;
       font-size: 16px;
       padding: 5px;
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
     }
 
     & > .ferramenta {
       font-size: 22px;
       font-weight: bold;
       color: #8257e6;
+      @media (max-width: 600px) {
+        font-size: 15px;
+      }
     }
   }
 `;
@@ -352,10 +392,10 @@ const Home: React.FC = () => {
           />
         ))}
       </ProjectContainer>
-      <Skills/>
+      <Skills />
       <About />
       <Experience />
-      <Footer/>
+      <Footer />
     </HomeContainer>
   );
 };

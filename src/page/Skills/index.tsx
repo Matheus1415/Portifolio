@@ -20,12 +20,19 @@ const SkillsContainer = styled.section`
   align-items: center;
   background-color: #0f0f19;
   padding: 50px 20px;
-
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
   & > h1 {
     font-size: 50px;
     margin-bottom: 50px;
     color: #ffffff;
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
   }
 
   & > .skillsContent {
@@ -35,6 +42,11 @@ const SkillsContainer = styled.section`
     gap: 50px;
     width: 100%;
     max-width: 1200px;
+    @media (max-width: 600px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
 
     & > .softSkills,
     & > .hardSkills {
@@ -42,6 +54,12 @@ const SkillsContainer = styled.section`
       border-radius: 10px;
       padding: 30px;
       color: white;
+      @media (max-width: 600px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
 
       & > h2 {
         font-size: 30px;
@@ -62,6 +80,9 @@ const SkillsContainer = styled.section`
           gap: 15px;
           font-size: 20px;
           margin: 15px 0;
+          @media (max-width: 600px) {
+            width: 100%;
+          }
 
           & > svg {
             font-size: 30px;
@@ -80,6 +101,9 @@ const SkillsContainer = styled.section`
         display: flex;
         align-items: center;
         gap: 20px;
+        @media (max-width: 600px) {
+          width: 100%;
+        }
 
         & > svg {
           font-size: 50px;

@@ -16,10 +16,20 @@ const TimelineContainer = styled.section`
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+  }
+
   & .timeline-wrapper {
     max-width: 1200px;
     position: relative;
     padding: 20px 0;
+    width: 100%; 
+    @media (max-width: 600px) {
+      width: 100%;
+    }
 
     &::before {
       content: "";
@@ -30,6 +40,12 @@ const TimelineContainer = styled.section`
       width: 4px;
       background: #8257e6;
       transform: translateX(-50%);
+      @media (max-width: 600px) {
+        width: 100%;
+        height: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
 
     & .timeline-item {
@@ -37,6 +53,12 @@ const TimelineContainer = styled.section`
       align-items: flex-start;
       margin-bottom: 50px;
       position: relative;
+      flex-direction: row; 
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       &:nth-child(even) {
         flex-direction: row-reverse;
@@ -44,6 +66,11 @@ const TimelineContainer = styled.section`
 
         & .content {
           align-items: flex-end;
+        }
+
+        @media (max-width: 600px) {
+          flex-direction: column-reverse;
+          align-items: center;
         }
       }
 
@@ -66,6 +93,11 @@ const TimelineContainer = styled.section`
 
         &:hover {
           background: #8257e6;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 20px;
+          padding: 8px;
         }
       }
 
@@ -103,10 +135,16 @@ const TimelineContainer = styled.section`
             font-size: 14px;
           }
         }
+
+        @media (max-width: 600px) {
+          flex: 0 0 80%; 
+          margin-top: 20px;
+        }
       }
     }
   }
 `;
+
 
 const Experience: React.FC = () => {
   const experiences = [

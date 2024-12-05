@@ -8,6 +8,11 @@ const ContainerMenu = styled.div`
   display: flex;
   flex-direction: row;
   gap: 15px;
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 
   & > .text {
     font-size: 30px;
@@ -15,11 +20,19 @@ const ContainerMenu = styled.div`
     flex-direction: column;
     align-items: center;
     transition: 1s;
+    @media (max-width: 600px) {
+      width: 100%;
+      flex-direction: column;
+    }
   }
 
   & > .text > a {
     text-decoration: none;
     color: #fff;
+    @media (max-width: 600px) {
+      font-size: 16px;
+      display: inline-block;
+    }
   }
 
   & > .text > .line {
@@ -29,6 +42,9 @@ const ContainerMenu = styled.div`
     background-color: #fff;
     margin-top: 2px;
     transition: 1s;
+    @media (max-width: 600px) {
+      width: 0 !important;
+    }
   }
 
   & > .text:hover > .line {
@@ -39,6 +55,9 @@ const ContainerMenu = styled.div`
   & > .div70 {
     width: 100%;
     max-width: 60%;
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 `;
 
@@ -52,20 +71,19 @@ export const Menu: React.FC = () => {
       </div>
       <div className="text">
         <a href="#projetos">Projetos</a>
-        <div className="line" style={{width:"110px"}}></div>
+        <div className="line" style={{ width: "110px" }}></div>
       </div>
       <div className="text">
         <a href="#habilidades">Habilidades </a>
-        <div className="line" style={{width:"150px"}}></div>
+        <div className="line" style={{ width: "150px" }}></div>
       </div>
       <div className="text">
         <a href="#sobre">Sobre</a>
         <div className="line"></div>
       </div>
       <div className="text">
-        <a href="#experiencia">Experiência
-        </a>
-        <div className="line" style={{width:"150px"}}></div>
+        <a href="#experiencia">Experiência</a>
+        <div className="line" style={{ width: "150px" }}></div>
       </div>
     </ContainerMenu>
   );
