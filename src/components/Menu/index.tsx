@@ -14,11 +14,15 @@ const ContainerMenu = styled.div`
 
   & > .text {
     font-size: 30px;
-    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: 1s;
+  }
+
+  & > .text > a {
+    text-decoration: none;
+    color: #fff;
   }
 
   & > .text > .line {
@@ -37,18 +41,34 @@ const ContainerMenu = styled.div`
 
   & > .div70 {
     width: 100%;
-    max-width: 70%;
+    max-width: 60%;
   }
 `;
-
 
 export const Menu: React.FC = () => {
   return (
     <ContainerMenu>
       <div className="div70"></div>
-      <div className="text" >
-        <p>Início</p>
+      <div className="text">
+        <a href="#inicio">Início</a>
         <div className="line"></div>
+      </div>
+      <div className="text">
+        <a href="#projetos">Projetos</a>
+        <div className="line" style={{width:"110px"}}></div>
+      </div>
+      <div className="text">
+        <a href="#habilidades">Habilidades </a>
+        <div className="line" style={{width:"150px"}}></div>
+      </div>
+      <div className="text">
+        <a href="#sobre">Sobre</a>
+        <div className="line"></div>
+      </div>
+      <div className="text">
+        <a href="#experiencia">Experiência
+        </a>
+        <div className="line" style={{width:"150px"}}></div>
       </div>
     </ContainerMenu>
   );

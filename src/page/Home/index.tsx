@@ -19,6 +19,9 @@ import { BsTrello } from "react-icons/bs";
 import { FaGitAlt } from "react-icons/fa";
 import Skills from "../Skills";
 import Project from "../Project";
+import About from "../About";
+import Experience from "../Experience";
+import Footer from "../Footer/inde";
 
 const Container = styled.section`
   min-height: 910px;
@@ -101,10 +104,19 @@ const HomeContainer = styled.section`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      justify-content: center;
+    }
     & > .titleSection {
       max-width: 50%;
       font-size: 55px !important;
       margin-bottom: 20px;
+      @media (max-width: 900px) {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
     }
   }
 
@@ -118,6 +130,11 @@ const HomeContainer = styled.section`
     max-width: 700px;
     border: none;
     border-radius: 5px;
+    @media (max-width: 900px) {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   & > .wrapper-search > input:focus {
@@ -283,7 +300,7 @@ const Home: React.FC = () => {
   return (
     <HomeContainer>
       <Menu />
-      <Container>
+      <Container id="inicio">
         <div className="box50">
           <h1>
             Olá, eu sou o <span>Matheus</span>
@@ -321,7 +338,7 @@ const Home: React.FC = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <ProjectContainer>
+      <ProjectContainer id="projetos">
         {filteredProjects.map((project) => (
           <Project
             key={project.title}
@@ -334,7 +351,10 @@ const Home: React.FC = () => {
           />
         ))}
       </ProjectContainer>
-      <Skills />
+      <Skills/>
+      <About />
+      <Experience />
+      <Footer/>
     </HomeContainer>
   );
 };

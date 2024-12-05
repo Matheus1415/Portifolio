@@ -190,7 +190,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <SkillsContainer>
+    <SkillsContainer id="habilidades">
       <h1>Minhas Habilidades</h1>
       <div className="skillsContent">
         <div className="softSkills">
