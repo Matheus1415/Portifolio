@@ -1,10 +1,5 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import { SiSass, SiTypescript, SiMysql, SiChakraui } from "react-icons/si";
-import { TbBrandLaravel } from "react-icons/tb";
-import { FaReact } from "react-icons/fa6";
-import { IoLogoJavascript } from "react-icons/io";
-import { BsTrello } from "react-icons/bs";
 import Tooltip from "../../components/Tooltip";
 import { IconType } from 'react-icons'; 
 

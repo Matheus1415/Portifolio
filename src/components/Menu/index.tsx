@@ -1,7 +1,4 @@
-import React, { useState } from "react";
 import styled from "styled-components";
-import { IoMenu, IoClose } from "react-icons/io5";
-import { FaHome } from "react-icons/fa";
 
 const ContainerMenu = styled.div`
   width: 100%;
