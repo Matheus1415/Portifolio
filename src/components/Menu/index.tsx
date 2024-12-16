@@ -28,27 +28,17 @@ const ContainerMenu = styled.div`
 
   & > .text > a {
     text-decoration: none;
-    color: #fff;
+    color: #46465e;
+    transition: 1s;
     @media (max-width: 600px) {
       font-size: 16px;
       display: inline-block;
     }
   }
 
-  & > .text > .line {
-    height: 5px;
-    width: 80px;
-    border-radius: 10px;
-    background-color: #fff;
-    margin-top: 2px;
-    transition: 1s;
-    @media (max-width: 600px) {
-      width: 0 !important;
-    }
-  }
-
-  & > .text:hover > .line {
-    background-color: #6c6c87;
+  & > .text > a:hover {
+    color: white !important;
+    background-color: #6c6c8752;
     box-shadow: -3px -7px 53px 10px #6c6c87;
   }
 
@@ -67,23 +57,18 @@ export const Menu: React.FC = () => {
       <div className="div70"></div>
       <div className="text">
         <a href="#inicio">Início</a>
-        <div className="line"></div>
       </div>
       <div className="text">
         <a href="#projetos">Projetos</a>
-        <div className="line" style={{ width: "110px" }}></div>
       </div>
       <div className="text">
         <a href="#habilidades">Habilidades </a>
-        <div className="line" style={{ width: "150px" }}></div>
       </div>
       <div className="text">
         <a href="#sobre">Sobre</a>
-        <div className="line"></div>
       </div>
       <div className="text">
         <a href="#experiencia">Experiência</a>
-        <div className="line" style={{ width: "150px" }}></div>
       </div>
     </ContainerMenu>
   );

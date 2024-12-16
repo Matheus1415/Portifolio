@@ -22,6 +22,10 @@ import Project from "../Project";
 import About from "../About";
 import Experience from "../Experience";
 import Footer from "../Footer/inde";
+import { SiLivewire } from "react-icons/si";
+import { TbBrandNodejs } from "react-icons/tb";
+import { FaDocker } from "react-icons/fa";
+import { SiStyledcomponents } from "react-icons/si";
 
 const Container = styled.section`
   min-height: 910px;
@@ -187,6 +191,7 @@ const ProjectContainer = styled.section`
     max-height: 700px;
     height: 250px;
     max-width: 700px;
+    min-width: 700px;
     display: flex;
     align-items: star;
     justify-content: center;
@@ -215,7 +220,10 @@ const ProjectContainer = styled.section`
       flex-direction: row;
       padding: 10px 0;
       & > .github {
+        min-width: 80px;
         font-size: 45px;
+        display: flex;
+        gap: 24;
       }
       & > .titleProject {
         & > h2 {
@@ -267,6 +275,17 @@ const projects = [
     githubMessage: "Aluroni",
   },
   {
+    title: "NearbyApp",
+    subtitle: "Front-and | UI | Mobile",
+    description:
+      "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
+    tools: [SiTypescript, FaReact, FaCss3Alt ],
+    githubUrl: "https://github.com/Matheus1415/NearbyApp",
+    githubMessage: "NearbyApp",
+    figmaUrl:'https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby',
+    figmaMessage:'NearbyApp Figma'
+  },
+  {
     title: "Space Explorer",
     subtitle: "Front-and | UI",
     description:
@@ -312,6 +331,17 @@ const projects = [
     githubMessage: "Tech Innovation Hub",
   },
   {
+    title: "FreelanceHours",
+    subtitle: "Back-and | Lógica | API-REST | Laravel",
+    description:
+      "O FreelanceHours é um projeto full-stack desenvolvido com Laravel (framework PHP) e Livewire para construção de aplicações dinâmicas e responsivas. A plataforma conecta criadores de ideias a patrocinadores interessados, permitindo que criadores registrem suas ideias de projetos e patrocinadores enviem propostas para financiar ou colaborar com essas ideias.",
+    tools: [TbBrandLaravel, SiMysql,SiLivewire],
+    githubUrl: "https://github.com/Matheus1415/FreelanceHours",
+    githubMessage: "FreelanceHours",
+    figmaUrl:'https://www.figma.com/community/file/1425095508121835225/freelancehours-evento-php',
+    figmaMessage:'FreelanceHours Figma'
+  },
+  {
     title: "Mendel",
     subtitle: "Front-and | Back-and | Lógica | Tech Lead | Project management",
     description:
@@ -326,6 +356,24 @@ const projects = [
     ],
     githubUrl: "https://github.com/Matheus1415/Mendel",
     githubMessage: "Mendel",
+  },
+  {
+    title: "in.orbit",
+    subtitle: "Front-and | Back-and | Lógica | UI",
+    description:
+      "O projeto é um site desktop de registro de metas com progresso semanal.",
+    tools: [
+      IoLogoJavascript,
+      FaReact,
+      SiTypescript,
+      TbBrandNodejs,
+      FaDocker,
+      SiMysql
+    ],
+    githubUrl: "https://github.com/Matheus1415/NLWPocketJS",
+    githubMessage: "in.orbit",
+    figmaUrl:'https://www.figma.com/community/file/1415093862269754302/nlw-pocket-js-in-orbit',
+    figmaMessage:'in.orbit Figma'
   },
 ];
 
@@ -389,6 +437,8 @@ const Home: React.FC = () => {
             tools={project.tools}
             githubUrl={project.githubUrl}
             githubMessage={project.githubMessage}
+            figmaMessage={project.figmaMessage}
+            figmaUrl={project.figmaUrl}
           />
         ))}
       </ProjectContainer>
