@@ -2,6 +2,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { IoLogoFigma } from "react-icons/io5";
 import Tooltip from "../../components/Tooltip";
+import { GoServer } from "react-icons/go";
 import { IconType } from 'react-icons'; 
 
 interface TooltipProps {
@@ -13,6 +14,8 @@ interface TooltipProps {
   githubMessage: string;
   figmaUrl?: string; 
   figmaMessage?: string; 
+  siteUrl?: string; 
+  siteMessage?: string; 
 }
 
 const Project: React.FC<TooltipProps> = ({
@@ -23,7 +26,9 @@ const Project: React.FC<TooltipProps> = ({
   githubUrl,
   githubMessage,
   figmaUrl = '', 
-  figmaMessage = ''
+  figmaMessage = '',
+  siteUrl = '', 
+  siteMessage = '',
 }) => {
   return (
     <div className="boxProject">
@@ -36,6 +41,9 @@ const Project: React.FC<TooltipProps> = ({
           <Tooltip icon={<FaGithub />} message={githubMessage} url={githubUrl} />
           {figmaUrl && (
             <Tooltip icon={<IoLogoFigma />} message={figmaMessage} url={figmaUrl} />
+          )}
+          {siteUrl && (
+            <Tooltip icon={<GoServer />} message={siteMessage} url={siteUrl} />
           )}
         </div>
       </div>

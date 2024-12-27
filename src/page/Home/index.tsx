@@ -356,6 +356,8 @@ const projects = [
     ],
     githubUrl: "https://github.com/Matheus1415/Mendel",
     githubMessage: "Mendel",
+    siteUrl:"https://mendel-legacy.netlify.app/",
+    siteMessage:"Acesse o Mendel",
   },
   {
     title: "in.orbit",
@@ -439,6 +441,8 @@ const Home: React.FC = () => {
             githubMessage={project.githubMessage}
             figmaMessage={project.figmaMessage}
             figmaUrl={project.figmaUrl}
+            siteUrl={project.siteUrl}
+            siteMessage={project.siteMessage}
           />
         ))}
       </ProjectContainer>

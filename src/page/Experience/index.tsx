@@ -7,6 +7,11 @@ import {
   FaGoogle,
 } from "react-icons/fa";
 
+const Title = styled.h1`
+  font-size: 40px;
+  padding: 35px 20px;
+`;
+
 const TimelineContainer = styled.section`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
@@ -26,7 +31,7 @@ const TimelineContainer = styled.section`
     max-width: 1200px;
     position: relative;
     padding: 20px 0;
-    width: 100%; 
+    width: 100%;
     @media (max-width: 600px) {
       width: 100%;
     }
@@ -53,7 +58,7 @@ const TimelineContainer = styled.section`
       align-items: flex-start;
       margin-bottom: 50px;
       position: relative;
-      flex-direction: row; 
+      flex-direction: row;
 
       @media (max-width: 600px) {
         flex-direction: column;
@@ -137,14 +142,13 @@ const TimelineContainer = styled.section`
         }
 
         @media (max-width: 600px) {
-          flex: 0 0 80%; 
+          flex: 0 0 80%;
           margin-top: 20px;
         }
       }
     }
   }
 `;
-
 
 const Experience: React.FC = () => {
   const experiences = [
@@ -187,28 +191,31 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <TimelineContainer id="experiencia">
-      <div className="timeline-wrapper">
-        {experiences.map((experience, index) => (
-          <div className="timeline-item" key={index}>
-            <div className="icon" onClick={experience.onClick}>
-              {experience.icon}
-            </div>
-            <div className="content">
-              <h4>{experience.year}</h4>
-              <p>{experience.description}</p>
-              <div className="tags">
-                {experience.tags.map((tag, i) => (
-                  <div className="tag" key={i}>
-                    {tag}
-                  </div>
-                ))}
+    <>
+      <Title>Minha Trajetória</Title>
+      <TimelineContainer id="experiencia">
+        <div className="timeline-wrapper">
+          {experiences.map((experience, index) => (
+            <div className="timeline-item" key={index}>
+              <div className="icon" onClick={experience.onClick}>
+                {experience.icon}
+              </div>
+              <div className="content">
+                <h4>{experience.year}</h4>
+                <p>{experience.description}</p>
+                <div className="tags">
+                  {experience.tags.map((tag, i) => (
+                    <div className="tag" key={i}>
+                      {tag}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </TimelineContainer>
+          ))}
+        </div>
+      </TimelineContainer>
+    </>
   );
 };
 
