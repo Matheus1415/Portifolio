@@ -25,7 +25,6 @@ import Footer from "../Footer/inde";
 import { SiLivewire } from "react-icons/si";
 import { TbBrandNodejs } from "react-icons/tb";
 import { FaDocker } from "react-icons/fa";
-import { SiStyledcomponents } from "react-icons/si";
 
 const Container = styled.section`
   min-height: 910px;
