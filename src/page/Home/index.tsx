@@ -221,7 +221,7 @@ const projects = [
     subtitle: "Front-end | UI",
     description: "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
     tools: [SiSass, SiTypescript, FaReact], // Usando os ícones importados
-    githubUrl: "https://github.com/Matheus1415/restaurante",
+    githubUrl: "https://github.com/Matheus1415/Cardapio-online",
     githubMessage: "Aluroni"
   },
   {

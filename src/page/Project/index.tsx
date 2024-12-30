@@ -28,7 +28,7 @@ const projetos = [
       {
         button: "Repositório",
         icon: <FaGithub />,
-        url: "https://github.com/Matheus1415/restaurante",
+        url: "https://github.com/Matheus1415/Cardapio-online",
       },
     ],
     text: "O sistema foi projetado para proporcionar uma navegação fluida, com uma interface limpa e funcional, utilizando os melhores recursos do React para criar componentes reutilizáveis e dinâmicos. A aplicação é responsiva e otimizada para diferentes dispositivos.",
@@ -329,7 +329,7 @@ const Container = styled.section`
       color: white;
       font-weight: bold;
       padding: 15px;
-      font-size: 45px;
+      font-size: 65px;
       text-align: center;
     }
 
@@ -417,61 +417,21 @@ const Container = styled.section`
       line-height: 1.6;
       color: #ffffff;
       margin-bottom: 20px;
-      & > h2 {
-        font-family: "Roboto", sans-serif;
-        font-size: 35px;
-        font-weight: bold;
-      }
-      & > h3 {
-        font-family: "Roboto", sans-serif;
-        font-size: 22px;
-        font-weight: regular;
-        color: #525c65;
-      }
-    }
-
-    & > .group-bottom {
-      width: 100%;
-      padding: 15px 0;
-      display: flex;
-      gap: 20px;
-
-      & > button {
-        border: 0;
-        padding: 10px 20px;
-        border-radius: 10px;
-        background-color: transparent;
-        color: white;
-        border: 1px solid white;
-        font-size: 25px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: transform 0.2s, box-shadow 0.2s;
-
-    }
-    & > button:hover {
-      border: none;
-      transform: scale(1.05);
-      color: #000000;
-      background-color: #ffffff;
-      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
-    }
-    }
-
-    & > .inforProject {
-      width: 100%;
-      padding: 15px 0;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-
       & > .w50 {
         width: 100%;
         max-width: 49%;
         color: white !important;
-
+        & > h2 {
+          font-family: "Roboto", sans-serif;
+          font-size: 35px;
+          font-weight: bold;
+        }
+        & > h3 {
+          font-family: "Roboto", sans-serif;
+          font-size: 22px;
+          font-weight: regular;
+          color: #525c65;
+        }
         .impact-info {
           .boxIcon {
             display: flex;
@@ -525,6 +485,35 @@ const Container = styled.section`
         }
       }
     }
+
+    & > .group-bottom {
+      width: 100%;
+      padding: 15px 0;
+      display: flex;
+      gap: 20px;
+
+      & > button {
+        border: 0;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        font-size: 25px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      & > button:hover {
+        border: none;
+        transform: scale(1.05);
+        color: #000000;
+        background-color: #ffffff;
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+      }
+    }
   }
 `;
 
@@ -535,14 +524,14 @@ type ProjetoType = {
   description: string;
   groupBottom: {
     button: string;
-    icon: JSX.Element; // Mudando para JSX.Element diretamente
+    icon: JSX.Element;
     url: string;
   }[];
   text: string;
   images: string[];
   summary: string;
   boxIcon: {
-    icon: JSX.Element; // Mudando para JSX.Element diretamente
+    icon: JSX.Element;
     name: string;
   }[];
   githubUrl?: string;
@@ -607,18 +596,7 @@ export const ProjetPage = () => {
         </div>
         <div className="info">
           <div className="topicos">
-            <span>Tópicos</span>
-            <div className="group-topc">
-              {repoData?.topics.length ? (
-                repoData.topics.map((topic) => (
-                  <p key={topic} style={{ background: "#f0f0f0" }}>
-                    {topic}
-                  </p>
-                ))
-              ) : (
-                <p>Sem tópicos definidos</p>
-              )}
-            </div>
+            <div className="group-topc"></div>
           </div>
           <div className="dates">
             <div className="summary-time">
@@ -664,34 +642,13 @@ export const ProjetPage = () => {
         </div>
 
         <div className="description">
-          <h2>Sobre o Projeto</h2>
-          <h3>Front-end | Logica</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-            sequi optio vel iusto numquam aut suscipit fugiat fuga dolore
-            laborum harum odio velit ipsam, aliquid officia. Fugit voluptatum
-            culpa repudiandae! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reprehenderit, quo sint nulla quidem possimus et,
-            ipsam laboriosam dolorum rem, nemo voluptatibus suscipit adipisci
-            minus assumenda! Amet perferendis illum consequatur. Tempora! Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-            laudantium impedit molestiae nisi deleniti repellendus quisquam
-            placeat nihil dicta, eum aliquid! Nihil voluptatem accusantium dolor
-            ducimus, sed magni nostrum qui?
-          </p>
-        </div>
-        <div className="inforProject">
           <div className="w50">
-            {/* <Carousel images={projeto?.images}/> */}
-          </div>
-          <div className="w50">
+            <h2>Sobre o Projeto</h2>
+            <h3>{projeto?.subtitle}</h3>
+            <p style={{fontSize:"20px"}}>{projeto?.description}</p>
             <div className="impact-info">
-              <p>
-                <strong>Resumo:</strong> Desenvolvi um sistema inovador que
-                automatiza e otimiza processos, aumentando a eficiência em 30%.
-              </p>
               <p className="ferramenta">
-                <strong>Ferramentas Utilizadas:</strong>
+                <strong>Ferramentas Utilizadas</strong>
               </p>
               <div className="boxIcon">
                 {projeto?.boxIcon.map((tool, index) => (
@@ -702,6 +659,9 @@ export const ProjetPage = () => {
                 ))}
               </div>
             </div>
+          </div>
+          <div className="w50">
+            {/* <Carousel images={projeto?.images}/> */}
           </div>
         </div>
       </div>
