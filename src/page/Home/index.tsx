@@ -1,108 +1,35 @@
+//Libs
+import { motion } from "framer-motion";
 import React, { useState } from "react";
-import styled from "styled-components";
-import { InteractiveFace } from "../../components/InteractiveFace";
+import styled, { keyframes } from "styled-components";
+//Component
 import { Menu } from "../../components/Menu";
-import { FaGithub } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaReact } from "react-icons/fa6";
-import { SiTypescript } from "react-icons/si";
 import Tooltip from "../../components/Tooltip";
-import { SiSass } from "react-icons/si";
+import Skills from "../../components/Skills";
+import About from "../../components/About";
+import Experience from "../../components/Experience";
+import Footer from "../../components/Footer/inde";
+import Project from "../../components/Project";
+//Icons
+import { SiSass, SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaHtml5 } from "react-icons/fa";
+import { FaGithub, FaHtml5, FaInstagram, FaLinkedin, FaReact } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { TbBrandLaravel } from "react-icons/tb";
 import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import { FaGitAlt } from "react-icons/fa";
-import Skills from "../Skills";
-import Project from "../Project";
-import About from "../About";
-import Experience from "../Experience";
-import Footer from "../Footer/inde";
 import { SiLivewire } from "react-icons/si";
 import { TbBrandNodejs } from "react-icons/tb";
 import { FaDocker } from "react-icons/fa";
-
-const Container = styled.section`
-  min-height: 910px;
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  & > .box50 {
-    color: white;
-    width: 50%;
-    min-height: 400px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    @media (max-width: 600px) {
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    & > h1 {
-      font-size: 80px;
-      @media (max-width: 600px) {
-        font-size: 30px;
-      }
-      & > span {
-        color: #8257e6;
-        &::selection {
-          background-color: #8257e6;
-          color: white;
-        }
-      }
-      &::selection {
-        background-color: #8257e6;
-      }
-    }
-
-    & > h2 {
-      font-size: 45px;
-      @media (max-width: 600px) {
-        font-size: 25px;
-      }
-      font-family: "Anton", sans-serif;
-      &::selection {
-        background-color: #8257e6;
-      }
-    }
-
-    & > .boxIcon {
-      padding: 5px;
-      font-size: 45px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 15px;
-    }
-
-    @media (max-width: 900px) {
-      width: 100%;
-      align-items: center;
-      text-align: center;
-    }
-  }
-`;
+import HeroSection from "../../components/HeroSection";
+//Jsons
 
 const HomeContainer = styled.section`
   background-image: linear-gradient(to top, #13131f, #08080d);
   font-family: "Roboto", sans-serif;
   color: white;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,120 +190,122 @@ const ProjectContainer = styled.section`
   }
 `;
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const AnimatedMessage = styled.h1`
+  font-size: 2rem;
+  color: #2e213f; 
+  text-align: center;
+  margin: 2rem 0;
+  animation: ${fadeIn} 1s ease-in-out;
+
+  &:hover {
+    color: #39294e; 
+    transform: scale(1.05);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+`;
+
 const projects = [
   {
     title: "Restaurant Web App",
-    subtitle: "Front-and | UI",
-    description:
-      "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
-    tools: [SiSass, SiTypescript, FaReact],
+    subtitle: "Front-end | UI",
+    description: "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
+    tools: [SiSass, SiTypescript, FaReact], // Usando os ícones importados
     githubUrl: "https://github.com/Matheus1415/restaurante",
-    githubMessage: "Aluroni",
+    githubMessage: "Aluroni"
   },
   {
     title: "NearbyApp",
-    subtitle: "Front-and | UI | Mobile",
-    description:
-      "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
-    tools: [SiTypescript, FaReact, FaCss3Alt ],
+    subtitle: "Front-end | UI | Mobile",
+    description: "Este aplicativo desenvolvido com React Native e Expo permite aos usuários visualizar a localização de estabelecimentos próximos, acessar suas páginas e resgatar cupons utilizando QR Codes.",
+    tools: [SiTypescript, FaReact, FaCss3Alt],
     githubUrl: "https://github.com/Matheus1415/NearbyApp",
     githubMessage: "NearbyApp",
-    figmaUrl:'https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby',
-    figmaMessage:'NearbyApp Figma'
+    figmaUrl: "https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby",
+    figmaMessage: "NearbyApp Figma"
   },
   {
     title: "Space Explorer",
-    subtitle: "Front-and | UI",
-    description:
-      "O Space Explorer é um site com temática espacial onde os usuários podem explorar fotos de galáxias, luas e planetas. A aplicação é uma single-page, apresentando uma única página estática. Os usuários podem filtrar as imagens por tags ou realizar uma pesquisa.",
+    subtitle: "Front-end | UI",
+    description: "O Space Explorer é um site com temática espacial onde os usuários podem explorar fotos de galáxias, luas e planetas. A aplicação é uma single-page, apresentando uma única página estática. Os usuários podem filtrar as imagens por tags ou realizar uma pesquisa.",
     tools: [SiSass, SiTypescript, FaReact],
     githubUrl: "https://github.com/Matheus1415/siteEspacial",
-    githubMessage: "Space Explorer",
+    githubMessage: "Space Explorer"
   },
   {
     title: "Pomodoro",
-    subtitle: "Front-and | Lógica",
-    description:
-      "O Pomodoro é um projeto simples desenvolvido com HTML, CSS, TypeScript e JavaScript. Ele permite criar uma lista de tarefas com um cronômetro, onde as tarefas são marcadas como concluídas quando o tempo acabar.",
+    subtitle: "Front-end | Lógica",
+    description: "O Pomodoro é um projeto simples desenvolvido com HTML, CSS, TypeScript e JavaScript. Ele permite criar uma lista de tarefas com um cronômetro, onde as tarefas são marcadas como concluídas quando o tempo acabar.",
     tools: [FaHtml5, FaCss3Alt, IoLogoJavascript, SiTypescript],
     githubUrl: "https://github.com/Matheus1415/Comodoro",
-    githubMessage: "Pomodoro",
+    githubMessage: "Pomodoro"
   },
   {
     title: "Gerenciador de Estudos",
-    subtitle: "Front-and | UI | Lógica",
-    description:
-      "O Gerenciador de Estudos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu tempo de estudo, incluindo um cronômetro para controlar o tempo dedicado a cada assunto.",
+    subtitle: "Front-end | UI | Lógica",
+    description: "O Gerenciador de Estudos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu tempo de estudo, incluindo um cronômetro para controlar o tempo dedicado a cada assunto.",
     tools: [SiSass, SiTypescript, FaReact],
     githubUrl: "https://github.com/Matheus1415/gerenciador-de-estudo",
-    githubMessage: "Gerenciador de Estudos",
+    githubMessage: "Gerenciador de Estudos"
   },
   {
     title: "Gerenciador de Evento",
-    subtitle: "Front-and | UI | Lógica | Recoil",
-    description:
-      "O Gerenciador de Eventos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu calendário de eventos, podendo adicionar eventos, filtrar eventos por datas usando Hook personalizando usando Recoil.",
+    subtitle: "Front-end | UI | Lógica | Recoil",
+    description: "O Gerenciador de Eventos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu calendário de eventos, podendo adicionar eventos, filtrar eventos por datas usando Hook personalizando usando Recoil.",
     tools: [SiSass, SiTypescript, FaReact],
     githubUrl: "https://github.com/Matheus1415/Gerenciador-de-eventos",
-    githubMessage: "Gerenciador de Evento",
+    githubMessage: "Gerenciador de Evento"
   },
   {
     title: "Tech Innovation Hub",
-    subtitle: "Back-and | Lógica | API-REST",
-    description:
-      "Essa API foi desenvolvida usando o Laravel e implementa um sistema para gerenciar usuários, startups e propostas de investimentos. A seguir, apresentamos a estrutura geral e os endpoints que a API oferece.",
+    subtitle: "Back-end | Lógica | API-REST",
+    description: "Essa API foi desenvolvida usando o Laravel e implementa um sistema para gerenciar usuários, startups e propostas de investimentos. A seguir, apresentamos a estrutura geral e os endpoints que a API oferece.",
     tools: [TbBrandLaravel, SiMysql],
     githubUrl: "https://github.com/Matheus1415/TechInnovationHub",
-    githubMessage: "Tech Innovation Hub",
+    githubMessage: "Tech Innovation Hub"
   },
   {
     title: "FreelanceHours",
-    subtitle: "Back-and | Lógica | API-REST | Laravel",
-    description:
-      "O FreelanceHours é um projeto full-stack desenvolvido com Laravel (framework PHP) e Livewire para construção de aplicações dinâmicas e responsivas. A plataforma conecta criadores de ideias a patrocinadores interessados, permitindo que criadores registrem suas ideias de projetos e patrocinadores enviem propostas para financiar ou colaborar com essas ideias.",
-    tools: [TbBrandLaravel, SiMysql,SiLivewire],
+    subtitle: "Back-end | Lógica | API-REST | Laravel",
+    description: "O FreelanceHours é um projeto full-stack desenvolvido com Laravel (framework PHP) e Livewire para construção de aplicações dinâmicas e responsivas. A plataforma conecta criadores de ideias a patrocinadores interessados, permitindo que criadores registrem suas ideias de projetos e patrocinadores enviem propostas para financiar ou colaborar com essas ideias.",
+    tools: [TbBrandLaravel, SiMysql, SiLivewire],
     githubUrl: "https://github.com/Matheus1415/FreelanceHours",
     githubMessage: "FreelanceHours",
-    figmaUrl:'https://www.figma.com/community/file/1425095508121835225/freelancehours-evento-php',
-    figmaMessage:'FreelanceHours Figma'
+    figmaUrl: "https://www.figma.com/community/file/1425095508121835225/freelancehours-evento-php",
+    figmaMessage: "FreelanceHours Figma"
   },
   {
     title: "Mendel",
-    subtitle: "Front-and | Back-and | Lógica | Tech Lead | Project management",
-    description:
-      "Este projeto de genética interativa foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente.",
-    tools: [
-      SiChakraui,
-      IoLogoJavascript,
-      FaReact,
-      BsTrello,
-      FaGitAlt,
-      FaGithub,
-    ],
+    subtitle: "Front-end | Back-end | Lógica | Tech Lead | Project management",
+    description: "Este projeto de genética interativa foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente.",
+    tools: [SiChakraui, IoLogoJavascript, FaReact, BsTrello, FaGitAlt, FaGithub],
     githubUrl: "https://github.com/Matheus1415/Mendel",
     githubMessage: "Mendel",
-    siteUrl:"https://mendel-legacy.netlify.app/",
-    siteMessage:"Acesse o Mendel",
+    siteUrl: "https://mendel-legacy.netlify.app/",
+    siteMessage: "Acesse o Mendel"
   },
   {
     title: "in.orbit",
-    subtitle: "Front-and | Back-and | Lógica | UI",
-    description:
-      "O projeto é um site desktop de registro de metas com progresso semanal.",
-    tools: [
-      IoLogoJavascript,
-      FaReact,
-      SiTypescript,
-      TbBrandNodejs,
-      FaDocker,
-      SiMysql
-    ],
+    subtitle: "Front-end | Back-end | Lógica | UI",
+    description: "O projeto é um site desktop de registro de metas com progresso semanal.",
+    tools: [IoLogoJavascript, FaReact, SiTypescript, TbBrandNodejs, FaDocker, SiMysql],
     githubUrl: "https://github.com/Matheus1415/NLWPocketJS",
     githubMessage: "in.orbit",
-    figmaUrl:'https://www.figma.com/community/file/1415093862269754302/nlw-pocket-js-in-orbit',
-    figmaMessage:'in.orbit Figma'
-  },
+    figmaUrl: "https://www.figma.com/community/file/1415093862269754302/nlw-pocket-js-in-orbit",
+    figmaMessage: "in.orbit Figma"
+  }
 ];
+
 
 const Home: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -390,34 +319,7 @@ const Home: React.FC = () => {
   return (
     <HomeContainer>
       <Menu />
-      <Container id="inicio">
-        <div className="box50">
-          <h1>
-            Olá, eu sou o <span>Matheus</span>
-          </h1>
-          <h2>Desenvolvedor full-stack</h2>
-          <div className="boxIcon">
-            <Tooltip
-              icon={<FaGithub />}
-              message="matheus1415"
-              url="https://github.com/Matheus1415"
-            />
-            <Tooltip
-              icon={<FaInstagram />}
-              message="@mps_devaretado"
-              url="https://www.instagram.com/mps_devaretado/"
-            />
-            <Tooltip
-              icon={<FaLinkedin />}
-              message="matheus-pereira-da-silva"
-              url="https://www.linkedin.com/in/matheus-pereira-da-silva-298020286/"
-            />
-          </div>
-        </div>
-        <div className="box50">
-          <InteractiveFace />
-        </div>
-      </Container>
+      <HeroSection/>
       <div className="wrapper-search">
         <h1 className="titleSection">Projetos desenvolvidos</h1>
         <input
@@ -429,21 +331,25 @@ const Home: React.FC = () => {
         />
       </div>
       <ProjectContainer id="projetos">
-        {filteredProjects.map((project) => (
-          <Project
-            key={project.title}
-            title={project.title}
-            subtitle={project.subtitle}
-            description={project.description}
-            tools={project.tools}
-            githubUrl={project.githubUrl}
-            githubMessage={project.githubMessage}
-            figmaMessage={project.figmaMessage}
-            figmaUrl={project.figmaUrl}
-            siteUrl={project.siteUrl}
-            siteMessage={project.siteMessage}
-          />
-        ))}
+        {filteredProjects.length === 0 ? (
+          <AnimatedMessage>Ops! esse projeto não foi encontrado.</AnimatedMessage>
+        ) : (
+          filteredProjects.map((project) => (
+            <Project
+              key={project.title}
+              title={project.title}
+              subtitle={project.subtitle}
+              description={project.description}
+              tools={project.tools}
+              githubUrl={project.githubUrl}
+              githubMessage={project.githubMessage}
+              figmaMessage={project.figmaMessage}
+              figmaUrl={project.figmaUrl}
+              siteUrl={project.siteUrl}
+              siteMessage={project.siteMessage}
+            />
+          ))
+        )}
       </ProjectContainer>
       <Skills />
       <About />

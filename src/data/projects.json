@@ -1,0 +1,346 @@
+[
+  {
+    "id": 1,
+    "title": "Restaurant Web App",
+    "subtitle": "Front-end | UI",
+    "description": "O Restaurant App é uma aplicação web moderna e interativa, desenvolvida com React e TypeScript, que permite aos usuários explorar um vasto cardápio de pratos disponíveis em um restaurante, aplicar filtros e visualizar detalhes de cada prato, proporcionando uma experiência agradável e prática.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/restaurante"
+      }
+    ],
+    "text": "O sistema foi projetado para proporcionar uma navegação fluida, com uma interface limpa e funcional, utilizando os melhores recursos do React para criar componentes reutilizáveis e dinâmicos. A aplicação é responsiva e otimizada para diferentes dispositivos.",
+    "images": ["Carousel images"],
+    "summary": "Desenvolvi uma aplicação web moderna e otimizada, que melhora a experiência de explorar cardápios de restaurantes.",
+    "boxIcon": [
+      {
+        "icon": "SiSass",
+        "name": "Sass"
+      },
+      {
+        "icon": "SiTypescript",
+        "name": "TypeScript"
+      },
+      {
+        "icon": "FaReact",
+        "name": "React"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "NearbyApp",
+    "subtitle": "Front-end | UI | Mobile",
+    "description": "NearbyApp é um aplicativo móvel desenvolvido com React Native e Expo, permitindo aos usuários localizar estabelecimentos próximos, visualizar suas informações e até resgatar cupons por meio de QR Codes. A aplicação oferece uma experiência fluida e responsiva tanto para iOS quanto para Android.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/NearbyApp"
+      },
+      {
+        "button": "Figma",
+        "icon": "FaFigma",
+        "url": "https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby"
+      }
+    ],
+    "text": "O aplicativo foi construído com foco em performance e usabilidade, utilizando as funcionalidades avançadas do Expo e React Native. Ele também possui integração com QR Codes, permitindo uma interação rápida e sem esforço entre usuários e comerciantes.",
+    "images": ["Carousel images"],
+    "summary": "A aplicação foi projetada para conectar usuários a comércios locais, proporcionando uma experiência única de localização e cupons.",
+    "boxIcon": [
+      {
+        "icon": SiTypescript,
+        "name": TypeScript
+      },
+      {
+        "icon": "FaReact",
+        "name": "React"
+      },
+      {
+        "icon": "FaCss3Alt",
+        "name": "CSS3"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Space Explorer",
+    "subtitle": "Front-end | UI",
+    "description": "Space Explorer é um site com uma interface dedicada a explorar imagens de galáxias, luas e planetas, usando filtros e funcionalidades de pesquisa para aprimorar a experiência do usuário. Desenvolvido com React, a aplicação traz uma experiência de navegação interativa e visualmente impactante.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/siteEspacial"
+      }
+    ],
+    "text": "Com um design minimalista e focado na exploração espacial, o projeto proporciona uma navegação intuitiva, permitindo que os usuários explorem o vasto universo de imagens espaciais de forma simples e imersiva.",
+    "images": ["Carousel images"],
+    "summary": "Criei um site interativo e educativo, permitindo aos usuários explorar imagens do espaço de maneira dinâmica.",
+    "boxIcon": [
+      {
+        "icon": "SiSass",
+        "name": "Sass"
+      },
+      {
+        "icon": "SiTypescript",
+        "name": "TypeScript"
+      },
+      {
+        "icon": "FaReact",
+        "name": "React"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Pomodoro",
+    "subtitle": "Front-end | Lógica",
+    "description": "O Pomodoro é um aplicativo simples para gerenciamento de tarefas baseado na técnica Pomodoro. Desenvolvido com HTML, CSS, TypeScript e JavaScript, permite aos usuários adicionar tarefas e controlar o tempo dedicado a cada uma delas através de um cronômetro.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/Comodoro"
+      }
+    ],
+    "text": "O projeto visa melhorar a produtividade dos usuários, combinando o gerenciamento de tarefas com o acompanhamento de tempo em intervalos específicos, proporcionando um foco contínuo nas atividades.",
+    "images": ["Carousel images"],
+    "summary": "Criei uma aplicação simples que ajuda usuários a melhorar sua produtividade usando a técnica Pomodoro.",
+    "boxIcon": [
+      {
+        "icon": "FaHtml5",
+        "name": "HTML5"
+      },
+      {
+        "icon": "FaCss3Alt",
+        "name": "CSS3"
+      },
+      {
+        "icon": "IoLogoJavascript",
+        "name": "JavaScript"
+      },
+      {
+        "icon": "SiTypescript",
+        "name": "TypeScript"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Gerenciador de Estudos",
+    "subtitle": "Front-end | UI | Lógica",
+    "description": "O Gerenciador de Estudos é uma aplicação single-page onde os usuários podem controlar seus tempos de estudo, adicionar tópicos e configurar alertas. Desenvolvido com React, TypeScript e Sass, o aplicativo oferece uma interface fluida e recursos para otimização do estudo.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/gerenciador-de-estudo"
+      }
+    ],
+    "text": "Com um foco em produtividade e organização, o aplicativo permite que o usuário defina sua rotina de estudos, controle o tempo dedicado a cada atividade e visualize seu progresso.",
+    "images": ["Carousel images"],
+    "summary": "Desenvolvi um sistema que ajuda no gerenciamento do tempo de estudo, aumentando a produtividade do usuário.",
+    "boxIcon": [
+      {
+        "icon": "SiSass",
+        "name": "Sass"
+      },
+      {
+        "icon": "SiTypescript",
+        "name": "TypeScript"
+      },
+      {
+        "icon": "FaReact",
+        "name": "React"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Gerenciador de Evento",
+    "subtitle": "Front-end | UI | Lógica | Recoil",
+    "description": "O Gerenciador de Eventos é uma aplicação single-page que permite o gerenciamento de eventos, incluindo a criação, edição e filtragem de eventos por data. Desenvolvido com React, TypeScript, Sass e Recoil, a aplicação é altamente interativa e fácil de usar.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/Gerenciador-de-eventos"
+      }
+    ],
+    "text": "Este sistema oferece uma interface de fácil uso para administrar múltiplos eventos, com suporte a filtros e personalizações dinâmicas para o gerenciamento de datas e detalhes de cada evento.",
+    "images": ["Carousel images"],
+    "summary": "Criei um sistema para gerenciamento de eventos, com funcionalidades dinâmicas de calendário e filtragem.",
+    "boxIcon": [
+      {
+        "icon": "SiSass",
+        "name": "Sass"
+      },
+      {
+        "icon": "SiTypescript",
+        "name": "TypeScript"
+      },
+      {
+        "icon": "FaReact",
+        "name": "React"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Tech Innovation Hub",
+    "subtitle": "Back-end | Lógica | API-REST",
+    "description": "O Tech Innovation Hub é uma API RESTful desenvolvida com Laravel que permite o gerenciamento de usuários, startups e propostas de investimentos, fornecendo endpoints para o registro e consulta de dados essenciais para a gestão de inovações tecnológicas.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/TechInnovationHub"
+      }
+    ],
+    "text": "A API foi projetada para gerenciar dados de forma eficaz e escalável, com um sistema robusto de autenticação e autorização para garantir a segurança e integridade das informações.",
+    "images": ["Carousel images"],
+    "summary": "Desenvolvi uma API RESTful para gerenciar startups, investimentos e usuários no ecossistema de inovação.",
+    "boxIcon": [
+      {
+        "icon": "TbBrandLaravel",
+        "name": "Laravel"
+      },
+      {
+        "icon": "SiMysql",
+        "name": "MySQL"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "FreelanceHours",
+    "subtitle": "Back-end | Lógica | API-REST | Laravel",
+    "description": "FreelanceHours é uma plataforma full-stack desenvolvida com Laravel e Livewire para conectar criadores de projetos a patrocinadores, permitindo o registro de ideias e propostas de financiamento ou colaboração.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/FreelanceHours"
+      },
+      {
+        "button": "Figma",
+        "icon": "FaFigma",
+        "url": "https://www.figma.com/community/file/1425095508121835225/freelancehours-evento-php"
+      }
+    ],
+    "text": "A plataforma oferece recursos de gerenciamento de projetos, permitindo que criadores e patrocinadores interajam, compartilhem ideias e colaborem para transformar conceitos em realidade.",
+    "images": ["Carousel images"],
+    "summary": "Desenvolvi uma plataforma para conectar criadores a patrocinadores, facilitando a colaboração em projetos inovadores.",
+    "boxIcon": [
+      {
+        "icon": "TbBrandLaravel",
+        "name": "Laravel"
+      },
+      {
+        "icon": "SiMysql",
+        "name": "MySQL"
+      },
+      {
+        "icon": "SiLivewire",
+        "name": "Livewire"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Mendel",
+    "subtitle": "Front-end | Back-end | Lógica | Tech Lead | Project management",
+    "description": "Mendel é um projeto interativo de genética, desenvolvido para ensinar conceitos genéticos por meio de uma interface visualmente atraente e interativa, com foco em aprendizagem prática e recursos educativos.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/Mendel"
+      },
+      {
+        "button": "Acessar Site",
+        "icon": "FaExternalLinkAlt",
+        "url": "https://mendel-legacy.netlify.app/"
+      }
+    ],
+    "text": "Este projeto envolveu o gerenciamento de equipe, o desenvolvimento de back-end e front-end e a criação de uma plataforma intuitiva para entender genética de maneira divertida e visual.",
+    "images": ["Carousel images"],
+    "summary": "Criei um sistema interativo para ensinar genética, com interface agradável e recursos educacionais.",
+    "boxIcon": [
+      {
+        "icon": "SiChakraui",
+        "name": "Chakra UI"
+      },
+      {
+        "icon": "IoLogoJavascript",
+        "name": "JavaScript"
+      },
+      {
+        "icon": "FaReact",
+        "name": "React"
+      },
+      {
+        "icon": "BsTrello",
+        "name": "Trello"
+      },
+      {
+        "icon": "FaGitAlt",
+        "name": "Git"
+      },
+      {
+        "icon": "FaGithub",
+        "name": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "in.orbit",
+    "subtitle": "Front-end | Back-end | Lógica | UI",
+    "description": "in.orbit é uma aplicação de registro de metas e progresso semanal, desenvolvida com uma arquitetura full-stack utilizando Node.js e React. A plataforma visa organizar metas e atividades de forma eficiente e atraente.",
+    "groupBottom": [
+      {
+        "button": "Repositório",
+        "icon": "FaGithub",
+        "url": "https://github.com/Matheus1415/NLWPocketJS"
+      },
+      {
+        "button": "Figma",
+        "icon": "FaFigma",
+        "url": "https://www.figma.com/community/file/1415093862269754302/nlw-pocket-js-in-orbit"
+      }
+    ],
+    "text": "A aplicação proporciona um controle visual sobre as metas, incluindo progressos semanais e etapas alcançadas, utilizando um design simples e uma integração eficaz entre front-end e back-end.",
+    "images": ["Carousel images"],
+    "summary": "Desenvolvi uma plataforma para o gerenciamento de metas e progresso de forma visual e organizada.",
+    "boxIcon": [
+      {
+        "icon": "IoLogoJavascript",
+        "name": "JavaScript"
+      },
+      {
+        "icon": "FaReact",
+        "name": "React"
+      },
+      {
+        "icon": "SiTypescript",
+        "name": "TypeScript"
+      },
+      {
+        "icon": "TbBrandNodejs",
+        "name": "Node.js"
+      },
+      {
+        "icon": "FaDocker",
+        "name": "Docker"
+      },
+      {
+        "icon": "SiMysql",
+        "name": "MySQL"
+      }
+    ]
+  }
+]
