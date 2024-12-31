@@ -113,9 +113,9 @@ export default function HeroSection() {
       </BubbleContainer>
       <div className="box50">
         <h1>
-          Olá, eu sou o <span>Matheus</span>
+          Olá, me chamo <span>Matheus</span>
         </h1>
-        <h2>Desenvolvedor full-stack</h2>
+        <h2>Desenvolvedor Full Stack</h2>
         <div className="boxIcon">
           <Tooltip
             icon={<FaGithub />}

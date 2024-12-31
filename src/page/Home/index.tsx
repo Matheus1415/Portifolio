@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 //Component
 import { Menu } from "../../components/Menu";
-import Skills from "../../components/Skills";
 import About from "../../components/About";
 import Experience from "../../components/Experience";
 import Footer from "../../components/Footer/inde";
 import Project from "../../components/Project";
+import HeroSection from "../../components/HeroSection";
+import HardSkills from "../../components/HardSkills";
 //Icons
 import { SiSass, SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -22,8 +23,6 @@ import { TbBrandLaravel } from "react-icons/tb";
 import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import { FaGitAlt } from "react-icons/fa";
-import HeroSection from "../../components/HeroSection";
-import { HardSkills } from "../../components/HardSkills";
 //Jsons
 
 const HomeContainer = styled.section`
@@ -329,8 +328,7 @@ const Home: React.FC = () => {
           ))
         )}
       </ProjectContainer>
-      <Skills />
-      <HardSkills/>
+      <HardSkills />
       <About />
       <Experience />
       <Footer />

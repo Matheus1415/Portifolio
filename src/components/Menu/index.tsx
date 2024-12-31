@@ -38,8 +38,6 @@ const ContainerMenu = styled.div`
 
   & > .text > a:hover {
     color: white !important;
-    background-color: #6c6c8752;
-    box-shadow: -3px -7px 53px 10px #6c6c87;
   }
 
   & > .div70 {

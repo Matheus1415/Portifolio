@@ -32,7 +32,7 @@ const projetos = [
       "/image/projeto01/aluroni01.png",
       "/image/projeto01/aluroni02.png",
       "/image/projeto01/aluroni03.png",
-    ],    
+    ],
     summary:
       "Desenvolvi uma aplicação web moderna e otimizada, que melhora a experiência de explorar cardápios de restaurantes.",
     boxIcon: [
@@ -69,7 +69,11 @@ const projetos = [
       },
     ],
     text: "O aplicativo foi construído com foco em performance e usabilidade, utilizando as funcionalidades avançadas do Expo e React Native. Ele também possui integração com QR Codes, permitindo uma interação rápida e sem esforço entre usuários e comerciantes.",
-    images: ["/image/projeto02/bem-vindo.jpeg","/image/projeto02/estabelecimento.jpeg","/image/projeto02/home.jpeg"],
+    images: [
+      "/image/projeto02/bem-vindo.jpeg",
+      "/image/projeto02/estabelecimento.jpeg",
+      "/image/projeto02/home.jpeg",
+    ],
     summary:
       "A aplicação foi projetada para conectar usuários a comércios locais, proporcionando uma experiência única de localização e cupons.",
     boxIcon: [
@@ -101,7 +105,10 @@ const projetos = [
       },
     ],
     text: "O projeto visa melhorar a produtividade dos usuários, combinando o gerenciamento de tarefas com o acompanhamento de tempo em intervalos específicos, proporcionando um foco contínuo nas atividades.",
-    images: ["/image/projeto03/pomodoro01.png","/image/projeto03/pomodoro02.png"],
+    images: [
+      "/image/projeto03/pomodoro01.png",
+      "/image/projeto03/pomodoro02.png",
+    ],
     summary:
       "Criei uma aplicação simples que ajuda usuários a melhorar sua produtividade usando a técnica Pomodoro.",
     boxIcon: [
@@ -137,7 +144,7 @@ const projetos = [
       },
     ],
     text: "A API foi projetada para gerenciar dados de forma eficaz e escalável, com um sistema robusto de autenticação e autorização para garantir a segurança e integridade das informações.",
-    images: ["/image/projeto04/tech.png","/image/projeto04/tech2.png"],
+    images: ["/image/projeto04/tech.png", "/image/projeto04/tech2.png"],
     summary:
       "Desenvolvi uma API RESTful para gerenciar startups, investimentos e usuários no ecossistema de inovação.",
     boxIcon: [
@@ -170,7 +177,12 @@ const projetos = [
       },
     ],
     text: "O projeto foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente, com tecnologias modernas e práticas educacionais inovadoras.",
-    images: ["/image/projeto05/mendel01.png","/image/projeto05/mendel02.png","/image/projeto05/mendel03.png","/image/projeto05/mendel04.png",],
+    images: [
+      "/image/projeto05/mendel01.png",
+      "/image/projeto05/mendel02.png",
+      "/image/projeto05/mendel03.png",
+      "/image/projeto05/mendel04.png",
+    ],
     summary:
       "Este projeto interativo de genética visa oferecer um aprendizado mais envolvente e acessível sobre os conceitos genéticos.",
     boxIcon: [
@@ -191,9 +203,8 @@ const projetos = [
         name: "Trello",
       },
     ],
-  },  
+  },
 ];
-
 
 const Container = styled.section`
   min-height: 100vh;
@@ -215,6 +226,12 @@ const Container = styled.section`
     gap: 40px;
     padding: 0 15px;
 
+    @media (max-width: 600px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
     & > .title {
       font-family: "Roboto", sans-serif;
       width: 100%;
@@ -224,6 +241,11 @@ const Container = styled.section`
       padding: 15px;
       font-size: 65px;
       text-align: center;
+      @media (max-width: 600px) {
+        padding-top: 10px;
+        font-size: 45px;
+        max-width: 100%;
+      }
     }
 
     & > .info {
@@ -239,6 +261,15 @@ const Container = styled.section`
       flex-direction: column;
       gap: 20px;
       padding: 10px;
+
+      @media (max-width: 600px) {
+        height: 200px;
+        background-color: transparent;
+        box-shadow: none;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
 
       & > .topicos {
         width: 100%;
@@ -303,6 +334,12 @@ const Container = styled.section`
     flex-direction: column;
     padding: 10px;
 
+    @media (max-width: 600px) {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
     & > .description {
       text-align: justify;
       font-size: 18px;
@@ -312,10 +349,22 @@ const Container = styled.section`
       flex-direction: row;
       justify-content: space-between;
       margin-bottom: 20px;
+      @media (max-width: 600px) {
+        padding: 15px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
       & > .w50 {
         width: 100%;
         max-width: 49%;
         color: white !important;
+        @media (max-width: 600px) {
+          max-width: 100%;
+          flex-direction: column;
+          align-items: center;
+        }
         & > h2 {
           font-family: "Roboto", sans-serif;
           font-size: 35px;
@@ -400,6 +449,9 @@ const Container = styled.section`
         align-items: center;
         gap: 10px;
         transition: transform 0.2s, box-shadow 0.2s;
+        @media (max-width: 600px) {
+          font-size: 18px;
+        }
       }
       & > button:hover {
         border: none;
