@@ -194,16 +194,6 @@ const projetos = [
   },  
 ];
 
-const colors = [
-  "#D4A5E4",
-  "#9C7AC5",
-  "#B87CE6",
-  "#7D4CC7",
-  "#A64DDB",
-  "#B569E5",
-  "#9A4CC0",
-  "#6A3D8E",
-];
 
 const Container = styled.section`
   min-height: 100vh;
