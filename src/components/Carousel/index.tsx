@@ -79,7 +79,7 @@ const Modal = styled.div`
 `;
 
 interface CarouselProps {
-  images: string[] ;
+  images: string[];
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
@@ -117,9 +117,20 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             <div
               key={index}
               className="carousel-slide"
-              style={{ backgroundImage: `url(${image})` }}
               onClick={() => openModal(image)}
-            />
+            >
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                style={{
+                  width: "100%",
+                  height: "400px",
+                  objectFit: "cover",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                }}
+              />
+            </div>
           ))}
         </div>
         <div className="buttons">

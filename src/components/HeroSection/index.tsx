@@ -37,28 +37,34 @@ const Container = styled.section`
     }
 
     & > h1 {
-      font-size: 72px;
-
+      font-size: 70px!important;
+      font-weight: 400 !important;
+      color: #9069ec;
+      
       @media (max-width: 600px) {
         font-size: 30px;
       }
 
       & > span {
-        color: #8257e6;
+        font-size: 80px!important;
+        font-weight: 900!important;
+        color: #ffffff;
 
         &::selection {
-          background-color: #8257e6;
+          background-color: #6846b5;
           color: white;
         }
       }
 
       &::selection {
         background-color: #8257e6;
+        color: white;
       }
     }
 
     & > h2 {
-      font-size: 45px;
+      font-size: 40px;
+      color: #bda5f4;
 
       @media (max-width: 600px) {
         font-size: 25px;
@@ -67,6 +73,7 @@ const Container = styled.section`
       font-family: "Anton", sans-serif;
 
       &::selection {
+        color: #ffffff;
         background-color: #8257e6;
       }
     }
@@ -97,7 +104,6 @@ const Container = styled.section`
     z-index: 0; 
     overflow: hidden; 
   `;
-
 
 export default function HeroSection() {
   return (

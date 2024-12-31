@@ -4,18 +4,14 @@ import { useEffect, useState } from "react";
 import { SiSass, SiTypescript } from "react-icons/si";
 import { IoLogoJavascript, IoTimeOutline } from "react-icons/io5";
 import { FiFigma } from "react-icons/fi";
+import { FaServer } from "react-icons/fa6";
 import { FaFileCode, FaGithub, FaHtml5, FaReact } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { TbBrandLaravel } from "react-icons/tb";
 import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
-import { FaGitAlt } from "react-icons/fa";
-import { SiLivewire } from "react-icons/si";
-import { TbBrandNodejs } from "react-icons/tb";
-import { FaDocker } from "react-icons/fa";
-import { GoServer } from "react-icons/go";
-import { IconType } from "react-icons";
+import Carousel from "../../components/Carousel";
 
 const projetos = [
   {
@@ -32,7 +28,11 @@ const projetos = [
       },
     ],
     text: "O sistema foi projetado para proporcionar uma navegação fluida, com uma interface limpa e funcional, utilizando os melhores recursos do React para criar componentes reutilizáveis e dinâmicos. A aplicação é responsiva e otimizada para diferentes dispositivos.",
-    images: ["Carousel images"],
+    images: [
+      "/image/projeto01/aluroni01.png",
+      "/image/projeto01/aluroni02.png",
+      "/image/projeto01/aluroni03.png",
+    ],    
     summary:
       "Desenvolvi uma aplicação web moderna e otimizada, que melhora a experiência de explorar cardápios de restaurantes.",
     boxIcon: [
@@ -69,7 +69,7 @@ const projetos = [
       },
     ],
     text: "O aplicativo foi construído com foco em performance e usabilidade, utilizando as funcionalidades avançadas do Expo e React Native. Ele também possui integração com QR Codes, permitindo uma interação rápida e sem esforço entre usuários e comerciantes.",
-    images: ["Carousel images"],
+    images: ["/image/projeto02/bem-vindo.jpeg","/image/projeto02/estabelecimento.jpeg","/image/projeto02/home.jpeg"],
     summary:
       "A aplicação foi projetada para conectar usuários a comércios locais, proporcionando uma experiência única de localização e cupons.",
     boxIcon: [
@@ -89,38 +89,6 @@ const projetos = [
   },
   {
     id: 3,
-    title: "Space Explorer",
-    subtitle: "Front-end | UI",
-    description:
-      "Space Explorer é um site com uma interface dedicada a explorar imagens de galáxias, luas e planetas, usando filtros e funcionalidades de pesquisa para aprimorar a experiência do usuário. Desenvolvido com React, a aplicação traz uma experiência de navegação interativa e visualmente impactante.",
-    groupBottom: [
-      {
-        button: "Repositório",
-        icon: <FaGithub />,
-        url: "https://github.com/Matheus1415/siteEspacial",
-      },
-    ],
-    text: "Com um design minimalista e focado na exploração espacial, o projeto proporciona uma navegação intuitiva, permitindo que os usuários explorem o vasto universo de imagens espaciais de forma simples e imersiva.",
-    images: ["Carousel images"],
-    summary:
-      "Criei um site interativo e educativo, permitindo aos usuários explorar imagens do espaço de maneira dinâmica.",
-    boxIcon: [
-      {
-        icon: <SiSass />,
-        name: "Sass",
-      },
-      {
-        icon: <SiTypescript />,
-        name: "TypeScript",
-      },
-      {
-        icon: <FaReact />,
-        name: "React",
-      },
-    ],
-  },
-  {
-    id: 4,
     title: "Pomodoro",
     subtitle: "Front-end | Lógica",
     description:
@@ -133,7 +101,7 @@ const projetos = [
       },
     ],
     text: "O projeto visa melhorar a produtividade dos usuários, combinando o gerenciamento de tarefas com o acompanhamento de tempo em intervalos específicos, proporcionando um foco contínuo nas atividades.",
-    images: ["Carousel images"],
+    images: ["/image/projeto03/pomodoro01.png","/image/projeto03/pomodoro02.png"],
     summary:
       "Criei uma aplicação simples que ajuda usuários a melhorar sua produtividade usando a técnica Pomodoro.",
     boxIcon: [
@@ -156,71 +124,7 @@ const projetos = [
     ],
   },
   {
-    id: 5,
-    title: "Gerenciador de Estudos",
-    subtitle: "Front-end | UI | Lógica",
-    description:
-      "O Gerenciador de Estudos é uma aplicação single-page onde os usuários podem controlar seus tempos de estudo, adicionar tópicos e configurar alertas. Desenvolvido com React, TypeScript e Sass, o aplicativo oferece uma interface fluida e recursos para otimização do estudo.",
-    groupBottom: [
-      {
-        button: "Repositório",
-        icon: <FaGithub />,
-        url: "https://github.com/Matheus1415/gerenciador-de-estudo",
-      },
-    ],
-    text: "Com um foco em produtividade e organização, o aplicativo permite que o usuário defina sua rotina de estudos, controle o tempo dedicado a cada atividade e visualize seu progresso.",
-    images: ["Carousel images"],
-    summary:
-      "Desenvolvi um sistema que ajuda no gerenciamento do tempo de estudo, aumentando a produtividade do usuário.",
-    boxIcon: [
-      {
-        icon: <SiSass />,
-        name: "Sass",
-      },
-      {
-        icon: <SiTypescript />,
-        name: "TypeScript",
-      },
-      {
-        icon: <FaReact />,
-        name: "React",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Gerenciador de Evento",
-    subtitle: "Front-end | UI | Lógica | Recoil",
-    description:
-      "O Gerenciador de Eventos é uma aplicação single-page que permite o gerenciamento de eventos, incluindo a criação, edição e filtragem de eventos por data. Desenvolvido com React, TypeScript, Sass e Recoil, a aplicação é altamente interativa e fácil de usar.",
-    groupBottom: [
-      {
-        button: "Repositório",
-        icon: <FaGithub />,
-        url: "https://github.com/Matheus1415/Gerenciador-de-eventos",
-      },
-    ],
-    text: "Este sistema oferece uma interface de fácil uso para administrar múltiplos eventos, com suporte a filtros e personalizações dinâmicas para o gerenciamento de datas e detalhes de cada evento.",
-    images: ["Carousel images"],
-    summary:
-      "Criei um sistema para gerenciamento de eventos, com funcionalidades dinâmicas de calendário e filtragem.",
-    boxIcon: [
-      {
-        icon: <SiSass />,
-        name: "Sass",
-      },
-      {
-        icon: <SiTypescript />,
-        name: "TypeScript",
-      },
-      {
-        icon: <FaReact />,
-        name: "React",
-      },
-    ],
-  },
-  {
-    id: 7,
+    id: 4,
     title: "Tech Innovation Hub",
     subtitle: "Back-end | Lógica | API-REST",
     description:
@@ -233,7 +137,7 @@ const projetos = [
       },
     ],
     text: "A API foi projetada para gerenciar dados de forma eficaz e escalável, com um sistema robusto de autenticação e autorização para garantir a segurança e integridade das informações.",
-    images: ["Carousel images"],
+    images: ["/image/projeto04/tech.png","/image/projeto04/tech2.png"],
     summary:
       "Desenvolvi uma API RESTful para gerenciar startups, investimentos e usuários no ecossistema de inovação.",
     boxIcon: [
@@ -248,7 +152,7 @@ const projetos = [
     ],
   },
   {
-    id: 8,
+    id: 5,
     title: "Mendel",
     subtitle: "Front-end | Back-end | Lógica | Tech Lead | Project management",
     description:
@@ -261,12 +165,12 @@ const projetos = [
       },
       {
         button: "Mendel",
-        icon: <FaGithub />,
+        icon: <FaServer />,
         url: "https://mendel-legacy.netlify.app/",
       },
     ],
     text: "O projeto foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente, com tecnologias modernas e práticas educacionais inovadoras.",
-    images: ["Carousel images"],
+    images: ["/image/projeto05/mendel01.png","/image/projeto05/mendel02.png","/image/projeto05/mendel03.png","/image/projeto05/mendel04.png",],
     summary:
       "Este projeto interativo de genética visa oferecer um aprendizado mais envolvente e acessível sobre os conceitos genéticos.",
     boxIcon: [
@@ -282,8 +186,12 @@ const projetos = [
         icon: <FaReact />,
         name: "React",
       },
+      {
+        icon: <BsTrello />,
+        name: "Trello",
+      },
     ],
-  },
+  },  
 ];
 
 const colors = [
@@ -411,11 +319,13 @@ const Container = styled.section`
     padding: 10px;
 
     & > .description {
-      max-width: 1560px;
       text-align: justify;
       font-size: 18px;
       line-height: 1.6;
       color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       margin-bottom: 20px;
       & > .w50 {
         width: 100%;
@@ -645,7 +555,7 @@ export const ProjetPage = () => {
           <div className="w50">
             <h2>Sobre o Projeto</h2>
             <h3>{projeto?.subtitle}</h3>
-            <p style={{fontSize:"20px"}}>{projeto?.description}</p>
+            <p style={{ fontSize: "20px" }}>{projeto?.description}</p>
             <div className="impact-info">
               <p className="ferramenta">
                 <strong>Ferramentas Utilizadas</strong>
@@ -661,7 +571,7 @@ export const ProjetPage = () => {
             </div>
           </div>
           <div className="w50">
-            {/* <Carousel images={projeto?.images}/> */}
+            <Carousel images={projeto?.images || []} />
           </div>
         </div>
       </div>

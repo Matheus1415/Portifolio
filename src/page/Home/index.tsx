@@ -1,5 +1,4 @@
 //Libs
-import { motion } from "framer-motion";
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 //Component
@@ -13,16 +12,17 @@ import Project from "../../components/Project";
 //Icons
 import { SiSass, SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaGithub, FaHtml5, FaInstagram, FaLinkedin, FaReact } from "react-icons/fa";
+import {
+  FaGithub,
+  FaHtml5,
+  FaReact,
+} from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { TbBrandLaravel } from "react-icons/tb";
 import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import { FaGitAlt } from "react-icons/fa";
-import { SiLivewire } from "react-icons/si";
-import { TbBrandNodejs } from "react-icons/tb";
-import { FaDocker } from "react-icons/fa";
 import HeroSection from "../../components/HeroSection";
 //Jsons
 
@@ -113,6 +113,7 @@ const ProjectContainer = styled.section`
   }
 
   & > .boxProject {
+    cursor: pointer;
     box-shadow: -13px -7px 53px -6px #000000c8;
     max-height: 700px;
     height: 250px;
@@ -203,13 +204,13 @@ const fadeIn = keyframes`
 
 const AnimatedMessage = styled.h1`
   font-size: 2rem;
-  color: #2e213f; 
+  color: #2e213f;
   text-align: center;
   margin: 2rem 0;
   animation: ${fadeIn} 1s ease-in-out;
 
   &:hover {
-    color: #39294e; 
+    color: #39294e;
     transform: scale(1.05);
     transition: transform 0.3s ease, color 0.3s ease;
   }
@@ -217,95 +218,68 @@ const AnimatedMessage = styled.h1`
 
 const projects = [
   {
+    id: 1,
     title: "Restaurant Web App",
     subtitle: "Front-end | UI",
-    description: "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
+    description:
+      "O Restaurant App é uma aplicação web moderna, desenvolvida com React e TypeScript, que oferece aos usuários a capacidade de explorar e filtrar uma ampla variedade de pratos disponíveis no cardápio de um restaurante.",
     tools: [SiSass, SiTypescript, FaReact], // Usando os ícones importados
     githubUrl: "https://github.com/Matheus1415/Cardapio-online",
-    githubMessage: "Aluroni"
+    githubMessage: "Aluroni",
   },
   {
+    id: 2,
     title: "NearbyApp",
     subtitle: "Front-end | UI | Mobile",
-    description: "Este aplicativo desenvolvido com React Native e Expo permite aos usuários visualizar a localização de estabelecimentos próximos, acessar suas páginas e resgatar cupons utilizando QR Codes.",
+    description:
+      "Este aplicativo desenvolvido com React Native e Expo permite aos usuários visualizar a localização de estabelecimentos próximos, acessar suas páginas e resgatar cupons utilizando QR Codes.",
     tools: [SiTypescript, FaReact, FaCss3Alt],
     githubUrl: "https://github.com/Matheus1415/NearbyApp",
     githubMessage: "NearbyApp",
-    figmaUrl: "https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby",
-    figmaMessage: "NearbyApp Figma"
+    figmaUrl:
+      "https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby",
+    figmaMessage: "NearbyApp Figma",
   },
   {
-    title: "Space Explorer",
-    subtitle: "Front-end | UI",
-    description: "O Space Explorer é um site com temática espacial onde os usuários podem explorar fotos de galáxias, luas e planetas. A aplicação é uma single-page, apresentando uma única página estática. Os usuários podem filtrar as imagens por tags ou realizar uma pesquisa.",
-    tools: [SiSass, SiTypescript, FaReact],
-    githubUrl: "https://github.com/Matheus1415/siteEspacial",
-    githubMessage: "Space Explorer"
-  },
-  {
+    id: 3,
     title: "Pomodoro",
     subtitle: "Front-end | Lógica",
-    description: "O Pomodoro é um projeto simples desenvolvido com HTML, CSS, TypeScript e JavaScript. Ele permite criar uma lista de tarefas com um cronômetro, onde as tarefas são marcadas como concluídas quando o tempo acabar.",
+    description:
+      "O Pomodoro é um projeto simples desenvolvido com HTML, CSS, TypeScript e JavaScript. Ele permite criar uma lista de tarefas com um cronômetro, onde as tarefas são marcadas como concluídas quando o tempo acabar.",
     tools: [FaHtml5, FaCss3Alt, IoLogoJavascript, SiTypescript],
     githubUrl: "https://github.com/Matheus1415/Comodoro",
-    githubMessage: "Pomodoro"
+    githubMessage: "Pomodoro",
   },
   {
-    title: "Gerenciador de Estudos",
-    subtitle: "Front-end | UI | Lógica",
-    description: "O Gerenciador de Estudos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu tempo de estudo, incluindo um cronômetro para controlar o tempo dedicado a cada assunto.",
-    tools: [SiSass, SiTypescript, FaReact],
-    githubUrl: "https://github.com/Matheus1415/gerenciador-de-estudo",
-    githubMessage: "Gerenciador de Estudos"
-  },
-  {
-    title: "Gerenciador de Evento",
-    subtitle: "Front-end | UI | Lógica | Recoil",
-    description: "O Gerenciador de Eventos é uma aplicação single-page desenvolvida com TypeScript, React e Sass. Ele permite que você gerencie seu calendário de eventos, podendo adicionar eventos, filtrar eventos por datas usando Hook personalizando usando Recoil.",
-    tools: [SiSass, SiTypescript, FaReact],
-    githubUrl: "https://github.com/Matheus1415/Gerenciador-de-eventos",
-    githubMessage: "Gerenciador de Evento"
-  },
-  {
+    id: 4,
     title: "Tech Innovation Hub",
     subtitle: "Back-end | Lógica | API-REST",
-    description: "Essa API foi desenvolvida usando o Laravel e implementa um sistema para gerenciar usuários, startups e propostas de investimentos. A seguir, apresentamos a estrutura geral e os endpoints que a API oferece.",
+    description:
+      "Essa API foi desenvolvida usando o Laravel e implementa um sistema para gerenciar usuários, startups e propostas de investimentos. A seguir, apresentamos a estrutura geral e os endpoints que a API oferece.",
     tools: [TbBrandLaravel, SiMysql],
     githubUrl: "https://github.com/Matheus1415/TechInnovationHub",
-    githubMessage: "Tech Innovation Hub"
+    githubMessage: "Tech Innovation Hub",
   },
   {
-    title: "FreelanceHours",
-    subtitle: "Back-end | Lógica | API-REST | Laravel",
-    description: "O FreelanceHours é um projeto full-stack desenvolvido com Laravel (framework PHP) e Livewire para construção de aplicações dinâmicas e responsivas. A plataforma conecta criadores de ideias a patrocinadores interessados, permitindo que criadores registrem suas ideias de projetos e patrocinadores enviem propostas para financiar ou colaborar com essas ideias.",
-    tools: [TbBrandLaravel, SiMysql, SiLivewire],
-    githubUrl: "https://github.com/Matheus1415/FreelanceHours",
-    githubMessage: "FreelanceHours",
-    figmaUrl: "https://www.figma.com/community/file/1425095508121835225/freelancehours-evento-php",
-    figmaMessage: "FreelanceHours Figma"
-  },
-  {
+    id: 5,
     title: "Mendel",
     subtitle: "Front-end | Back-end | Lógica | Tech Lead | Project management",
-    description: "Este projeto de genética interativa foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente.",
-    tools: [SiChakraui, IoLogoJavascript, FaReact, BsTrello, FaGitAlt, FaGithub],
+    description:
+      "Este projeto de genética interativa foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente.",
+    tools: [
+      SiChakraui,
+      IoLogoJavascript,
+      FaReact,
+      BsTrello,
+      FaGitAlt,
+      FaGithub,
+    ],
     githubUrl: "https://github.com/Matheus1415/Mendel",
     githubMessage: "Mendel",
     siteUrl: "https://mendel-legacy.netlify.app/",
-    siteMessage: "Acesse o Mendel"
+    siteMessage: "Acesse o Mendel",
   },
-  {
-    title: "in.orbit",
-    subtitle: "Front-end | Back-end | Lógica | UI",
-    description: "O projeto é um site desktop de registro de metas com progresso semanal.",
-    tools: [IoLogoJavascript, FaReact, SiTypescript, TbBrandNodejs, FaDocker, SiMysql],
-    githubUrl: "https://github.com/Matheus1415/NLWPocketJS",
-    githubMessage: "in.orbit",
-    figmaUrl: "https://www.figma.com/community/file/1415093862269754302/nlw-pocket-js-in-orbit",
-    figmaMessage: "in.orbit Figma"
-  }
 ];
-
 
 const Home: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -316,10 +290,11 @@ const Home: React.FC = () => {
       project.subtitle.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+
   return (
     <HomeContainer>
       <Menu />
-      <HeroSection/>
+      <HeroSection />
       <div className="wrapper-search">
         <h1 className="titleSection">Projetos desenvolvidos</h1>
         <input
@@ -332,11 +307,14 @@ const Home: React.FC = () => {
       </div>
       <ProjectContainer id="projetos">
         {filteredProjects.length === 0 ? (
-          <AnimatedMessage>Ops! esse projeto não foi encontrado.</AnimatedMessage>
+          <AnimatedMessage>
+            Ops! esse projeto não foi encontrado.
+          </AnimatedMessage>
         ) : (
           filteredProjects.map((project) => (
             <Project
-              key={project.title}
+              key={project.id}
+              id={project.id}
               title={project.title}
               subtitle={project.subtitle}
               description={project.description}
