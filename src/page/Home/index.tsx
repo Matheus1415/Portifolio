@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 //Component
 import { Menu } from "../../components/Menu";
-import Tooltip from "../../components/Tooltip";
 import Skills from "../../components/Skills";
 import About from "../../components/About";
 import Experience from "../../components/Experience";
@@ -24,6 +23,7 @@ import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import { FaGitAlt } from "react-icons/fa";
 import HeroSection from "../../components/HeroSection";
+import { HardSkills } from "../../components/HardSkills";
 //Jsons
 
 const HomeContainer = styled.section`
@@ -330,6 +330,7 @@ const Home: React.FC = () => {
         )}
       </ProjectContainer>
       <Skills />
+      <HardSkills/>
       <About />
       <Experience />
       <Footer />
