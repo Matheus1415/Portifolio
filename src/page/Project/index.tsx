@@ -205,11 +205,6 @@ const colors = [
   "#6A3D8E",
 ];
 
-const colorFunction = () => {
-  let numberSort = Math.floor(Math.random() * (8 - 0) + 0);
-  return colors[numberSort];
-};
-
 const Container = styled.section`
   min-height: 100vh;
   background-color: #1b1b2c;
