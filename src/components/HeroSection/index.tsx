@@ -39,6 +39,7 @@ const Container = styled.section`
     & > h1 {
       font-size: 70px!important;
       font-weight: 400 !important;
+      text-align: center;
       color: #9069ec;
       
       @media (max-width: 600px) {

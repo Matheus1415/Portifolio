@@ -475,38 +475,38 @@ const hardSkillsProps = [
       },
     ],
     ChartComponent: {
-        type: "bar",
-        data: {
-          labels: [
-            "Modelagem de Dados",
-            "Laravel com MySQL",
-            "Migrations",
-            "Otimização de Queries",
-            "Regras de Negócio",
-          ],
-          datasets: [
-            {
-              label: "Nível de Domínio (1-10)",
-              data: [6, 9, 6, 7, 8],
-              backgroundColor: [
-                "rgba(0, 117, 143, 0.555)",
-                "rgba(41, 128, 185, 0.555)",
-                "rgba(75, 192, 192, 0.555)",
-                "rgba(54, 162, 235, 0.555)",
-                "rgba(153, 102, 255, 0.555)",
-              ],
-              borderColor: [
-                "rgba(0, 117, 143, 1)",
-                "rgba(41, 128, 185, 1)",
-                "rgba(75, 192, 192, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(153, 102, 255, 1)",
-              ],
-              borderWidth: 1,
-            },
-          ],
-        },
+      type: "bar",
+      data: {
+        labels: [
+          "Modelagem de Dados",
+          "Laravel com MySQL",
+          "Migrations",
+          "Otimização de Queries",
+          "Regras de Negócio",
+        ],
+        datasets: [
+          {
+            label: "Nível de Domínio (1-10)",
+            data: [6, 9, 6, 7, 8],
+            backgroundColor: [
+              "rgba(0, 117, 143, 0.555)",
+              "rgba(41, 128, 185, 0.555)",
+              "rgba(75, 192, 192, 0.555)",
+              "rgba(54, 162, 235, 0.555)",
+              "rgba(153, 102, 255, 0.555)",
+            ],
+            borderColor: [
+              "rgba(0, 117, 143, 1)",
+              "rgba(41, 128, 185, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(153, 102, 255, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
       },
+    },
   },
 ];
 
@@ -556,6 +556,9 @@ const Container = styled.div<{
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
+      @media (max-width: 400px) {
+        gap: 40px;
+      }
       & > .box-wraper {
         width: 46%;
         padding: 1%;
@@ -565,8 +568,8 @@ const Container = styled.div<{
           width: 100%;
           flex-direction: column;
           align-items: center;
-          min-height: 200px;
-          gap: 10px;
+          min-height: 250px;
+          gap: 20px;
         }
 
         & > h2 {
@@ -766,7 +769,7 @@ const HardSkills: React.FC = () => {
         </div>
 
         <div className="boxCharAndNex">
-          <h2>Habilidades de Manipulação</h2>
+          <h2>Habilidades Técnicas</h2>
           <br />
           <ChartComponent
             data={hardSkillsProps[currentIndex].ChartComponent.data}

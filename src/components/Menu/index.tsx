@@ -1,73 +1,90 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 
-const ContainerMenu = styled.div`
-  width: 100%;
-  max-width: 97%;
-  padding-top: 20px;
-  text-align: right;
+interface MenuProps {
+  isOpen: boolean;
+}
+
+const ContainerMenu = styled.div<MenuProps>`
+  position: fixed;
+  top: 0;
+  left: ${(props) => (props.isOpen ? "0" : "-250px")};
+  height: 100%;
+  width: 250px;
+  background-color: ${(props) => (props.isOpen ? "#2c2c54" : "")};
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+`;
+
+const Hamburger = styled.div`
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  cursor: pointer;
+
+  & div {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+`;
+
+const MenuItems = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 15px;
-  @media (max-width: 600px) {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 60px;
 
-  & > .text {
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 1s;
-    @media (max-width: 600px) {
-      width: 100%;
-      flex-direction: column;
-    }
-  }
-
-  & > .text > a {
+  a {
     text-decoration: none;
-    color: #46465e;
-    transition: 1s;
-    @media (max-width: 600px) {
-      font-size: 16px;
-      display: inline-block;
-    }
-  }
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
 
-  & > .text > a:hover {
-    color: white !important;
-  }
-
-  & > .div70 {
-    width: 100%;
-    max-width: 60%;
-    @media (max-width: 600px) {
-      display: none;
+    &:hover {
+      color: #f39c12;
     }
   }
 `;
 
 export const Menu: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <ContainerMenu>
-      <div className="div70"></div>
-      <div className="text">
-        <a href="#inicio">Início</a>
-      </div>
-      <div className="text">
-        <a href="#projetos">Projetos</a>
-      </div>
-      <div className="text">
-        <a href="#habilidades">Habilidades </a>
-      </div>
-      <div className="text">
-        <a href="#sobre">Sobre</a>
-      </div>
-      <div className="text">
-        <a href="#experiencia">Experiência</a>
-      </div>
-    </ContainerMenu>
+    <>
+      <Hamburger onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </Hamburger>
+
+      <ContainerMenu isOpen={isOpen}>
+        <MenuItems>
+          <a href="#inicio" onClick={toggleMenu}>
+            Início
+          </a>
+          <a href="#projetos" onClick={toggleMenu}>
+            Projetos
+          </a>
+          <a href="#habilidades" onClick={toggleMenu}>
+            Habilidades
+          </a>
+          <a href="#sobre" onClick={toggleMenu}>
+            Sobre
+          </a>
+          <a href="#experiencia" onClick={toggleMenu}>
+            Experiência
+          </a>
+        </MenuItems>
+      </ContainerMenu>
+    </>
   );
 };
