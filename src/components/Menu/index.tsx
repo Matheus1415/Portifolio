@@ -46,7 +46,7 @@ const MenuItems = styled.div`
     transition: color 0.3s;
 
     &:hover {
-      color: #f39c12;
+      color: #565693;
     }
   }
 `;

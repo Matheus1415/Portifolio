@@ -702,6 +702,7 @@ const HardSkills: React.FC = () => {
         $backgroundColor={hardSkillsProps[currentIndex].backgroundColor}
         $buttomColor={hardSkillsProps[currentIndex].buttomColor}
         $titleColor={hardSkillsProps[currentIndex].titleColor}
+        id="habilidades"
       >
         <div
           className="boxBorder"
