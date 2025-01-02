@@ -519,7 +519,6 @@ const Container = styled.div<{
   max-width: 98%;
   display: flex;
   flex-direction: row;
-  background-color: #0f0f19;
 
   & > .boxBorder {
     width: 60%;

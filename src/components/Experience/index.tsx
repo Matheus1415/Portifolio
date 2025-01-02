@@ -153,15 +153,6 @@ const TimelineContainer = styled.section`
 const Experience: React.FC = () => {
   const experiences = [
     {
-      year: "2023 - 2024",
-      icon: <FaProjectDiagram />,
-      description:
-        "Desenvolvimento do projeto de genética Mendel: Este projeto de genética interativa foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente. Ele abrange desde as Leis de Mendel até genética avançada, incluindo herança ligada ao sexo, com várias seções detalhadas e funcionalidades interativas.",
-      tags: ["Genética", "Design Interativo", "Educação", "JavaScript"],
-      onClick: () =>
-        window.open("https://github.com/Matheus1415/Mendel", "_blank"),
-    },
-    {
       year: "2022 - 2024",
       icon: <FaGraduationCap />,
       description:
@@ -174,11 +165,22 @@ const Experience: React.FC = () => {
       ],
     },
     {
+      year: "2023 - 2024",
+      icon: <FaProjectDiagram />,
+      description:
+        "Desenvolvimento do projeto de genética Mendel: Este projeto de genética interativa foi desenvolvido para proporcionar uma experiência educacional rica em conceitos genéticos, utilizando um design interativo e visualmente atraente. Ele abrange desde as Leis de Mendel até genética avançada, incluindo herança ligada ao sexo, com várias seções detalhadas e funcionalidades interativas.",
+      tags: ["Genética", "Design Interativo", "Educação", "JavaScript"],
+      onClick: () =>
+        window.open("https://github.com/Matheus1415/Mendel", "_blank"),
+    },
+    {
       year: "2024",
       icon: <FaLaptopCode />,
       description:
         "Estágio como desenvolvedor full-stack em uma empresa de desenvolvimento, onde dominei Laravel, PHP, jQuery, JavaScript e construção de bancos de dados, aprimorando habilidades técnicas e interpessoais.",
       tags: ["Laravel", "PHP", "jQuery", "JavaScript", "Banco de Dados"],
+      onClick: () =>
+        window.open("https://www.linkedin.com/in/matheus-pereira-da-silva-298020286/", "_blank"),
     },
     {
       year: "2024",

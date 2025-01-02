@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BubbleEffect from "../BubbleEffect";
 import Tooltip from "../Tooltip";
 import { InteractiveFace } from "../InteractiveFace";
+import { IoDocumentText } from "react-icons/io5";
 
 const Container = styled.section`
   min-height: 910px;
@@ -132,6 +133,11 @@ export default function HeroSection() {
             icon={<FaLinkedin />}
             message="matheus-pereira-da-silva"
             url="https://www.linkedin.com/in/matheus-pereira-da-silva-298020286/"
+          />
+          <Tooltip
+            icon={<IoDocumentText />}
+            message="Currículo"
+            url="https://drive.google.com/file/d/1GwXc4K0uACo_WlaBZIXF7Vtw-jLgAIaj/view?usp=sharing"
           />
         </div>
       </div>
