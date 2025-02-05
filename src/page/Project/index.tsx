@@ -1,17 +1,18 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 import { SiSass, SiTypescript } from "react-icons/si";
-import { IoLogoJavascript, IoTimeOutline } from "react-icons/io5";
+import { IoLogoJavascript } from "react-icons/io5";
 import { FiFigma } from "react-icons/fi";
 import { FaServer } from "react-icons/fa6";
-import { FaFileCode, FaGithub, FaHtml5, FaReact } from "react-icons/fa";
+import { FaGithub, FaHtml5, FaReact } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { TbBrandLaravel } from "react-icons/tb";
 import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import Carousel from "../../components/Carousel";
+import MyLottieAnimation from "../../components/MyLottieAnimation";
+import space from '../../assets/icon/space.json';
 
 const projetos = [
   {
@@ -217,19 +218,27 @@ const Container = styled.section`
   overflow: hidden;
 
   & > .header {
-    background-color: #2e2e4b;
+    background-color: #151522;
     min-width: 100%;
     height: 400px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     gap: 40px;
     padding: 0 15px;
+    position: relative;
 
     @media (max-width: 600px) {
       width: 100%;
       flex-direction: column;
       align-items: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      z-index: 1;
     }
 
     & > .title {
@@ -248,83 +257,6 @@ const Container = styled.section`
       }
     }
 
-    & > .info {
-      background-color: #fff;
-      box-shadow: 1px 2px 15px 5px #00000016;
-      border-radius: 10px;
-      width: 450px;
-      max-width: 49%;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 20px;
-      padding: 10px;
-
-      @media (max-width: 600px) {
-        height: 200px;
-        background-color: transparent;
-        box-shadow: none;
-        max-width: 100%;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      & > .topicos {
-        width: 100%;
-        & > span {
-          font-family: "Roboto", sans-serif;
-          font-size: 30px;
-          font-weight: bold;
-          color: #525c65;
-        }
-        & > .group-topc {
-          margin-top: 10px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          border-radius: 5px;
-          color: white;
-          gap: 5px;
-          flex-wrap: wrap;
-
-          & > p {
-            border-radius: 5px;
-            padding: 10px;
-          }
-        }
-      }
-
-      & > .dates {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        justify-items: center;
-
-        & > .summary-time {
-          flex: 0 0 48%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          gap: 20px;
-          color: #525c65;
-          padding: 10px;
-
-          & > .time {
-            font-size: 20px;
-
-            & > span {
-              font-size: 24px;
-              padding-top: 8px;
-              font-weight: bold;
-            }
-          }
-        }
-      }
-    }
   }
 
   & > .content {
@@ -333,6 +265,8 @@ const Container = styled.section`
     align-items: flex-start;
     flex-direction: column;
     padding: 10px;
+    background-color: #1b1b2c;
+    z-index: 2;
 
     @media (max-width: 600px) {
       max-width: 100%;
@@ -507,70 +441,15 @@ export const ProjetPage = () => {
   const projeto: ProjetoType | undefined = projetos.find(
     (proj) => proj.id === parseInt(id || "0")
   );
-  const [repoData, setRepoData] = useState<RepoData | null>(null);
-
-  useEffect(() => {
-    const fetchRepoData = async () => {
-      try {
-        if (projeto?.groupBottom[0]?.url) {
-          const repoName = projeto.groupBottom[0]?.url.split("/").pop();
-          const response = await fetch(
-            `https://api.github.com/repos/Matheus1415/${repoName}`
-          );
-
-          const data = await response.json();
-          setRepoData(data);
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    fetchRepoData();
-  }, [projeto?.groupBottom]);
-
-  const createdAt = repoData ? new Date(repoData.created_at) : null;
-  const updatedAt = repoData ? new Date(repoData.updated_at) : null;
-
-  const formattedCreatedAt = createdAt ? createdAt.toLocaleDateString() : "";
-  const formattedUpdatedAt = updatedAt ? updatedAt.toLocaleDateString() : "";
 
   return (
     <Container>
       <div className="header">
-        <div className="title">
-          <h1>{repoData?.name}</h1>
+        <div className="overlay">
+          <MyLottieAnimation visible animationData={space} size={710}/>
         </div>
-        <div className="info">
-          <div className="topicos">
-            <div className="group-topc"></div>
-          </div>
-          <div className="dates">
-            <div className="summary-time">
-              <div className="icon">
-                <IoTimeOutline size={40} />
-              </div>
-              <div className="time">
-                Criado em <br /> <span>{formattedCreatedAt}</span>
-              </div>
-            </div>
-            <div className="summary-time">
-              <div className="icon">
-                <IoTimeOutline size={40} />
-              </div>
-              <div className="time">
-                Atualizado em <br /> <span>{formattedUpdatedAt}</span>
-              </div>
-            </div>
-            <div className="summary-time">
-              <div className="icon">
-                <FaFileCode size={40} />
-              </div>
-              <div className="time">
-                Linguagem principal <br /> <span>{repoData?.language}</span>
-              </div>
-            </div>
-          </div>
+        <div className="title">
+          <h1>{projeto?.title}</h1>
         </div>
       </div>
 

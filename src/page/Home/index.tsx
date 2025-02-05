@@ -23,7 +23,9 @@ import { TbBrandLaravel } from "react-icons/tb";
 import { SiChakraui } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import { FaGitAlt } from "react-icons/fa";
+import MyLottieAnimation from "../../components/MyLottieAnimation";
 //Jsons
+import bacgroud404 from '../../assets/icon/bacgroud404.json';
 
 const HomeContainer = styled.section`
   background-image: linear-gradient(to top, #13131f, #08080d);
@@ -190,28 +192,22 @@ const ProjectContainer = styled.section`
   }
 `;
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
 const AnimatedMessage = styled.h1`
-  font-size: 2rem;
-  color: #2e213f;
-  text-align: center;
-  margin: 2rem 0;
-  animation: ${fadeIn} 1s ease-in-out;
-
-  &:hover {
-    color: #39294e;
-    transform: scale(1.05);
-    transition: transform 0.3s ease, color 0.3s ease;
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  & > .boxJson {
+    width: 100%;
+    max-width: 50%;
+  }
+  & > .boxText {
+    width: 100%;
+    max-width: 50%;
+    & > h1 {
+      font-size: 35px;
+    }
   }
 `;
 
@@ -307,7 +303,12 @@ const Home: React.FC = () => {
       <ProjectContainer id="projetos">
         {filteredProjects.length === 0 ? (
           <AnimatedMessage>
-            Ops! esse projeto não foi encontrado.
+            <div className="boxJon">
+              <MyLottieAnimation visible animationData={bacgroud404} size={400}/>
+            </div>
+            <div className="boxText">
+              <h1>  Ops! esse projeto não foi encontrado.</h1>
+            </div>
           </AnimatedMessage>
         ) : (
           filteredProjects.map((project) => (

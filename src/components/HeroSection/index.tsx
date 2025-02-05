@@ -1,9 +1,11 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import styled from "styled-components";
 import BubbleEffect from "../BubbleEffect";
 import Tooltip from "../Tooltip";
 import { InteractiveFace } from "../InteractiveFace";
-import { IoDocumentText } from "react-icons/io5";
+import linkedin from '../../assets/icon/linkedin.json';
+import insta from '../../assets/icon/insta.json';
+import donwload from '../../assets/icon/donwload.json';
 
 const Container = styled.section`
   min-height: 910px;
@@ -85,6 +87,7 @@ const Container = styled.section`
       font-size: 45px;
       display: flex;
       flex-direction: row;
+      justify-content: center;
       align-items: center;
       gap: 15px;
     }
@@ -125,17 +128,19 @@ export default function HeroSection() {
             url="https://github.com/Matheus1415"
           />
           <Tooltip
-            icon={<FaInstagram />}
+            lottie_react={insta}
+            size={50}
             message="@mps_devaretado"
             url="https://www.instagram.com/mps_devaretado/"
           />
           <Tooltip
-            icon={<FaLinkedin />}
+            lottie_react={linkedin}
             message="matheus-pereira-da-silva"
             url="https://www.linkedin.com/in/matheus-pereira-da-silva-298020286/"
           />
           <Tooltip
-            icon={<IoDocumentText />}
+            lottie_react={donwload}
+            size={50}
             message="Currículo"
             url="https://drive.google.com/file/d/1GwXc4K0uACo_WlaBZIXF7Vtw-jLgAIaj/view?usp=sharing"
           />
