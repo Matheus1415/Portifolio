@@ -3,6 +3,8 @@ import { Home } from "../page/Home";
 import MainContainer from "../style/geral";
 import { ProjetPage } from "../page/Project";
 import { DefaultLayout } from "../layouts/DefaultLayout";
+import { About } from "../page/about";
+import { Skills } from "../page/Skills";
 
 const Router = () => {
   return (
@@ -10,6 +12,8 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<About />} />
+          <Route path="/habilidades" element={<Skills />} />
         </Route>
         <Route path="/projeto/:id" element={<ProjetPage />} />
       </Routes>

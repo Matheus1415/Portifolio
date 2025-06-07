@@ -1,0 +1,51 @@
+[
+  {
+    "username": "@Smart",
+    "role": "Samart Telecon - Projetos e Consultorias",
+    "message": "Durante seu período de estágio conosco como Desenvolvedor Full Stack, Matheus se destacou não apenas por suas habilidades técnicas excepcionais, mas também por sua dedicação e capacidade de aprender e aplicar conceitos avançados com rapidez.",
+    "social": "https://www.instagram.com/smarttelecomeng/",
+    "type": "instagram"
+  },
+  {
+    "username": "@yohana",
+    "role": "Web Designer | Designer",
+    "message": "Uma pessoa super compreensível que consegue se adaptar rapidamente no ambiente que lhe é proporcionado. Além disso, é uma das pessoas mais incríveis que já conheci e tive a oportunidade de conhecer.",
+    "social": "https://www.instagram.com/yohana_laysa/",
+    "type": "instagram"
+  },
+  {
+    "username": "@Venancio",
+    "role": "Full-Stack Developer",
+    "message": "Trabalhar com o Matheus foi uma experiência incrível. Um exemplo como programador e em gestão de projetos. Muito do que sei hoje foi por causa dele.",
+    "social": "https://github.com/JoseVenancioDev",
+    "type": "github"
+  },
+  {
+    "username": "@Gabriel",
+    "role": "Full-Stack Developer | Project Manager",
+    "message": "Como colega de classe do Matheus, tive a oportunidade de acompanhar de perto o início de sua jornada e trabalhar em diversos projetos com ele.",
+    "social": "https://github.com/Gabriel-Sousa-Dev",
+    "type": "github"
+  },
+  {
+    "username": "@Alessandro",
+    "role": "Front-end Developer",
+    "message": "Foi uma experiência transformadora de aprendizado, crescimento e descobertas inesquecíveis, que ampliam horizontes e despertam novas possibilidades a cada momento durante meu trabalho com ele.",
+    "social": "https://github.com/AlessandroSilvaS",
+    "type": "github"
+  },
+  {
+    "username": "@Thiago",
+    "role": "Front-end Developer",
+    "message": "Um dos técnicos mais brilhantes, esforçado e carismático que conheci, e também um bom líder e projetista.",
+    "social": "https://github.com/Thiago-Ferreira-da-Silva",
+    "type": "github"
+  },
+  {
+    "username": "@Ermeson",
+    "role": "Full-Stack Developer",
+    "message": "Encarar a pressão com sabedoria é um privilégio, e isso é algo que ele soube fazer com maestria, sempre guiando sua equipe com liderança exemplar e sendo um mentor inspirador.",
+    "social": "https://github.com/ErmesonRamos",
+    "type": "github"
+  }
+]

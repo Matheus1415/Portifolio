@@ -5,17 +5,11 @@ import styled, { keyframes } from "styled-components";
 const bubbleColors = ["#c084fc", "#a78bfa", "#8b5cf6", "#7c3aed", "#6d28d9"];
 
 export function BackgroundBubbles() {
-  const [colors, setColors] = useState(
-    Array.from({ length: 15 }, () => bubbleColors[Math.floor(Math.random() * bubbleColors.length)])
+  const [colors] = useState(
+    Array.from({ length: 35 }, () =>
+      bubbleColors[Math.floor(Math.random() * bubbleColors.length)]
+    )
   );
-
-  const handleBubbleClick = (index: number) => {
-    setColors((prev) =>
-      prev.map((color, i) =>
-        i === index ? bubbleColors[Math.floor(Math.random() * bubbleColors.length)] : color
-      )
-    );
-  };
 
   return (
     <BubblesContainer>
@@ -32,7 +26,6 @@ export function BackgroundBubbles() {
             left={left}
             duration={duration}
             delay={delay}
-            // onClick={() => handleBubbleClick(index)}
           />
         );
       })}
@@ -40,7 +33,6 @@ export function BackgroundBubbles() {
   );
 }
 
-// Bubbles Container ocupa o fundo da tela
 const BubblesContainer = styled.div`
   position: fixed;
   top: 0;
@@ -52,7 +44,6 @@ const BubblesContainer = styled.div`
   pointer-events: none;
 `;
 
-// Animação de movimento flutuante em 2D
 const floatAnimation = keyframes`
   0% {
     transform: translate(0, 0) scale(1);
@@ -71,7 +62,6 @@ const floatAnimation = keyframes`
   }
 `;
 
-// Bubble com propriedades dinâmicas
 const Bubble = styled.div<{
   color: string;
   top: number;
@@ -87,10 +77,10 @@ const Bubble = styled.div<{
   top: ${({ top }) => top}%;
   left: ${({ left }) => left}%;
   opacity: 0.15;
-  pointer-events: auto;
-  cursor: pointer;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s;
+  pointer-events: auto; 
 
+  cursor: default;
+  transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.3s;
   box-shadow: ${({ color }) => `0 0 12px 3px ${color}55`};
 
   animation: ${floatAnimation} ${({ duration }) => duration}s ease-in-out infinite;
