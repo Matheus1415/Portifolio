@@ -21,33 +21,54 @@ import {
   CardHeader,
   CardBody,
   SocialIcon,
+  TechList,
 } from "./styles";
 import { SiMysql, SiStyledcomponents, SiTypescript } from "react-icons/si";
-import { motion } from "framer-motion";
-
 import testimonials from "../../data/testimonials.json";
-
-type Tech = {
-  icon: JSX.Element;
-  name: string;
-};
-
-const techs: Tech[] = [
-  { icon: <FaReact color="#61DBFB" size={29} />, name: "React" },
-  { icon: <SiTypescript color="#3178C6" size={29} />, name: "TypeScript" },
-  { icon: <FaJs color="#F7DF1E" size={29} />, name: "JavaScript" },
-  { icon: <FaNodeJs color="#3C873A" size={29} />, name: "Node.js" },
-  { icon: <FaLaravel color="#FF2D20" size={29} />, name: "Laravel" },
-  { icon: <FaPhp color="#777BB4" size={29} />, name: "PHP" },
-  { icon: <SiMysql color="#00758F" size={29} />, name: "MySQL" },
-  { icon: <FaDatabase color="#C0C0C0" size={29} />, name: "SQL" },
-  {
-    icon: <SiStyledcomponents color="#DB7093" size={29} />,
-    name: "Styled Components",
-  },
-];
+import { useEffect, useRef, useState } from "react";
+import { Reorder } from "framer-motion";
 
 export function About() {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const techs = [
+    { icon: <FaReact size={29} />, name: "React" },
+    { icon: <SiTypescript size={29} />, name: "TypeScript" },
+    { icon: <FaJs size={29} />, name: "JavaScript" },
+    { icon: <FaNodeJs size={29} />, name: "Node.js" },
+    { icon: <FaPhp size={29} />, name: "PHP" },
+    { icon: <FaLaravel size={29} />, name: "Laravel" },
+    { icon: <SiMysql size={29} />, name: "MySQL" },
+    { icon: <FaDatabase size={29} />, name: "SQL" },
+    { icon: <SiStyledcomponents size={29} />, name: "Styled Components" },
+  ];
+
+  const colors = [
+    "#6D28D9",
+    "#2563EB",
+    "#059669",
+    "#D97706",
+    "#9333EA",
+    "#DC2626",
+    "#0EA5E9",
+  ];
+
+  const [draggingIndex, setDraggingIndex] = useState<number | null>(null);
+  const [constraints, setConstraints] = useState({ left: -20, right: 50 });
+
+  useEffect(() => {
+    if (wrapperRef.current && contentRef.current) {
+      const wrapperWidth = wrapperRef.current.offsetWidth;
+      const contentWidth = contentRef.current.scrollWidth;
+
+      const left = Math.min(0, wrapperWidth - contentWidth);
+      setConstraints({ left, right: 0 });
+    }
+  }, [techs.length]);
+
+  const [items, setItems] = useState(testimonials);
+
   return (
     <AboutContainer>
       <LeftSection>
@@ -73,58 +94,81 @@ export function About() {
         </Paragraph>
 
         <SectionTitle>Tecnologias</SectionTitle>
-        <TechScrollWrapper>
-          <motion.div
-            animate={{ x: ["0%", "-100%"] }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1rem",
-              width: "200%",
-            }}
-          >
+        <TechScrollWrapper ref={wrapperRef}>
+          <TechList>
             {techs.map((tech, index) => (
-              <TechItem key={tech.name + index}>
+              <TechItem
+                key={tech.name}
+                bgColor={colors[index % colors.length]}
+                drag="x"
+                dragConstraints={constraints}
+                dragElastic={0.15}
+                onDragStart={() => setDraggingIndex(index)}
+                onDragEnd={() => setDraggingIndex(null)}
+                style={{
+                  filter:
+                    draggingIndex === index
+                      ? "brightness(1.3)"
+                      : "brightness(1)",
+                  cursor: draggingIndex === index ? "grabbing" : "grab",
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
                 {tech.icon}
                 <span>{tech.name}</span>
               </TechItem>
             ))}
-          </motion.div>
+          </TechList>
         </TechScrollWrapper>
       </LeftSection>
 
       <RightSection>
         <SectionTitle>O que dizem sobre mim</SectionTitle>
-        {testimonials.map((item, index) => (
-          <TestimonialCard key={index}>
-            <CardHeader>
-              <div className="user-info">
-                <FaUserCircle size={40} className="user-icon" />
-                <div>
-                  <p className="username">{item.username}</p>
-                  <span className="role">{item.role}</span>
-                </div>
-              </div>
-              <a href={item.social} target="_blank" rel="noopener noreferrer">
-                <SocialIcon>
-                  {item.type === "instagram" ? (
-                    <FaInstagram size={24} color="#E1306C" />
-                  ) : (
-                    <FaGithub size={24} color="#000" />
-                  )}
-                </SocialIcon>
-              </a>
-            </CardHeader>
-            <CardBody>
-              <p>{item.message}</p>
-            </CardBody>
-          </TestimonialCard>
-        ))}
+        <Reorder.Group
+          axis="y"
+          values={items}
+          onReorder={setItems}
+          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+        >
+          {items.map((item, index) => (
+            <Reorder.Item
+              key={item.username + index}
+              value={item}
+              layout 
+              transition={{ duration: 0.3, ease: "easeInOut" }} 
+              style={{ listStyle: "none" }}
+              whileDrag={{ scale: 1.02 }}
+            >
+              <TestimonialCard>
+                <CardHeader>
+                  <div className="user-info">
+                    <FaUserCircle size={40} className="user-icon" />
+                    <div>
+                      <p className="username">{item.username}</p>
+                      <span className="role">{item.role}</span>
+                    </div>
+                  </div>
+                  <a
+                    href={item.social}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialIcon>
+                      {item.type === "instagram" ? (
+                        <FaInstagram size={24} color="#E1306C" />
+                      ) : (
+                        <FaGithub size={24} color="#000" />
+                      )}
+                    </SocialIcon>
+                  </a>
+                </CardHeader>
+                <CardBody>
+                  <p>{item.message}</p>
+                </CardBody>
+              </TestimonialCard>
+            </Reorder.Item>
+          ))}
+        </Reorder.Group>
       </RightSection>
     </AboutContainer>
   );

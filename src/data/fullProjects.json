@@ -1,0 +1,9 @@
+[
+  {
+    "id": "mendel-01",
+    "title": "Introdução do Mendel",
+    "ano": 2024,
+    "descricao": "O desenvolvimento do software Mendel foi um projeto inovador para o Ceará Científico 2024, liderado por mim, com colaboração de uma equipe dedicada de desenvolvedores, designers e educadores. Focado na área científica, o sistema oferece uma solução interativa e visualmente atrativa, utilizando ferramentas tecnológicas para aprimorar o aprendizado de genética. Destinado a estudantes de ensino médio, o projeto foi projetado para transformar o ensino de biologia, com ênfase nas leis mendelianas e conceitos genéticos. A plataforma tem grande potencial para elevar o desempenho dos alunos e melhorar a compreensão dos temas, proporcionando uma experiência de aprendizado mais dinâmica e envolvente. O Mendel foi testado e validado por alunos da escola EEP José Maria Falcão, recebendo feedback positivo pela sua eficácia em tornar o conteúdo científico mais acessível e interessante.",
+    "link": "https://mendel-legacy.netlify.app/"
+  }
+]

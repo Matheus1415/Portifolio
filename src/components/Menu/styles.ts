@@ -18,6 +18,7 @@ export const Sidebar = styled.ul`
 `;
 
 export const MenuItem = styled.li<MenuItemProps>`
+  border: none;
   color: ${({ isActive, theme }) =>
     isActive ? theme["purple-100"] : theme.white};
   background-color: ${({ isActive, theme }) =>
@@ -37,5 +38,12 @@ export const MenuItem = styled.li<MenuItemProps>`
   &:hover {
     color: ${({ isActive, theme }) =>
       isActive ? theme["purple-100"] : theme["gray-500"]};
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
   }
 `;

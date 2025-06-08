@@ -5,6 +5,7 @@ import { ProjetPage } from "../page/Project";
 import { DefaultLayout } from "../layouts/DefaultLayout";
 import { About } from "../page/about";
 import { Skills } from "../page/Skills";
+import { Projects } from "../page/Projects";
 
 const Router = () => {
   return (
@@ -14,8 +15,8 @@ const Router = () => {
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/habilidades" element={<Skills />} />
+          <Route path="/projetos" element={<Projects />} />
         </Route>
-        <Route path="/projeto/:id" element={<ProjetPage />} />
       </Routes>
     </MainContainer>
   );
