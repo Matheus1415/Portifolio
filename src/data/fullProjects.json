@@ -1,9 +1,537 @@
 [
   {
-    "id": "mendel-01",
-    "title": "Introdução do Mendel",
-    "ano": 2024,
-    "descricao": "O desenvolvimento do software Mendel foi um projeto inovador para o Ceará Científico 2024, liderado por mim, com colaboração de uma equipe dedicada de desenvolvedores, designers e educadores. Focado na área científica, o sistema oferece uma solução interativa e visualmente atrativa, utilizando ferramentas tecnológicas para aprimorar o aprendizado de genética. Destinado a estudantes de ensino médio, o projeto foi projetado para transformar o ensino de biologia, com ênfase nas leis mendelianas e conceitos genéticos. A plataforma tem grande potencial para elevar o desempenho dos alunos e melhorar a compreensão dos temas, proporcionando uma experiência de aprendizado mais dinâmica e envolvente. O Mendel foi testado e validado por alunos da escola EEP José Maria Falcão, recebendo feedback positivo pela sua eficácia em tornar o conteúdo científico mais acessível e interessante.",
-    "link": "https://mendel-legacy.netlify.app/"
+    "id": 1,
+    "project": {
+      "title": "Mendel Projects",
+      "year": 2024,
+      "type": "educacional",
+      "intro": {
+        "description": "O desenvolvimento do software Mendel foi um projeto inovador para o Ceará Científico 2024, liderado por mim, com colaboração de uma equipe dedicada de desenvolvedores, designers e educadores. O principal objetivo era facilitar o ensino de genética mendeliana para alunos do ensino médio de forma acessível e interativa.",
+        "highlight": "Transformar o ensino de biologia para o ensino médio, com foco nas leis mendelianas."
+      },
+      "sections": [
+        {
+          "title": "Introdução do Mendel",
+          "date": "2024",
+          "type": "text+image",
+          "link": {
+            "label": "Pagina do mendel",
+            "url": "https://mendel-legacy.netlify.app/"
+          },
+          "content": [
+            "A aplicação de metodologias dinâmicas no ensino tem sido amplamente discutida por educadores ao redor do mundo. Dentro desse contexto, a tecnologia surge como uma poderosa aliada.",
+            "No campo da Biologia, especialmente no estudo da Genética, o uso de softwares educacionais pode tornar o aprendizado mais eficiente e envolvente.",
+            "Pesquisas evidenciam a relevância de ferramentas interativas para a aprendizagem, principalmente em conteúdos abstratos como as leis de Mendel. O software Mendel foi desenvolvido para atender essa demanda educacional."
+          ],
+          "image": {
+            "src": "/image/mendel/teamMendel.jpeg",
+            "alt": "Team mendel"
+          }
+        },
+        {
+          "title": "Histórico do desenvolvimento",
+          "date": "2024",
+          "type": "text+image+download",
+          "download": {
+            "label": "Download",
+            "file": "/assets/pdf/historicoDevMendel.pdf"
+          },
+          "content": [
+            "Além disso, para a estruturação do código-fonte da aplicação, foi utilizada a biblioteca REACT, por sua flexibilidade e componentização que permite o desenvolvimento modular do sistema.",
+            "A biblioteca CHAKRA UI foi usada para a estilização, com foco em acessibilidade e rapidez no desenvolvimento visual.",
+            "Sistema VLIBRAS, Excalidraw, Chart.js, GITHUB, VITE e Figma foram ferramentas utilizadas para garantir interatividade, colaboração visual, versionamento, performance e design responsivo."
+          ],
+          "image": {
+            "src": "/image/mendel/projectMendel.png",
+            "alt": "Project mendel"
+          }
+        },
+        {
+          "title": "Contribuidores do Mendel",
+          "date": "2024",
+          "type": "autores",
+          "authors": [
+            {
+              "name": "Matheus Pereira",
+              "roles": [
+                "Gestor de Projeto",
+                "Gestor de Projeto",
+                "Desenvolvedor"
+              ],
+              "description": "Responsável pela coordenação geral do projeto e desenvolvimento do sistema, além de intermediar entre os diferentes responsáveis pelo projeto.",
+              "github": "https://www.github.com/Matheus1415"
+            },
+            {
+              "name": "Yohana Laysa",
+              "roles": ["Design", "Redatora", "UX | UI"],
+              "description": "Responsável pela criação da interface do projeto, desenvolvimento do portfólio e coordenação das documentações do projeto."
+            },
+            {
+              "name": "Alessandro Silva",
+              "roles": ["Desenvolvedor"],
+              "description": "Contribuiu com a implementação de páginas de conteúdo e criação de componentes específicos do sistema.",
+              "github": "https://www.github.com/AlessandroSilvaS"
+            },
+            {
+              "name": "Daniel de Sousa",
+              "roles": ["Redator", "Desenvolvedor"],
+              "description": "Redator técnico e desenvolvedor de componentes interativos, estruturando níveis complexos e intermediários.",
+              "github": "https://www.github.com/DanielDeSousaDEV"
+            },
+            {
+              "name": "Moises Lima",
+              "roles": ["Desenvolvedor"],
+              "description": "Focado no desenvolvimento de demandas variadas, manutenção de código e suporte à criação do algoritmo do quadro de Punnett.",
+              "github": "https://www.github.com/dev-moises-lima"
+            },
+            {
+              "name": "Ermeson Ramos",
+              "roles": ["Orientador de Desenvolvimento", "Desenvolvedor"],
+              "description": "Coordenou os desenvolvimentos iniciais e contribuiu com a arquitetura do projeto.",
+              "github": "https://www.github.com/ErmesonRamos"
+            },
+            {
+              "name": "Gabriel Sousa",
+              "roles": ["Tech Lead", "Gestor de Projeto", "Desenvolvedor"],
+              "description": "Gestão de tarefas e desenvolvimento de funcionalidades chave, além de contribuir para a estrutura e escopo do projeto, liderando o desenvolvimento.",
+              "github": "https://www.github.com/Gabriel-Sousa-Dev"
+            },
+            {
+              "name": "Vinicius Gykatah",
+              "roles": ["Desenvolvedor", "Suporte"],
+              "description": "Desenvolvedor responsável pelo suporte técnico e solução de problemas.",
+              "github": "https://www.github.com/Gykatah"
+            },
+            {
+              "name": "Jeferson Bryan",
+              "roles": ["Desenvolvedor"],
+              "description": "Contribuiu com a implementação de páginas de conteúdo e interações.",
+              "github": "https://www.github.com/JefersonBryan"
+            },
+            {
+              "name": "José Venâncio",
+              "roles": ["Desenvolvedor"],
+              "description": "Contribuiu com a implementação de páginas de conteúdo e criação de páginas interativas.",
+              "github": "https://www.github.com/JoseVenancioDev"
+            },
+            {
+              "name": "Thiago Haner",
+              "roles": [],
+              "description": "",
+              "github": "https://www.github.com/ThiagoHaner"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "project": {
+      "title": "Cardápio Web",
+      "year": 2023,
+      "type": "educacional",
+      "intro": {
+        "description": "O Cardápio Web é uma aplicação desenvolvida com React e TypeScript voltada para restaurantes, permitindo a exibição de menus, pedidos e funcionalidades dinâmicas. O projeto demonstra práticas modernas de desenvolvimento frontend com foco em performance, acessibilidade e estrutura modular.",
+        "highlight": "Aplicação moderna para restaurantes com foco em navegação dinâmica e experiência do usuário."
+      },
+      "sections": [
+        {
+          "title": "🍽️ Aplicativo Web para Restaurantes",
+          "date": "2023",
+          "type": "text+image",
+          "link": {
+            "label": "GitHub",
+            "url": "https://github.com/Matheus1415/Cardapio-online"
+          },
+          "content": [
+            "O projeto foi desenvolvido utilizando React como a base para construção da interface, aproveitando sua arquitetura baseada em componentes reutilizáveis que facilitam a manutenção e escalabilidade. A adoção do TypeScript trouxe tipagem estática ao código, aumentando a segurança e a robustez do desenvolvimento. Para garantir uma navegação fluida e sem recarregamentos, utilizamos o React Router DOM, que gerencia as rotas dinamicamente. A usabilidade foi aprimorada com a integração do React Icons, permitindo o uso de ícones customizados e acessíveis. A aplicação também incorpora Normalize.css para assegurar que o estilo seja consistente em diferentes navegadores, enquanto o Web Vitals é utilizado para monitorar o desempenho, possibilitando otimizações focadas na experiência do usuário. Além disso, para manter a qualidade do código, adotamos diversas bibliotecas de testes, como as da Testing Library, garantindo que os componentes funcionem corretamente. A configuração e execução dos scripts de desenvolvimento foram facilitadas pelo React-Scripts, e a biblioteca Classnames foi utilizada para gerenciar de forma dinâmica as classes CSS, tornando o código mais limpo e organizado."
+          ],
+          "image": {
+            "src": "/image/cardapio/aluroni01.png",
+            "alt": "Página Inicial"
+          }
+        },
+        {
+          "title": "Fotos do projeto",
+          "date": "2023",
+          "type": "text+image",
+          "content": [
+            "Página Inicial: Apresenta a tela inicial com os destaques e opções de navegação.",
+            "Página de Cardápio: Aqui os usuários podem explorar diferentes categorias de pratos e filtrar por opções.",
+            "Página de Pedido: Permite ao usuário realizar pedidos e visualizar informações detalhadas sobre os itens escolhidos."
+          ],
+          "image": {
+            "src": "/image/cardapio/aluroni02.png",
+            "alt": "Página de Cardápio"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "project": {
+      "title": "NearbyApp",
+      "year": 2023,
+      "type": "mobile",
+      "intro": {
+        "description": "NearbyApp é um aplicativo mobile que utiliza geolocalização para mostrar estabelecimentos próximos ao usuário. Permite também o escaneamento de QR Codes para resgatar cupons e oferece uma navegação intuitiva entre telas informativas.",
+        "highlight": "Aplicativo mobile com geolocalização, QR Code e navegação fluida usando React Native e Expo."
+      },
+      "sections": [
+        {
+          "title": "Tecnologias Utilizadas no NearbyApp",
+          "date": "2023",
+          "type": "text+image",
+          "link": {
+            "label": "Repositório no GitHub",
+            "url": "https://github.com/Matheus1415/NearbyApp"
+          },
+          "content": [
+            "O aplicativo mobile foi desenvolvido utilizando o React Native, que serve como framework principal para a construção da interface nativa e responsiva. Para facilitar o desenvolvimento e testes, utilizamos o Expo, uma ferramenta que permite executar o app facilmente em dispositivos móveis. Recursos específicos, como o gerenciamento da localização do dispositivo, foram implementados com a biblioteca expo-location, enquanto a interação com a câmera, incluindo a funcionalidade de escanear QR Codes, foi realizada através do expo-camera. A navegação entre as diferentes telas do aplicativo é gerenciada de forma eficiente pelo React Navigation, proporcionando uma experiência fluida ao usuário."
+          ]
+        },
+        {
+          "title": "Capturas de Tela",
+          "date": "2023",
+          "type": "text+image",
+          "content": [
+            "Página Inicial: Exibe a tela inicial com a localização do usuário e estabelecimentos próximos.",
+            "Página de Estabelecimento: Apresenta detalhes e informações adicionais sobre cada estabelecimento.",
+            "Tela de Resgate de Cupons: Permite escanear QR Codes para resgatar descontos."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "project": {
+      "title": "Pomodoro: Lista de Tarefas",
+      "year": 2023,
+      "type": "web",
+      "intro": {
+        "description": "O projeto Pomodoro permite ao usuário organizar seus projetos em ciclos de trabalho com temporizador, registrar o histórico de atividades e gerenciar o status de execução.",
+        "highlight": "Pomodoro com funcionalidades de timer, controle de status de tarefas e histórico completo das atividades realizadas."
+      },
+      "sections": [
+        {
+          "title": "Tecnologias Utilizadas no Pomodoro",
+          "date": "2023",
+          "type": "text+image",
+          "link": {
+            "label": "Repositório no GitHub",
+            "url": "https://github.com/Matheus1415/Pomodoro"
+          },
+          "content": [
+            "Timer para Projetos: Adicione projetos e defina um tempo para trabalhar neles. Controle o progresso dos projetos com um timer dinâmico.",
+            "Estados dos Projetos: Em andamento, Concluído e Interrompido.",
+            "Página de Histórico: Consulte a lista de projetos concluídos ou interrompidos com detalhes sobre a duração e status final."
+          ],
+          "image": {
+            "src": "/image/ignite-timer/home.png",
+            "alt": "Tela inicial do Pomodoro"
+          }
+        },
+        {
+          "title": "Capturas de Tela",
+          "date": "2023",
+          "type": "text+image",
+          "content": [
+            "Página Inicial: Apresenta a tela inicial para adicionar tarefas e exibir o cronômetro.",
+            "Histórico de atividades: Lista com nome dos projetos, duração e status final."
+          ],
+          "image": {
+            "src": "/image/ignite-timer/history.png",
+            "alt": "Histórico de tarefas do Pomodoro"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "project": {
+      "title": "DevStage: compartilhar um link personalizado",
+      "year": 2025,
+      "type": "web",
+      "intro": {
+        "description": "Projeto DevStage que permite compartilhar links personalizados para eventos, acompanhar convites e incentivar a participação com prêmios.",
+        "highlight": "Compartilhe links personalizados para eventos, acompanhe amigos convidados e incentive a participação."
+      },
+      "sections": [
+        {
+          "title": "Página Inicial",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Apresenta os principais destaques do evento.",
+            "Formulário de cadastro rápido para participação.",
+            "Informações sobre palestras, workshops e prêmios."
+          ]
+        },
+        {
+          "title": "Página de Convite",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Geração de um link personalizado para compartilhamento.",
+            "Acompanhamento do número de amigos convidados.",
+            "Incentivo à participação por meio de prêmios exclusivos."
+          ]
+        },
+        {
+          "title": "Fotos do projeto",
+          "date": "2025",
+          "type": "text+image",
+          "content": [
+            "Página Inicial : Destaques de informações e cadastro para o evento",
+            "Página de convite : Gerar um link para convite de novos usuários para o evento."
+          ],
+          "image": {
+            "src": "/image/devStage/home.png",
+            "alt": "Home"
+          }
+        },
+        {
+          "title": "Fotos do projeto",
+          "date": "2025",
+          "type": "text+image",
+          "content": [
+            "Página de convite : Gerar um link para convite de novos usuários para o evento."
+          ],
+          "image": {
+            "src": "/image/devStage/invite.png",
+            "alt": "Página de Convite"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "project": {
+      "title": "Comodoro: Lista de Tarefas",
+      "year": 2023,
+      "type": "web",
+      "intro": {
+        "description": "Projeto Comodoro, um cronômetro com lista de tarefas que integra controle de tempo e gerenciamento de tarefas usando tecnologias modernas.",
+        "highlight": "Cronômetro integrado a lista de tarefas com funcionalidades completas para produtividade."
+      },
+      "sections": [
+        {
+          "title": "Tecnologias Utilizadas",
+          "date": "2023",
+          "type": "text",
+          "content": [
+            "HTML: Estrutura e conteúdo da página, incluindo os elementos necessários para o cronômetro e a lista de tarefas.",
+            "CSS: Estilização da página para uma melhor experiência do usuário.",
+            "JavaScript: Responsável pela lógica de controle do cronômetro e manipulação da lista de tarefas.",
+            "TypeScript: Superset do JavaScript, trazendo tipagem estática para melhorar a manutenção do código.",
+            "Live Server: Servidor local para visualização em tempo real enquanto desenvolve."
+          ]
+        },
+        {
+          "title": "Comodoro Web",
+          "date": "2023",
+          "type": "text+image",
+          "content": [
+            "Página Inicial: Apresenta a tela inicial com as tarefas e o cronômetro."
+          ],
+          "image": {
+            "src": "/image/pomodoro/pomodoro01.png",
+            "alt": "Home"
+          }
+        },
+        {
+          "title": "Comodoro Web",
+          "date": "2023",
+          "type": "text+image",
+          "content": [
+            "Mostra como o cronômetro interage com as tarefas, marcando-as como concluídas quando o tempo acabar.",
+            "Aqui o usuário pode adicionar novas tarefas e ver o tempo de execução de cada uma delas."
+          ],
+          "image": {
+            "src": "/image/pomodoro/pomodoro02.png",
+            "alt": "Página de Tarefas"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "project": {
+      "title": "TechInnovationHub: Conectando Inovações",
+      "year": 2025,
+      "type": "web",
+      "intro": {
+        "description": "Plataforma para conectar startups e investidores com autenticação segura e gestão completa.",
+        "highlight": "Sistema robusto com controle de usuários, startups e propostas de investimento."
+      },
+      "sections": [
+        {
+          "title": "Tecnologias Utilizadas",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Autenticação: Utiliza o Laravel Sanctum para autenticar usuários e gerar tokens de acesso, permitindo interações seguras com a API.",
+            "Controle de Usuários: A API gerencia as operações CRUD para usuários, permitindo a criação, atualização, listagem e exclusão de usuários com diferentes tipos: Comum, Investidor, Startup e Admin.",
+            "Startups: Permite a criação e o gerenciamento de informações sobre startups, incluindo dados como tecnologias, tempo disponível e tags associadas.",
+            "Propostas de Investimento: A API permite a criação, visualização, atualização e exclusão de propostas de investimento, associando investidores e startups para potencial colaboração."
+          ],
+          "link": {
+            "label": "GitHub",
+            "url": "https://github.com/Matheus1415/TechInnovationHub"
+          }
+        },
+        {
+          "title": "Funcionalidades Principais",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Cadastro e autenticação segura de usuários com diferentes perfis.",
+            "Gerenciamento detalhado de startups com perfis completos e categorização por tecnologia.",
+            "Sistema para investidores criarem, gerenciarem e acompanharem propostas de investimento.",
+            "Dashboard personalizado para acompanhamento em tempo real das interações entre startups e investidores."
+          ]
+        },
+        {
+          "title": "Desafios Enfrentados",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Implementação de segurança robusta para autenticação via tokens com Laravel Sanctum.",
+            "Estruturação eficiente da API para suportar múltiplos tipos de usuários e permissões distintas.",
+            "Otimização das consultas e gestão dos relacionamentos complexos entre startups, investidores e propostas.",
+            "Garantia de escalabilidade para suportar aumento contínuo de usuários e dados."
+          ]
+        },
+        {
+          "title": "Metodologias Utilizadas",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Desenvolvimento ágil com sprints semanais para entrega contínua de funcionalidades.",
+            "Testes automatizados para garantir a qualidade e a estabilidade da API.",
+            "Versionamento via GitHub para controle de código e colaboração entre equipe.",
+            "Documentação detalhada para facilitar a manutenção e futuras expansões."
+          ]
+        },
+        {
+          "title": "Futuro do Projeto",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Adicionar funcionalidades de matchmaking automatizado entre investidores e startups baseado em IA.",
+            "Expandir integração com outras plataformas financeiras e de gestão de investimentos.",
+            "Implementar notificações em tempo real e sistema de mensagens internas.",
+            "Criar um módulo de análises e relatórios personalizados para investidores."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "project": {
+      "title": "Smart Telecom: Desenvolvimento Full-Stack em Estágio",
+      "year": 2024,
+      "type": "estágio",
+      "intro": {
+        "description": "Estágio como desenvolvedor full-stack focado em desenvolvimento, segurança e banco de dados.",
+        "highlight": "Contribuições em CRUD, segurança, manipulação de documentos e modelagem de banco de dados."
+      },
+      "sections": [
+        {
+          "title": "Principais Contribuições",
+          "date": "2024",
+          "type": "text",
+          "content": [
+            "Desenvolvi e otimizei CRUDs completos para gerenciar informações de forma eficiente.",
+            "Garanti a segurança das informações aplicando validações rigorosas e políticas de acesso.",
+            "Automatizei a criação e manipulação de documentos dentro do sistema.",
+            "Modelei e otimizei o banco de dados utilizando migrations e seeders no Laravel.",
+            "Implementei sistemas dinâmicos gerenciados por ciclos e períodos específicos."
+          ],
+          "link": {
+            "label": "Site Oficial Smart Telecom",
+            "url": "https://smarttelecom.eng.br/"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "project": {
+      "title": "LmsMedischool",
+      "year": 2025,
+      "type": "freelance",
+      "intro": {
+        "description": "Freelancer full-stack em equipe para aprimorar e expandir funcionalidades da plataforma LmsMedischool, colaborando com desenvolvedores experientes.",
+        "highlight": "Foco em gerenciamento de cursos, integração de pagamentos, criação de tema e banco de questões."
+      },
+      "sections": [
+        {
+          "title": "Principais Contribuições e Experiências",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Gerenciamento de Atividades e Cursos: desenvolvimento backend com PHP para adicionar, editar e corrigir atividades.",
+            "Integração com API de Pagamento: suporte a boleto, cartão de crédito e Pix, garantindo segurança nas transações.",
+            "Criação de Novo Tema: desenvolvimento de layout responsivo e personalizado para a plataforma.",
+            "Banco de Questões: modelagem e otimização de consultas SQL para gerenciamento eficiente dos dados."
+          ]
+        },
+        {
+          "title": "Hard Skills Desenvolvidas",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "PHP: desenvolvimento backend e funcionalidades complexas.",
+            "Integração de APIs: comunicação e automação entre sistemas.",
+            "Banco de Dados: modelagem, otimização de consultas e gerenciamento.",
+            "UX/UI Design: personalização e criação de interfaces responsivas.",
+            "Segurança e Pagamentos: implementação de sistemas seguros."
+          ]
+        },
+        {
+          "title": "Soft Skills Desenvolvidas",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Trabalho em equipe: colaboração eficiente com outros desenvolvedores.",
+            "Resolução de problemas: capacidade de lidar com desafios técnicos complexos.",
+            "Comunicação: troca de ideias e alinhamento de expectativas.",
+            "Adaptabilidade: rápida aprendizagem e aplicação de novas tecnologias.",
+            "Gestão do tempo: organização para cumprir prazos e metas."
+          ]
+        },
+        {
+          "title": "Resumo",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Projeto enriquecedor para evolução técnica em PHP, integrações API, banco de dados e full-stack.",
+            "Fortaleceu habilidades de trabalho em equipe, resolução de problemas e entrega de soluções escaláveis."
+          ]
+        }
+      ],
+      "images": [
+        {
+          "alt": "Home",
+          "src": "/image/lms/home.png"
+        },
+        {
+          "alt": "Página de cursos",
+          "src": "/image/lms/cursos.png"
+        }
+      ],
+      "links": {
+        "linkedin": "https://www.linkedin.com/company/tech-north-solucoes/"
+      }
+    }
   }
 ]

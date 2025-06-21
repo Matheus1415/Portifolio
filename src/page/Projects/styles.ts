@@ -58,7 +58,7 @@ export const CardFront = styled.div`
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  background-color:rgb(29, 0, 50);
+  background-color: rgb(29, 0, 50);
   border-radius: 12px;
   overflow: hidden;
 `;
@@ -68,7 +68,7 @@ export const CardBack = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color:rgb(43, 21, 82);
+  background-color: rgb(43, 21, 82);
   color: #fff;
   border-radius: 12px;
   padding: 1.5rem;
@@ -79,7 +79,7 @@ export const CardBack = styled.div`
 
   h3 {
     font-size: 1.3rem;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
   }
 
   p {
@@ -191,7 +191,7 @@ export const Column = styled.div`
 `;
 
 export const SectionTitle = styled.h3`
-  color:rgb(143, 65, 192);
+  color: rgb(143, 65, 192);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 `;
@@ -234,5 +234,66 @@ export const CloseButton = styled.button`
   color: #fff;
   cursor: pointer;
   margin-bottom: 1rem;
+`;
+
+export const SectionBlock = styled.div`
+  background-color: #161b22;
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid #30363d;
+`;
+
+export const ImagePlaceholder = styled.div`
+  background-color: #0d1117;
+  border: 1px dashed #6a4f9a;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #8b949e;
+  font-style: italic;
+  text-align: center;
+`;
+
+export const AuthorsList = styled.ul`
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+`;
+
+export const AuthorItem = styled.li`
+  margin-bottom: 0.75rem;
+  color: #cdd9e5;
+`;
+
+export const AuthorName = styled.strong`
+  font-size: 1.1rem;
+  color: #e1e8ff;
+`;
+
+export const GithubLink = styled.a`
+  color: #8ab4f8;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #5c81f9;
+    text-decoration: underline;
+  }
+`;
+
+export const Roles = styled.div`
+  font-size: 0.95rem;
+  color: #aab9d6;
+  margin-top: 0.15rem;
+`;
+
+export const Description = styled.div`
+  font-style: italic;
+  font-size: 0.9em;
+  color: #8f9fc0;
+  margin-top: 0.25rem;
+  line-height: 1.3;
 `;
 

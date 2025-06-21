@@ -15,9 +15,18 @@ import {
   LinkButton,
   Column,
   ModalContent,
+  SectionBlock,
+  ImagePlaceholder,
+  Description,
+  Roles,
+  GithubLink,
+  AuthorName,
+  AuthorItem,
+  AuthorsList,
 } from "./styles";
 import { FaLaravel, FaPhp, FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
+import fullprojects from "../../data/fullProjects.json";
 
 type Project = {
   id: number;
@@ -103,6 +112,45 @@ const projects: Project[] = [
   },
 ];
 
+export type ProjectType = {
+  id: number;
+  project: {
+    title: string;
+    year: number;
+    type: string;
+    intro: {
+      description: string;
+      highlight: string;
+    };
+    sections: SectionType[];
+  };
+};
+
+export type SectionType = {
+  title: string;
+  date: string;
+  type: string;
+  link?: {
+    label: string;
+    url: string;
+  };
+  content?: string[];
+  image?: {
+    src: string;
+    alt: string;
+  };
+  download?: {
+    label: string;
+    file: string;
+  };
+  authors?: {
+    name: string;
+    github?: string;
+    roles: string[];
+    description: string;
+  }[];
+};
+
 export function Projects() {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -114,6 +162,10 @@ export function Projects() {
   };
 
   const isFlipped = (id: number) => flippedCards.includes(id);
+
+  const fullProjectSelected = fullprojects.find(
+    (p: ProjectType) => p.id === selectedProject?.id
+  );
 
   return (
     <>
@@ -152,103 +204,102 @@ export function Projects() {
         ))}
       </ProjectsContainer>
 
-      {selectedProject && (
+      {fullProjectSelected && (
         <FullscreenModal
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <CloseButton onClick={() => setSelectedProject(null)}>×</CloseButton>
-          <h2>{selectedProject.title || "Projeto Mendel"}</h2>
 
           <ModalContent>
             <Column>
-              <SectionTitle>Apresentação</SectionTitle>
-              <SectionText>
-                Este projeto Mendel é uma plataforma educativa focada em
-                genética, desenvolvida para melhorar o aprendizado de estudantes
-                do ensino médio com recursos interativos.
-              </SectionText>
-              <SectionTitle>Apresentação</SectionTitle>
-              <SectionText>
-                Este projeto Mendel é uma plataforma educativa focada em
-                genética, desenvolvida para melhorar o aprendizado de estudantes
-                do ensino médio com recursos interativos.
-              </SectionText>
-              <SectionTitle>Apresentação</SectionTitle>
-              <SectionText>
-                Este projeto Mendel é uma plataforma educativa focada em
-                genética, desenvolvida para melhorar o aprendizado de estudantes
-                do ensino médio com recursos interativos.
-              </SectionText>
-              <SectionTitle>Apresentação</SectionTitle>
-              <SectionText>
-                Este projeto Mendel é uma plataforma educativa focada em
-                genética, desenvolvida para melhorar o aprendizado de estudantes
-                do ensino médio com recursos interativos.
-              </SectionText>
-              <SectionTitle>Apresentação</SectionTitle>
-              <SectionText>
-                Este projeto Mendel é uma plataforma educativa focada em
-                genética, desenvolvida para melhorar o aprendizado de estudantes
-                do ensino médio com recursos interativos.
-              </SectionText>
-              <SectionTitle>Apresentação</SectionTitle>
-              <SectionText>
-                Este projeto Mendel é uma plataforma educativa focada em
-                genética, desenvolvida para melhorar o aprendizado de estudantes
-                do ensino médio com recursos interativos.
-              </SectionText>
+              <SectionBlock>
+                <SectionTitle>
+                  {fullProjectSelected.project.title} (
+                  {fullProjectSelected.project.year})
+                </SectionTitle>
+                <SectionText>
+                  {fullProjectSelected.project.intro.description}
+                </SectionText>
+                <SectionText
+                  style={{ fontWeight: "bold", marginTop: "0.5rem" }}
+                >
+                  {fullProjectSelected.project.intro.highlight}
+                </SectionText>
+              </SectionBlock>
 
-              <SectionTitle>Membros que trabalharam</SectionTitle>
-              <SectionText>
-                Ana Silva, João Pereira, Carla Souza, Roberto Lima
-              </SectionText>
+              {fullProjectSelected.project.sections.map(
+                (section: SectionType, index: number) => (
+                  <SectionBlock key={index}>
+                    <SectionTitle>{section.title}</SectionTitle>
 
-              <SectionTitle>Imagens</SectionTitle>
-              <SectionText>
-                [Aqui serão exibidas imagens futuras relacionadas ao projeto]
-              </SectionText>
+                    {section.content?.map((text, i) => (
+                      <SectionText key={i}>{text}</SectionText>
+                    ))}
 
-              <SectionTitle>Histórico</SectionTitle>
-              <SectionText>
-                O desenvolvimento iniciou-se em 2023 com foco em inovação
-                educacional para o Ceará, integrando várias tecnologias para
-                acessibilidade e design moderno.
-              </SectionText>
-            </Column>
+                    {section.image && (
+                      <img
+                        src={section.image.src}
+                        alt={section.image.alt}
+                        style={{
+                          maxWidth: "100%",
+                          marginTop: "1rem",
+                          borderRadius: "8px",
+                        }}
+                      />
+                    )}
 
-            <Column>
-              <SectionTitle>Repositório</SectionTitle>
-              <LinkButton
-                href="https://github.com/usuario/projeto-mendel"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Abrir no GitHub
-              </LinkButton>
+                    {section.link && (
+                      <LinkButton
+                        href={section.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ marginTop: "0.5rem", display: "inline-block" }}
+                      >
+                        {section.link.label}
+                      </LinkButton>
+                    )}
 
-              <SectionTitle>Tutorial</SectionTitle>
-              <LinkButton
-                href="https://github.com/usuario/projeto-mendel/wiki/Tutorial"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ver tutorial no GitHub
-              </LinkButton>
+                    {section.download && (
+                      <LinkButton
+                        href={section.download.file}
+                        download
+                        style={{ marginTop: "0.5rem", display: "inline-block" }}
+                      >
+                        {section.download.label}
+                      </LinkButton>
+                    )}
 
-              <SectionTitle>Tecnologias utilizadas</SectionTitle>
-              <SectionText>
-                React, Chakra UI, Vite, GitHub, VLibras, Excalidraw, Chart.js,
-                Figma
-              </SectionText>
-
-              <SectionTitle>Outras Informações</SectionTitle>
-              <SectionText>
-                O projeto conta com foco em acessibilidade, design responsivo e
-                integração com ferramentas colaborativas para garantir a melhor
-                experiência de aprendizado.
-              </SectionText>
+                    {Array.isArray(section.authors) &&
+                      section.authors.length > 0 && (
+                        <AuthorsList>
+                          {section.authors.map((author, idx) => (
+                            <AuthorItem key={idx}>
+                              <AuthorName>{author.name}</AuthorName>
+                              {author.github && (
+                                <>
+                                  {" – "}
+                                  <GithubLink
+                                    href={author.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    GitHub
+                                  </GithubLink>
+                                </>
+                              )}
+                              <Roles>{author.roles.join(", ")}</Roles>
+                              {author.description && (
+                                <Description>{author.description}</Description>
+                              )}
+                            </AuthorItem>
+                          ))}
+                        </AuthorsList>
+                      )}
+                  </SectionBlock>
+                )
+              )}
             </Column>
           </ModalContent>
         </FullscreenModal>
