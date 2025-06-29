@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const TechnologiesContainer = styled.section`
   width: 100%;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 0 4rem;
   text-align: left;
   display: flex;
   flex-direction: column;
