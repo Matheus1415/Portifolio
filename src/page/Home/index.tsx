@@ -1,5 +1,6 @@
 import { About } from "./components/About";
 import { Presentation } from "./components/Presentation";
+import { Projects } from "./components/Projects";
 import { Services } from "./components/Services";
 import { Technologies } from "./components/Technologies";
 import { Trajectory } from "./components/Trajectory";
@@ -13,6 +14,7 @@ export function Home() {
       <Technologies/>
       <Trajectory/>
       <About/>
+      <Projects/>
     </HomeContainer>
   );
 }

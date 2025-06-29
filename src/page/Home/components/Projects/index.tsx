@@ -1,62 +1,122 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import {
+  Container,
+  Content,
+  MainDescription,
+  MainImage,
+  MainProject,
+  ProjectItem,
+  ProjectMeta,
+  ProjectTitle,
+  Sidebar,
+  Thumbnail,
+} from "./styles";
 
 const projectsData = [
   {
     id: 1,
-    title: "Projeto Alpha",
-    description:
-      "Projeto Alpha é uma solução completa para gestão empresarial, focando em eficiência e automação de processos.",
-    imageLarge: "/images/projeto-alpha-large.png",
-    imageThumb: "/images/projeto-alpha-thumb.png",
+    title: "Mendel",
+    description: "App educativo criado para o Ceará Científico 2024.",
+    imageLarge: "/bg/bg-mendel.png",
+    imageThumb: "/bg/bg-mendel.png",
+    technology: "React",
+    date: 2024,
   },
   {
     id: 2,
-    title: "Projeto Beta",
-    description:
-      "Projeto Beta é uma plataforma interativa para educação online, que oferece recursos inovadores para aprendizado personalizado.",
-    imageLarge: "/images/projeto-beta-large.png",
-    imageThumb: "/images/projeto-beta-thumb.png",
+    title: "Cardápio online",
+    description: "Visualize e filtre pratos em um cardápio digital.",
+    imageLarge: "/bg/bg-restaurant.png",
+    imageThumb: "/bg/bg-restaurant.png",
+    technology: "React",
+    date: 2022,
   },
   {
     id: 3,
-    title: "Projeto Gamma",
-    description:
-      "Projeto Gamma consiste em um app móvel para controle financeiro pessoal com design intuitivo e análise inteligente.",
-    imageLarge: "/images/projeto-gamma-large.png",
-    imageThumb: "/images/projeto-gamma-thumb.png",
+    title: "NearByApp",
+    description: "Explore locais próximos e resgate cupons via QR Code.",
+    imageLarge: "/bg/bg-nearbyapp.png",
+    imageThumb: "/bg/bg-nearbyapp.png",
+    technology: "React",
+    date: 2023,
+  },
+  {
+    id: 4,
+    title: "Timer Ignite",
+    description: "Gerencie seu tempo com foco e produtividade.",
+    imageLarge: "/bg/bg-ignite-timer.png",
+    imageThumb: "/bg/bg-ignite-timer.png",
+    technology: "React",
+    date: 2024,
+  },
+  {
+    id: 5,
+    title: "DevStage",
+    description: "Evento online para desenvolvedores de todo o Brasil.",
+    imageLarge: "/bg/bg-devstage.png",
+    imageThumb: "/bg/bg-devstage.png",
+    technology: "React",
+    date: 2024,
+  },
+  {
+    id: 6,
+    title: "Pomodoro",
+    description: "App com tarefas e cronômetro Pomodoro.",
+    imageLarge: "/bg/bg-comodoro.png",
+    imageThumb: "/bg/bg-comodoro.png",
+    technology: "TypeScript",
+    date: 2023,
+  },
+  {
+    id: 7,
+    title: "TechInnovationHub",
+    description: "API em Laravel para gerenciar startups e investidores.",
+    imageLarge: "/bg/bg-techinnovation.png",
+    imageThumb: "/bg/bg-techinnovation.png",
+    technology: "Laravel",
+    date: 2024,
+  },
+  {
+    id: 8,
+    title: "Smart Telecom",
+    description: "Projetos com Laravel durante estágio profissional.",
+    imageLarge: "/bg/bg-smart.png",
+    imageThumb: "/bg/bg-smart.png",
+    technology: "Laravel",
+    date: 2024,
+  },
+  {
+    id: 9,
+    title: "Lms-medischool",
+    description: "Melhorias e novas funções em plataforma educacional.",
+    imageLarge: "/bg/bg-lms.png",
+    imageThumb: "/bg/bg-lms.png",
+    technology: "php",
+    date: 2024,
+  },
+  {
+    id: 10,
+    title: "Files System",
+    description: "Aplicação Laravel para gerenciar arquivos e pastas.",
+    imageLarge: "/bg/bg-filessystem.png",
+    imageThumb: "/bg/bg-filessystem.png",
+    technology: "Laravel",
+    date: 2025,
   },
 ];
 
 export function Projects() {
-  const [selectedProjectId, setSelectedProjectId] = useState(projectsData[0].id);
+  const [selectedProjectId, setSelectedProjectId] = useState(
+    projectsData[0].id
+  );
+
   const selectedProject = projectsData.find(
     (project) => project.id === selectedProjectId
   );
 
   return (
     <Container>
-      <Description>
-        <h2>Meus Projetos</h2>
-        <p>
-          Aqui você encontra uma seleção dos meus principais trabalhos, desenvolvidos com foco em inovação, usabilidade e eficiência técnica. Cada projeto traz desafios únicos e soluções criativas que refletem minha paixão pela tecnologia.
-        </p>
-      </Description>
-
       <Content>
-        <Sidebar>
-          {projectsData.map((project) => (
-            <ProjectItem
-              key={project.id}
-              active={project.id === selectedProjectId}
-              onClick={() => setSelectedProjectId(project.id)}
-            >
-              <Thumbnail src={project.imageThumb} alt={project.title} />
-              <ProjectTitle>{project.title}</ProjectTitle>
-            </ProjectItem>
-          ))}
-        </Sidebar>
-
         <MainProject>
           <MainImage
             src={selectedProject?.imageLarge}
@@ -68,6 +128,22 @@ export function Projects() {
             <p>{selectedProject?.description}</p>
           </MainDescription>
         </MainProject>
+
+        <Sidebar>
+          {projectsData.map((project) => (
+            <ProjectItem
+              key={project.id}
+              active={project.id === selectedProjectId}
+              onClick={() => setSelectedProjectId(project.id)}
+            >
+              <Thumbnail src={project.imageThumb} alt={project.title} />
+              <div>
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectMeta>{project.date}</ProjectMeta>
+              </div>
+            </ProjectItem>
+          ))}
+        </Sidebar>
       </Content>
     </Container>
   );
