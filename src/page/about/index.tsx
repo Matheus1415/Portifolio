@@ -22,11 +22,12 @@ import {
   CardBody,
   SocialIcon,
   TechList,
+  MainContainer,
+  TestimonialsList,
 } from "./styles";
 import { SiMysql, SiStyledcomponents, SiTypescript } from "react-icons/si";
 import testimonials from "../../data/testimonials.json";
 import { useEffect, useRef, useState } from "react";
-import { Reorder } from "framer-motion";
 
 export function About() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -67,79 +68,63 @@ export function About() {
     }
   }, [techs.length]);
 
-  const [items, setItems] = useState(testimonials);
-
   return (
-    <AboutContainer>
-      <LeftSection>
-        <SectionTitle>Sobre Mim</SectionTitle>
-        <Paragraph>
-          Meu nome é Matheus, e sou um desenvolvedor apaixonado por tecnologia,
-          inovação e a criação de soluções que conectem pessoas e otimizem
-          processos. Desde que comecei minha jornada no mundo do
-          desenvolvimento, venho explorando diferentes áreas, incluindo
-          Front-End, Back-End e o meu desenvolvimento interpessoal.
-        </Paragraph>
-        <Paragraph>
-          Ao longo da minha trajetória, adquiri experiência em ferramentas e
-          tecnologias como React, TypeScript, Laravel, MySQL, entre outras. Além
-          disso, tenho um forte compromisso em sempre aprender, evoluir e
-          colaborar em projetos que fazem a diferença na vida das pessoas.
-        </Paragraph>
-        <Paragraph>
-          Quando não estou codificando, gosto de explorar novas metodologias, me
-          engajar em projetos desafiadores e compartilhar conhecimento com a
-          comunidade. Acredito que a combinação de dedicação e curiosidade é a
-          chave para o sucesso no mundo da tecnologia.
-        </Paragraph>
-
-        <SectionTitle>Tecnologias</SectionTitle>
-        <TechScrollWrapper ref={wrapperRef}>
-          <TechList>
-            {techs.map((tech, index) => (
-              <TechItem
-                key={tech.name}
-                bgColor={colors[index % colors.length]}
-                drag="x"
-                dragConstraints={constraints}
-                dragElastic={0.15}
-                onDragStart={() => setDraggingIndex(index)}
-                onDragEnd={() => setDraggingIndex(null)}
-                style={{
-                  filter:
-                    draggingIndex === index
-                      ? "brightness(1.3)"
-                      : "brightness(1)",
-                  cursor: draggingIndex === index ? "grabbing" : "grab",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {tech.icon}
-                <span>{tech.name}</span>
-              </TechItem>
-            ))}
-          </TechList>
-        </TechScrollWrapper>
-      </LeftSection>
-
-      <RightSection>
-        <SectionTitle>O que dizem sobre mim</SectionTitle>
-        <Reorder.Group
-          axis="y"
-          values={items}
-          onReorder={setItems}
-          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-        >
-          {items.map((item, index) => (
-            <Reorder.Item
-              key={item.username + index}
-              value={item}
-              layout 
-              transition={{ duration: 0.3, ease: "easeInOut" }} 
-              style={{ listStyle: "none" }}
-              whileDrag={{ scale: 1.02 }}
-            >
-              <TestimonialCard>
+    <MainContainer>
+      <AboutContainer>
+        <LeftSection>
+          <SectionTitle>Sobre Mim</SectionTitle>
+          <Paragraph>
+            Meu nome é Matheus, e sou um desenvolvedor apaixonado por tecnologia,
+            inovação e a criação de soluções que conectem pessoas e otimizem
+            processos. Desde que comecei minha jornada no mundo do
+            desenvolvimento, venho explorando diferentes áreas, incluindo
+            Front-End, Back-End e o meu desenvolvimento interpessoal.
+          </Paragraph>
+          <Paragraph>
+            Ao longo da minha trajetória, adquiri experiência em ferramentas e
+            tecnologias como React, TypeScript, Laravel, MySQL, entre outras. Além
+            disso, tenho um forte compromisso em sempre aprender, evoluir e
+            colaborar em projetos que fazem a diferença na vida das pessoas.
+          </Paragraph>
+          <Paragraph>
+            Quando não estou codificando, gosto de explorar novas metodologias, me
+            engajar em projetos desafiadores e compartilhar conhecimento com a
+            comunidade. Acredito que a combinação de dedicação e curiosidade é a
+            chave para o sucesso no mundo da tecnologia.
+          </Paragraph>
+          <SectionTitle>Tecnologias</SectionTitle>
+          <TechScrollWrapper ref={wrapperRef}>
+            <TechList ref={contentRef}>
+              {techs.map((tech, index) => (
+                <TechItem
+                  key={tech.name}
+                  bgColor={colors[index % colors.length]}
+                  drag="x"
+                  dragConstraints={constraints}
+                  dragElastic={0.15}
+                  onDragStart={() => setDraggingIndex(index)}
+                  onDragEnd={() => setDraggingIndex(null)}
+                  style={{
+                    filter:
+                      draggingIndex === index
+                        ? "brightness(1.3)"
+                        : "brightness(1)",
+                    cursor: draggingIndex === index ? "grabbing" : "grab",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {tech.icon}
+                  <span>{tech.name}</span>
+                </TechItem>
+              ))}
+            </TechList>
+          </TechScrollWrapper>
+        </LeftSection>
+        <RightSection>
+          <SectionTitle>O que dizem sobre mim</SectionTitle>
+          <TestimonialsList>
+            {testimonials.map((item, index) => (
+              <TestimonialCard key={item.username + index}>
                 <CardHeader>
                   <div className="user-info">
                     <FaUserCircle size={40} className="user-icon" />
@@ -166,10 +151,10 @@ export function About() {
                   <p>{item.message}</p>
                 </CardBody>
               </TestimonialCard>
-            </Reorder.Item>
-          ))}
-        </Reorder.Group>
-      </RightSection>
-    </AboutContainer>
+            ))}
+          </TestimonialsList>
+        </RightSection>
+      </AboutContainer>
+    </MainContainer>
   );
 }

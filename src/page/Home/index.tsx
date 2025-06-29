@@ -20,54 +20,7 @@ import {
   FaFileAlt,
 } from "react-icons/fa";
 import { BackgroundBubbles } from "../../components/BackgroundBubbles";
-
-const animation = {
-  scale: [1, 1.8, 1.8, 1, 1],
-  rotate: [0, 0, 180, 180, 0],
-  borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-  transition: {
-    duration: 2,
-    ease: "easeInOut",
-    times: [0, 0.2, 0.5, 0.8, 1],
-    repeat: Infinity,
-    repeatDelay: 1,
-  },
-};
-
-const LoadingScreen = () => (
-  <Overlay>
-    <motion.div
-      animate={animation}
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
-      style={{
-        width: 70,
-        height: 70,
-        backgroundColor: "white",
-        marginRight: "40px",
-      }}
-    />
-    <motion.div
-      animate={animation}
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
-      style={{
-        width: 70,
-        height: 70,
-        backgroundColor: "white",
-        marginRight: "40px",
-      }}
-    />
-    <motion.div
-      animate={animation}
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
-      style={{
-        width: 70,
-        height: 70,
-        backgroundColor: "white",
-        marginRight: "40px",
-      }}
-    />
-  </Overlay>
-);
+import LoadingScreen from "../../animation/LoadingScreen";
 
 export function Home() {
   const [loading, setLoading] = useState(true);

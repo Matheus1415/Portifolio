@@ -29,7 +29,10 @@ export const ProjectsContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 1.5rem;
+    padding: 1rem;
+    max-height: none;
+    height: 100vh;
+    overflow-y: auto;
   }
 `;
 
@@ -44,11 +47,16 @@ export const ProjectCard = styled.div`
 export const CardInner = styled(motion.div)`
   width: 100%;
   max-width: 600px;
-  height: 230px;
+  min-height: 230px;
   display: flex;
   flex-direction: column;
   position: relative;
   transform-style: preserve-3d;
+
+  @media (max-width: 768px) {
+    min-height: 270px;
+    background-color: transparent;
+  }
 `;
 
 export const CardFront = styled.div`
@@ -61,6 +69,10 @@ export const CardFront = styled.div`
   background-color: rgb(29, 0, 50);
   border-radius: 12px;
   overflow: hidden;
+  @media (max-width: 768px) {
+    min-height: 270px;
+    background-color: transparent;
+  }
 `;
 
 export const CardBack = styled.div`
@@ -87,6 +99,19 @@ export const CardBack = styled.div`
     margin: 1rem 0;
     flex-grow: 1;
   }
+
+  @media (max-width: 768px) {
+    background-color: transparent;
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
+  }
 `;
 
 export const ProjectImage = styled.img`
@@ -96,6 +121,12 @@ export const ProjectImage = styled.img`
   background-size: cover;
   object-fit: cover;
   border-radius: 12px;
+
+  @media (max-width: 768px) {
+    background-position: right center;
+    background-size: contain;
+    object-fit: contain;
+  }
 `;
 
 export const TechnologyTag = styled.span<{ technology: string }>`
@@ -181,6 +212,12 @@ export const ModalContent = styled.div`
     border: 2px solid transparent;
     background-clip: content-box;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 0;
+  }
 `;
 
 export const Column = styled.div`
@@ -188,6 +225,10 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const SectionTitle = styled.h3`
@@ -296,4 +337,3 @@ export const Description = styled.div`
   margin-top: 0.25rem;
   line-height: 1.3;
 `;
-

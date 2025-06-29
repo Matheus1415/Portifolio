@@ -1,58 +1,99 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+export const MainContainer = styled.main`
+  overflow-x: hidden;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 700px;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 12px;
+    justify-content: center;
+    max-height: 100vh;
+  }
+`;
 
 export const AboutContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   min-height: 100vh;
-  padding: 2rem;
   gap: 2rem;
+  padding: 2rem 1rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 1.5rem;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    overflow-y: auto;
+
+    /* Scrollbar personalizada */
+    scrollbar-width: thin;
+    scrollbar-color: #6a4f9a transparent;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #6a4f9a;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
   }
 `;
 
 export const LeftSection = styled.div`
   flex: 1;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const RightSection = styled.div`
   flex: 1;
-  padding: 1rem;
-  max-height: 800px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 
-  &::-webkit-scrollbar {
-    width: 8px;
+  @media (max-width: 768px) {
+    width: 100%;
   }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(124, 58, 237, 0.5);
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  scrollbar-width: thin;
-  scrollbar-color: rgba(124, 58, 237, 0.5) transparent;
 `;
 
 export const SectionTitle = styled.h2`
   font-size: 1.6rem;
   color: #c084fc;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const Paragraph = styled.p`
   color: rgb(255, 255, 255);
   line-height: 1.6;
   margin-bottom: 2rem;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
 `;
 
 export const TechList = styled(motion.div)`
@@ -93,9 +134,14 @@ export const TechItem = styled(motion.div)<{ bgColor?: string }>`
   &:hover {
     transform: translateY(-2px);
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
 `;
 
-export const TestimonialCard = styled(motion.div)`
+export const TestimonialCard = styled.div`
   max-width: 700px;
   background-color: #13131f;
   color: white;
@@ -104,6 +150,11 @@ export const TestimonialCard = styled(motion.div)`
   margin-bottom: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    max-width: 100%;
+  }
 `;
 
 export const CardHeader = styled.div`
@@ -131,6 +182,12 @@ export const CardHeader = styled.div`
       font-size: 0.875rem;
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 `;
 
 export const SocialIcon = styled.div`
@@ -147,4 +204,32 @@ export const CardBody = styled.div`
   font-size: 0.95rem;
   line-height: 1.6;
   color: #e0e0ff;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
+`;
+
+export const TestimonialsList = styled.div`
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+
+  scrollbar-width: thin;
+  scrollbar-color: #6a4f9a transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #6a4f9a;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
 `;

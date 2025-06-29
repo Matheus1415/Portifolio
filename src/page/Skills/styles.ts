@@ -1,6 +1,19 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+export const ContainerColumn = styled.div`
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
 export const SkillsWrapper = styled.div`
   width: 100%;
   height: 800px;
@@ -11,6 +24,9 @@ export const SkillsWrapper = styled.div`
   justify-content: center;
   margin: 0 auto;
   padding: 20px;
+  @media (max-width: 768px) {
+    padding: 0px;
+  }
 `;
 
 export const SlidesContainer = styled(motion.div)`
@@ -67,12 +83,18 @@ export const SkillCard = styled(motion.div)`
     margin: 0;
     font-weight: 600;
     font-size: 1.6rem;
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
   }
 
   p,
   ul,
   a {
     color: #e0d7ff;
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+    }
   }
 
   .button-wrapper {
@@ -80,6 +102,10 @@ export const SkillCard = styled(motion.div)`
     padding-top: 1rem;
     display: flex;
     justify-content: flex-start;
+    @media (max-width: 768px) {
+      margin: 0;
+      font-size: 0.75rem;
+    }
   }
 
   a {
@@ -145,6 +171,12 @@ export const NavButton = styled.button`
 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
+  @media (max-width: 768px) {
+    
+    margin-left: 9px;
+    padding: 8px 12px;
+  }
+
   &:hover {
     background-color: #4c1d95;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
@@ -159,5 +191,31 @@ export const NavButton = styled.button`
     transform: scale(0.97);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     border: none;
+  }
+`;
+
+export const FilterBar = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+export const FilterButton = styled.button`
+  padding: 0.5rem 1rem;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &.active {
+    background: ${(thema) => thema.theme["purple-300"]};
+  }
+
+  &:hover {
+    background: ${(thema) => thema.theme["purple-500"]};
   }
 `;

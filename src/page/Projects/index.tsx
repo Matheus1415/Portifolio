@@ -110,6 +110,14 @@ const projects: Project[] = [
     technology: "php",
     icon: <FaPhp size={18} />,
   },
+  {
+    id: 10,
+    title: "Files System",
+    imageSrc: "/bg/bg-filessystem.png",
+    description: "Aplicação Laravel para gerenciar arquivos e pastas.",
+    technology: "Laravel",
+    icon: <FaLaravel size={18} />,
+  },
 ];
 
 export type ProjectType = {

@@ -533,5 +533,54 @@
         "linkedin": "https://www.linkedin.com/company/tech-north-solucoes/"
       }
     }
+  },
+  {
+    "id": 10,
+    "project": {
+      "title": "FilesSystem: Gerenciamento de Arquivos com Laravel",
+      "year": 2025,
+      "type": "web",
+      "intro": {
+        "description": "Aplicação Laravel para gerenciar arquivos e pastas com funcionalidades completas de upload, edição, exclusão e download.",
+        "highlight": "Projeto focado no aprendizado e implementação do sistema de arquivos do Laravel, com interface intuitiva e eficiente."
+      },
+      "sections": [
+        {
+          "title": "Funcionalidades Principais",
+          "date": "2025",
+          "type": "text",
+          "content": [
+            "Cadastro de Arquivos: Upload de arquivos para o sistema de armazenamento configurado.",
+            "Seleção de Arquivos e Pastas: Navegação intuitiva para seleção e gerenciamento de arquivos e diretórios.",
+            "Modificação de Arquivos: Edição ou substituição de arquivos existentes no sistema.",
+            "Exclusão de Arquivos e Pastas: Remoção segura de arquivos e diretórios.",
+            "Download de Arquivos: Permite baixar os arquivos armazenados no sistema."
+          ]
+        },
+        {
+          "title": "Contribuidores",
+          "date": "2025",
+          "type": "authors",
+          "authors": [
+            {
+              "name": "Matheus1415",
+              "github": "https://github.com/Matheus1415",
+              "roles": ["Desenvolvedor Full-Stack", "Designer de Interface"],
+              "description": "Responsável pelo desenvolvimento backend e frontend, além do design da interface."
+            },
+            {
+              "name": "DanielDeSousaDEV",
+              "github": "https://github.com/DanielDeSousaDEV",
+              "roles": ["Colaborador Backend"],
+              "description": "Contribuiu com melhorias no backend e otimizações do sistema de arquivos."
+            }
+          ]
+        }
+      ],
+      "link": {
+        "label": "Repositório no GitHub",
+        "url": "https://github.com/Matheus1415/FilesSystem"
+      }
+    }
   }
 ]

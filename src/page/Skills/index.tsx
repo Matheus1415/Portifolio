@@ -6,6 +6,9 @@ import {
   SkillCard,
   CarouselControls,
   NavButton,
+  FilterBar,
+  FilterButton,
+  ContainerColumn,
 } from "./styles";
 import { SiTypescript, SiPhp, SiCoursera } from "react-icons/si";
 import {
@@ -28,6 +31,7 @@ const skillsData = [
     icon: <SiTypescript />,
     company: "@Alura - Cursos Online",
     date: "Formação Concluída | 2024",
+    category: "Front-end",
     certificateLink:
       "http://cursos.alura.com.br/user/mps-web-tech/degree-typescript-v309729-309729/certificate",
     description:
@@ -47,6 +51,7 @@ const skillsData = [
     icon: <SiTypescript />,
     company: "@Alura - Cursos Online",
     date: "Formação Concluída | 2024",
+    category: "Front-end",
     certificateLink:
       "https://cursos.alura.com.br/user/mps-web-tech/degree-typescript-v309729-309729/certificate",
     description:
@@ -64,6 +69,7 @@ const skillsData = [
     icon: <SiTypescript />,
     company: "@Alura - Cursos Online",
     date: "Formação Concluída | 2024",
+    category: "Front-end",
     certificateLink:
       "https://cursos.alura.com.br/user/mps-web-tech/degree-typescript-desenvolva-front-end-produtividade-644154/certificate",
     description:
@@ -82,6 +88,7 @@ const skillsData = [
     icon: <FaReact />,
     company: "@Alura - Cursos Online",
     date: "Formação Concluída | 2024",
+    category: "Front-end",
     certificateLink:
       "https://cursos.alura.com.br/user/mps-web-tech/degree-react-ts-v581770-581770/certificate",
     description:
@@ -104,6 +111,7 @@ const skillsData = [
     icon: <SiPhp />,
     company: "@Alura - Cursos Online",
     date: "Formação Concluída | 2024",
+    category: "Back-end",
     certificateLink:
       "https://cursos.alura.com.br/user/mps-web-tech/degree-linguagem-php-v597958-597958/certificate",
     description:
@@ -126,6 +134,7 @@ const skillsData = [
     title: "Formação Laravel",
     icon: <FaLaravel />,
     company: "@Alura - Cursos Online",
+    category: "Full-stack",
     date: "Formação Concluída | 2024",
     certificateLink:
       "https://cursos.alura.com.br/user/mps-web-tech/degree-laravel-461900/certificate",
@@ -146,6 +155,7 @@ const skillsData = [
     title: "Curso Front-End Completo",
     icon: <FaJs />,
     company: "Danki Code - Cursos Online",
+    category: "Front-end",
     date: "Formação Concluída | 2023",
     certificateLink:
       "https://cursos.dankicode.com/api/certificados/a2d88abb-6582-4210-af95-6bd1572fcebc",
@@ -181,6 +191,7 @@ const skillsData = [
     icon: <FaRegFileCode />,
     company: "Danki Code - Cursos Online",
     date: "Formação Concluída | 2023",
+    category: "Back-end",
     certificateLink:
       "https://cursos.dankicode.com/api/certificados/21e94441-3276-49f1-b5af-ccc1cbcb79f8",
     description:
@@ -205,6 +216,7 @@ const skillsData = [
     icon: <IoLogoJavascript />,
     company: "Danki Code - Cursos Online",
     date: "Formação Concluída | 2023",
+    category: "Front-end",
     certificateLink:
       "https://cursos.dankicode.com/api/certificados/f709fd33-629b-4884-a370-09d4720a9ee2",
     description:
@@ -233,6 +245,7 @@ const skillsData = [
     icon: <FaReact />,
     company: "Danki Code - Cursos Online",
     date: "Formação Concluída | 2024",
+    category: "Front-end",
     certificateLink:
       "https://cursos.dankicode.com/api/certificados/f86b6310-2bc6-428c-8ad6-da83b0dd08b7",
     description:
@@ -267,6 +280,7 @@ const skillsData = [
     title: "Google Project Management",
     platform: "Coursera",
     date: "Formação Concluída | Junho de 2024",
+    category: "Soft Skills",
     certificateLink:
       "https://www.coursera.org/account/accomplishments/verify/8ST7FSPYMHU4",
     icon: <SiCoursera />,
@@ -288,6 +302,7 @@ const skillsData = [
     title: "Applying Project Management",
     platform: "Coursera",
     date: "Formação Concluída | Junho de 2024",
+    category: "Soft Skills",
     certificateLink:
       "https://www.coursera.org/account/accomplishments/verify/8ST7FSPYMHU4",
     icon: <SiCoursera />,
@@ -306,6 +321,7 @@ const skillsData = [
     title: "Agile Project Management",
     platform: "Coursera",
     date: "Formação Concluída | Junho de 2024",
+    category: "Soft Skills",
     certificateLink:
       "https://www.coursera.org/account/accomplishments/verify/SLGEF4F2RYPR",
     icon: <SiCoursera />,
@@ -324,6 +340,7 @@ const skillsData = [
     title: "Cloud Foundations",
     platform: "AWS Academy",
     date: "Concluído em Março de 2024",
+    category: "Soft Skills",
     certificateLink: "https://www.credly.com/go/Mq8O7f1q",
     icon: <FaAws />,
     description:
@@ -342,6 +359,7 @@ const skillsData = [
     title: "Fundamentos do React e Next.js",
     platform: "Rocketseat",
     date: "Concluído em 21 de Fevereiro de 2025",
+    category: "Front-end",
     certificateLink:
       "https://app.rocketseat.com.br/certificates/1311d4fd-5bd0-4d63-83d9-23aea3b682a5",
     icon: <FaReact />,
@@ -366,6 +384,7 @@ const skillsData = [
     title: "Desenvolvimento de Aplicações Mobile com React Native",
     platform: "Rocketseat",
     date: "Concluído em 15 de Dezembro de 2024",
+    category: "Front-end",
     certificateLink:
       "https://app.rocketseat.com.br/certificates/69da40c6-79a9-49a4-9c4f-a9143df07ed7",
     icon: <FaReact />,
@@ -390,6 +409,7 @@ const skillsData = [
     title: "Desenvolvimento de Back-end com Node.js",
     platform: "Rocketseat",
     date: "Concluído em 23 de Fevereiro de 2025",
+    category: "Back-end",
     certificateLink:
       "https://app.rocketseat.com.br/certificates/dc699ba7-4427-425d-a764-dbb3add0615a",
     icon: <FaNodeJs />,
@@ -412,6 +432,7 @@ const skillsData = [
     title: "Técnico em Informática",
     platform: "José Maria Falcão",
     date: "Janeiro de 2022 - Dezembro de 2024",
+    category: "Soft Skills",
     certificateLink: "",
     icon: <IoIosSchool />,
     description:
@@ -431,6 +452,7 @@ const skillsData = [
     title: "Formação na Fábrica de Programadores",
     platform: "Fundação Democrática Rocha & UANE",
     date: "Formação Concluída em 2024",
+    category: "Soft Skills",
     certificateLink: "",
     icon: <IoIosSchool />,
     description:
@@ -446,6 +468,7 @@ const skillsData = [
     title: "Projeto Mendel - Ceará Científico 2024",
     platform: "Ceará Científico 2024",
     date: "Participação em 2024",
+    category: "Soft Skills",
     certificateLink: "https://mendel-legacy.netlify.app/",
     icon: <IoIosSchool />,
     description:
@@ -464,63 +487,98 @@ const skillsData = [
   },
 ];
 
+const categories = [
+  "Todos",
+  "Front-end",
+  "Back-end",
+  "Full-stack",
+  "Soft Skills",
+];
+
 export function Skills() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
+
+  const filteredSkills =
+    selectedCategory === "Todos"
+      ? skillsData
+      : skillsData.filter((skill) => skill.category === selectedCategory);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === skillsData.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === filteredSkills.length - 1 ? 0 : prev + 1
+    );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? skillsData.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? filteredSkills.length - 1 : prev - 1
+    );
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentIndex(0);
   };
 
   return (
-    <SkillsWrapper>
-      <SlidesContainer
-        animate={{ x: `-${currentIndex * 100}%` }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      >
-        {skillsData.map((skill) => (
-          <CardContainer key={skill.id}>
-            <SkillCard>
-              <div className="icon">{skill.icon}</div>
-              <h3>{skill.title}</h3>
-              <p>
-                <strong>{skill.company}</strong> — {skill.date}
-              </p>
-              <p>{skill.description}</p>
-              <ul>
-                {skill.bulletPoints.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
-              <p>
-                <em>{skill.conclusion}</em>
-              </p>
-              <div className="button-wrapper">
-                <a
-                  href={skill.certificateLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver certificado
-                </a>
-              </div>
-            </SkillCard>
-          </CardContainer>
+    <ContainerColumn>
+      <FilterBar>
+        {categories.map((cat) => (
+          <FilterButton
+            key={cat}
+            onClick={() => handleCategoryChange(cat)}
+            className={selectedCategory === cat ? "active" : ""}
+          >
+            {cat}
+          </FilterButton>
         ))}
-      </SlidesContainer>
+      </FilterBar>
+      <SkillsWrapper>
+        <SlidesContainer
+          animate={{ x: `-${currentIndex * 100}%` }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        >
+          {filteredSkills.map((skill) => (
+            <CardContainer key={skill.id}>
+              <SkillCard>
+                <div className="icon">{skill.icon}</div>
+                <h3>{skill.title}</h3>
+                <p>
+                  <strong>{skill.company}</strong> — {skill.date}
+                </p>
+                <p>{skill.description}</p>
+                <ul>
+                  {skill.bulletPoints.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
+                <p>
+                  <em>{skill.conclusion}</em>
+                </p>
+                <div className="button-wrapper">
+                  <a
+                    href={skill.certificateLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver certificado
+                  </a>
+                </div>
+              </SkillCard>
+            </CardContainer>
+          ))}
+        </SlidesContainer>
 
-      {/* Botões de navegação com ícones */}
-      <CarouselControls>
-        <NavButton onClick={prevSlide}>
-          <FaArrowLeft /> Anterior
-        </NavButton>
-        <NavButton onClick={nextSlide}>
-          Próximo <FaArrowRight />
-        </NavButton>
-      </CarouselControls>
-    </SkillsWrapper>
+        <CarouselControls>
+          <NavButton onClick={prevSlide}>
+            <FaArrowLeft /> Anterior
+          </NavButton>
+          <NavButton onClick={nextSlide}>
+            Próximo <FaArrowRight />
+          </NavButton>
+        </CarouselControls>
+      </SkillsWrapper>
+    </ContainerColumn>
   );
 }
