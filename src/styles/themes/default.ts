@@ -1,23 +1,25 @@
-export const defaultTheme = {
-  white: '#FFF',
+export const defaultTheme  = {
+  white: "#FFFFFF",
 
-  'purple-100': '#e4b1ff',
-  'purple-300': '#5E4B7A',
-  'purple-500': '#4A3B6A',
-  'purple-700': '#342953',
-  'purple-800': '#13131F',
+  "purple-50": "#f7ecfa",
+  "purple-100": "#e9d6f9",
+  "purple-300": "#cfa2ef",
+  "purple-500": "#a970e2",
+  "purple-700": "#6c3bb5",
+  "purple-900": "#4a1e7c",
 
-  'gray-100': '#E1E1E6',
-  'gray-300': '#C4C4CC',
-  'gray-400': '#8D8D99',
-  'gray-500': '#7C7C8A',
-  'gray-600': '#323238',
-  'gray-700': '#29292E',
-  'gray-800': '#1B1B2C', 
-  'gray-850': '#151522', 
-  'gray-900': '#13131D', 
+  "gray-50": "#F8F9FA",
+  "gray-100": "#F1F3F5",
+  "gray-200": "#E9ECEF",
+  "gray-300": "#DEE2E6",
+  "gray-400": "#CED4DA",
+  "gray-500": "#ADB5BD",
+  "gray-600": "#6C757D",
+  "gray-700": "#495057",
+  "gray-800": "#343A40",
+  "gray-900": "#212529",
 
-  'black-opaque': '#000000C8', 
+  "black-opaque": "#00000080",
 
-  'accent-500': '#846495',
+  "accent-500": "#9E6DFD",
 };

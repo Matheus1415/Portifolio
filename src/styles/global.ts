@@ -13,8 +13,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-image: linear-gradient(to left,rgba(42, 0, 85, 0.42), transparent);
-    color: ${(props) => props.theme.white};
     -webkit-font-smoothing: antialiased;
   }
 
