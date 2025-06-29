@@ -78,6 +78,7 @@ export const TechGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
+  align-content: center;
   gap: 1.5rem;
 
   @media (max-width: 768px) {

@@ -81,7 +81,7 @@ export function Trajectory() {
     },
     {
       year: "2025",
-      icon: <FaLaptopCode />,
+      icon: <FaBriefcase />,
       description:
         "Em 2025, consegui mais dois estagios como desenvolvedor, com maiores responsabilidades técnicas e participação em projetos mais complexos.",
       tags: ["Laravel", "PHP", "jQuery", "JavaScript", "Banco de Dados"],
