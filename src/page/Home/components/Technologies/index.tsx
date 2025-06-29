@@ -1,4 +1,29 @@
-import { Container, TechGrid, TechBox, TechnologiesContainer } from "./styles";
+import {
+  SiTypescript,
+  SiStyledcomponents,
+  SiTailwindcss,
+  SiCss3,
+  SiBootstrap,
+  SiLaravel,
+  SiPhp,
+  SiMysql,
+  SiJsonwebtokens,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+  SiTrello,
+  SiJira,
+  SiScrumalliance,
+} from "react-icons/si";
+import {
+  Container,
+  TechGrid,
+  TechBox,
+  TechnologiesContainer,
+  Image,
+} from "./styles";
+import { FaReact } from "react-icons/fa";
+
 export function Technologies() {
   return (
     <TechnologiesContainer>
@@ -20,37 +45,132 @@ export function Technologies() {
         <TechGrid>
           <TechBox variant="primary">
             <div className="content">
-              <h3>Front-end</h3>
+              <h3>Competências em Front-end</h3>
               <p>
-                React, Vue.js, Next.js, HTML5, CSS3, Styled Components,
-                TailwindCSS
+                Tenho experiência sólida com React e TypeScript, desenvolvendo
+                interfaces modernas, responsivas e eficientes.
+              </p>
+              <p>
+                Utilizo Styled Components, Tailwind CSS, CSS puro e Bootstrap
+                para estilização, garantindo flexibilidade e consistência no
+                design.
+              </p>
+              <p className="tech-icons">
+                <FaReact title="React" />
+                <SiTypescript title="TypeScript" />
+                <SiStyledcomponents title="Styled Components" />
+                <SiTailwindcss title="Tailwind CSS" />
+                <SiCss3 title="CSS3" />
+                <SiBootstrap title="Bootstrap" />
               </p>
             </div>
-            <img src="./logo-mp.png" alt="Front-end logo" />
+            <Image
+              src="./image/cards/card-front.png"
+              alt="Front-end logo"
+              initial={{ y: 0 }}
+              animate={{ y: [0, -20, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+            />
           </TechBox>
 
           <TechBox variant="secondary">
             <div className="content">
-              <h3>Back-end</h3>
-              <p>Node.js, Express, Laravel, PHP, Python, REST APIs, GraphQL</p>
+              <h3>Competências em Back-end</h3>
+              <p>
+                Tenho ampla experiência em desenvolvimento back-end com PHP e
+                Laravel, criando sistemas robustos, seguros e escaláveis.
+                Utilizo boas práticas para garantir performance e manutenção
+                facilitada.
+              </p>
+              <p className="tech-icons">
+                <SiPhp title="PHP" />
+                <SiLaravel title="Laravel" />
+                <SiMysql title="MySQL" />
+                <SiJsonwebtokens title="JWT" />
+              </p>
             </div>
-            <img src="./logo-mp.png" alt="Back-end logo" />
+
+            <Image
+              src="./image/cards/card-back.png"
+              alt="Back-end logo"
+              initial={{ y: 0 }}
+              animate={{ y: [0, -20, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+            />
           </TechBox>
 
           <TechBox variant="secondary">
             <div className="content">
-              <h3>DBA</h3>
-              <p>MySQL, PostgreSQL, MongoDB, Redis, Firebase</p>
+              <h3>Gestão de Projetos</h3>
+              <p>
+                Tenho domínio do Git e GitHub, utilizando-os para versionamento
+                de código, revisão em equipe e organização de tarefas com GitHub
+                Projects e Trello. Acompanho fluxos ágeis com metodologias como
+                Scrum e Agile, promovendo entregas mais eficientes.
+              </p>
+              <p className="tech-icons">
+                <SiGit title="Git" />
+                <SiGithub title="GitHub" />
+                <SiTrello title="Trello" />
+                <SiJira title="Jira" />
+                <SiScrumalliance title="Scrum" />
+              </p>
             </div>
-            <img src="./logo-mp.png" alt="DBA logo" />
+
+            <Image
+              src="./image/cards/card-manager.png"
+              alt="Back-end logo"
+              initial={{ y: 0 }}
+              animate={{ y: [0, -20, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+            />
           </TechBox>
 
           <TechBox variant="primary">
             <div className="content">
-              <h3>Manage</h3>
-              <p>Git, Docker, CI/CD, Jira, Agile, Scrum</p>
+              <h3>Gestão de Bancos de Dados</h3>
+              <p>
+                Tenho ampla experiência na modelagem, criação e otimização de
+                bancos de dados relacionais com MySQL, garantindo estrutura
+                sólida, desempenho e escalabilidade.
+              </p>
+              <p>
+                Também possuo conhecimentos em bancos NoSQL como MongoDB e
+                soluções como Redis e Firebase, permitindo trabalhar com
+                diferentes tipos de arquiteturas de dados.
+              </p>
+              <p className="tech-icons">
+                <SiMysql title="MySQL" />
+                <SiMongodb title="MongoDB" />
+              </p>
             </div>
-            <img src="./logo-mp.png" alt="Manage logo" />
+            <Image
+              src="./image/cards/card-database.png"
+              alt="Back-end logo"
+              initial={{ y: 0 }}
+              animate={{ y: [0, -20, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+            />
           </TechBox>
         </TechGrid>
       </Container>

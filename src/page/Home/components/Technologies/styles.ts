@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const TechnologiesContainer = styled.section`
@@ -88,74 +89,77 @@ export const TechGrid = styled.div`
 interface TechBoxProps {
   variant?: "primary" | "secondary";
 }
-
 export const TechBox = styled.div<TechBoxProps>`
-  background-color: ${({ theme, variant }) =>
-    variant === "primary" ? theme["purple-100"] : theme["gray-100"]};
   border-radius: 12px;
   max-width: 800px;
+  width: 100%;
   min-height: 400px;
   padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
 
-  color: ${({ theme, variant }) =>
-    variant === "primary" ? theme["purple-900"] : theme["purple-700"]};
+  background-color: ${({ theme, variant }) =>
+    variant === "primary" ? theme["purple-900"] : theme["gray-900"]};
+  color: ${({ theme }) => theme.white};
 
-  box-shadow: ${({ variant }) =>
-    variant === "primary"
-      ? "0 4px 8px rgba(132, 100, 149, 0.15)" // sombra discreta roxa
-      : "0 4px 8px rgba(0, 0, 0, 0.1)"}; // sombra discreta cinza
-
+  box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.32);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover {
-    background-color: ${({ theme, variant }) =>
-      variant === "primary" ? theme["purple-300"] : theme["purple-100"]};
-    color: ${({ theme }) => theme["purple-900"]};
-    box-shadow: 0 6px 12px rgba(132, 100, 149, 0.3);
-  }
-
   div.content {
-    max-width: 60%;
-
+    flex: 1 1 55%;
     h3 {
       margin: 0 0 0.5rem 0;
-      font-size: 1.3rem;
+      font-size: 1.8rem;
       font-weight: bold;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: ${({ theme, variant }) =>
+        variant === "primary" ? theme["purple-300"] : theme.white};
+      color: ${({ theme }) => theme["gray-900"]};
     }
 
     p {
       margin: 0;
+      margin-top: 15px;
+      text-align: justify;
       font-size: 1rem;
-      line-height: 1.4;
-      color: ${({ theme }) => theme["gray-700"]};
+      line-height: 1.5;
+      color: ${({ theme }) => theme.white};
     }
-  }
 
-  img {
-    max-width: 80px;
-    max-height: 80px;
-    object-fit: contain;
-    border-radius: 8px;
+    .tech-icons {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 2rem;
+      align-items: center;
+    }
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: flex-start;
+    min-height: auto;
+    padding: 1.5rem;
 
     div.content {
+      flex: 1 1 100%;
       max-width: 100%;
-      margin-bottom: 1rem;
-    }
-
-    img {
-      max-width: 100%;
-      max-height: 150px;
-      align-self: center;
     }
   }
 `;
 
+export const Image = styled(motion.img)`
+  flex: 1 1 40%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 
